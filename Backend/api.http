@@ -1,9 +1,10 @@
-POST http://localhost:9090/register HTTP/1.1
+
+
+###
+POST http://localhost:9090/login HTTP/1.1
 content-Type: application/json
 
 {
-    "name": "John Doe",
-    "email": "john@example.com",
-    "password": "password123",
-    "username": "johndoe"
+    "email": "john@exampe.com",
+    "password":"password122"
 }
