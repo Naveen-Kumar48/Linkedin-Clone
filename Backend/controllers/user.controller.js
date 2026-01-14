@@ -213,6 +213,26 @@ export const downloadProfile = async (req, res) => {
     );
 
     let outputPath = await convertUserDataToPDF(userProfile);
-    return res.json({ message:  outputPath });
+    return res.json({"message":outputPath });
   
 };
+
+
+
+// *Api for the user Connection request
+
+export const sendConnectionRequest=async (req,res)=>{
+  const {token,connectionId}=req.body;
+  try {
+    const user=await  User.findOne({token:token})
+
+    if(!user){
+      return  res.status(404).json({message:"User Not  Found"})
+    }
+    
+  } catch (error) {
+    return res.status(500).json({message:error.message})
+    
+  }
+
+}
