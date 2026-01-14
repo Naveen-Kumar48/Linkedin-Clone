@@ -1,8 +1,44 @@
 import User from "../models/user.model.js";
 import bcrypt from "bcrypt";
 import Profile from "../models/profile.model.js";
-
+import PDFDocument from "pdfkit";
 import crypto from "crypto";
+import fs from "fs";
+
+//* function to convert user data to pdf
+const convertUserDataToPDF = async (userData) => {
+  const doc = new PDFDocument();
+
+  const outputPath = "uploads/" + crypto.randomBytes(32).toString("hex") + ".pdf";
+  const stream = fs.createWriteStream(outputPath);
+
+  doc.pipe(stream);
+
+  if (userData.userId?.profilePicture) {
+    doc.image(`uploads/${userData.userId.profilePicture}`, {
+      align: "center",
+      width: 100,
+    });
+  }
+
+  doc.fontSize(14).text(`Name: ${userData.userId.name}`);
+  doc.fontSize(14).text(`Email: ${userData.userId.email}`);
+  doc.fontSize(14).text(`Username: ${userData.userId.username}`);
+  doc.fontSize(14).text(`Bio: ${userData.bio}`);
+  doc.fontSize(14).text(`Current Post: ${userData.currentPost}`);
+
+  doc.fontSize(14).text(`Past Work Experience:`);
+
+    userData.pastwork.forEach((work, index) => {
+      doc.fontSize(14).text(`Company Name:${work.company}`);
+      doc.fontSize(14).text(`Position:${work.position}`);
+      doc.fontSize(14).text(`Years:${work.years}`);
+    });
+  
+  doc.end();
+  return outputPath;
+};
+
 
 //*Api to register user
 export const register = async (req, res) => {
@@ -27,8 +63,8 @@ export const register = async (req, res) => {
     });
     await newUser.save();
 
-    const profile = new Profile({ user: newUser._id });
-    // await profile.save();
+    const profile = new Profile({ userId: newUser._id });
+    await profile.save();
     return res.json({ message: "User Created successfully" });
   } catch (error) {
     return res.status(500).json({ message: error.message });
@@ -52,11 +88,131 @@ export const login = async (req, res) => {
     const token = crypto.randomBytes(32).toString("hex");
     await User.updateOne({ _id: user._id }, { token: token });
     res.json({
-        token: token,
-    })
-
-
+      token: token,
+    });
   } catch (error) {
     return res.status(500).json({ message: error.message });
   }
+};
+
+// *API  for the upload profile picture
+export const uploadprofilepic = async (req, res) => {
+  const { token } = req.body;
+  try {
+    const user = await User.findOne({ token: token });
+    if (!user) {
+      return res.status(404).json({ message: "User not found" });
+    }
+    user.profilePicture = req.file.filename;
+
+    await user.save();
+    res.json({
+      message: "Profile picture uploaded successfully",
+    });
+  } catch (error) {
+    return res.status(500).json({ message: error.message });
+  }
+};
+
+// *Api to update user profile
+export const updateUserProfile = async (req, res) => {
+  try {
+    const { token, ...newUserData } = req.body;
+    const user = await user.findOne({ token: token });
+    if (!user) {
+      return res.status(404).json({ message: "User not found" });
+    }
+
+    const { username, email } = newUserData;
+
+    const existingUser = await User.findOne({
+      $or: [{ username: username }, { email: email }],
+    });
+
+    if (existingUser) {
+      if (existingUser || String(existingUser._id) !== String(user._id)) {
+        return res
+          .status(400)
+          .json({ message: "Username or email already Exists" });
+      }
+    }
+
+    Object.assign(user, newUserData);
+    await user.save();
+    return res.json({ message: "Profile updated successfully" });
+  } catch (error) {
+    return res.status(500).json({ message: error.message });
+  }
+};
+
+// *Api for getting user profile
+export const getUserProfile = async (req, res) => {
+  try {
+    const { token } = req.body;
+    const user = await User.findOne({ token: token });
+    if (!user) {
+      return res.status(404).json({ message: "User not found" });
+    }
+
+    const userProfile = await Profile.findOne({ userId: user._id }).populate(
+      "userId",
+      "name email username profilePicture"
+    );
+    return res.json(userProfile);
+  } catch (error) {
+    return res.status(500).json({ message: error.message });
+  }
+};
+
+export default updateUserProfile;
+
+//* Api for  update userProfile Data
+
+export const updateProfileData = async (req, res) => {
+  try {
+    const { token, ...newProfileData } = req.body;
+    const userProfile = await User.findOne({ token: token });
+
+    if (!userProfile) {
+      return res.status(404).json({ message: "User not found" });
+    }
+
+    const profile_to_update = await Profile.findOne({
+      userId: userProfile._id,
+    });
+
+    Object.assign(profile_to_update, newProfileData);
+    await profile_to_update.save();
+    return res.json({ message: "Profile Data Updated Successfully" });
+  } catch (error) {
+    return res.status(500).json({ message: error.message });
+  }
+};
+
+// *Api to get all the user data
+export const getAllUsersProfile = async (req, res) => {
+  try {
+    const profiles = await Profile.find().populate(
+      "userId",
+      "name email username profilePicture"
+    );
+    res.json({ profiles });
+  } catch (error) {
+    res.status(500).json({ message: error.message });
+  }
+};
+
+// *Api to download the profile resume
+
+export const downloadProfile = async (req, res) => {
+  
+    const user_Id = req.query.id;
+    const userProfile = await Profile.findOne({ userId: user_Id }).populate(
+      "userId",
+      "name email username profilePicture"
+    );
+
+    let outputPath = await convertUserDataToPDF(userProfile);
+    return res.json({ message:  outputPath });
+  
 };

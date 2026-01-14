@@ -10,6 +10,7 @@ app.use(express.json());
 app.use(cors());
 app.use(postRoutes);
 app.use(userRoutes);
+app.use(express.static('uploads'))
 const PORT = process.env.PORT || 9090;
 
 const start = async () => {

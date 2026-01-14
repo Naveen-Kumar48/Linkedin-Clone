@@ -1,10 +1,61 @@
 
+###
+POST http://localhost:9090/register HTTP/1.1
+content-Type: application/json
+
+{
+    "name": "user",
+    "email": "user@gmail.com",
+    "password": "1",
+    "username": "user"
+}
 
 ###
 POST http://localhost:9090/login HTTP/1.1
 content-Type: application/json
 
 {
-    "email": "john@exampe.com",
-    "password":"password122"
+    "email": "user@gmail.com",
+    "password":"1"
 }
+###
+
+GET http://localhost:9090/getuser_profile HTTP/1.1
+content-Type: application/json
+
+
+{
+"token":"53258f428921c5646a126904278cd5afbde1954813edbf95a8d2c8a32bba03a2"
+
+}
+
+
+###
+POST http://localhost:9090/updateprofile_data HTTP/1.1
+content-Type: application/json
+
+    
+{
+  "token":"53258f428921c5646a126904278cd5afbde1954813edbf95a8d2c8a32bba03a2",
+   "bio": "Experienced technology leader with expertise in product architecture, team building, and scalable system design.",
+  "currentPost": "CTO",
+  "pastwork": [
+    {
+      "company": "Microsoft",
+      "position": "CTO",
+      "years": "2+"
+    }
+  ],
+  "education": [
+    {
+      "school": "IIIT",
+      "degree": "B.Tech",
+      "fieldOfStudy": "2015-2019"
+    }
+  ]
+}
+
+###
+GET http://localhost:9090/user/get_allusers HTTP/1.1
+content-Type: application/json
+

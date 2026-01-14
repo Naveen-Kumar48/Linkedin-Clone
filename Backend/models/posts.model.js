@@ -7,7 +7,7 @@ const postSchema = new mongoose.Schema({
   },
   body: { type: String, required: true },
   likes: {
-    type: Numeber,
+    type: Number,
     default: 0,
   },
   createdAt: {
@@ -18,7 +18,9 @@ const postSchema = new mongoose.Schema({
     type: Date,
     default: Date.now,
   },
-  media: { type: String, default: "" },
+  media: { 
+    type: String, default: ''
+   },
   active: {
     type: Boolean,
     default: true,
