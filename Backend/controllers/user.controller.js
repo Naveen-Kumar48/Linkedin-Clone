@@ -90,11 +90,11 @@ export const login = async (req, res) => {
     const token = crypto.randomBytes(32).toString("hex");
     await User.updateOne({ _id: user._id }, { token: token });
     res.json({
-      token: token,
+      token: token, 
     });
   } catch (error) {
     return res.status(500).json({ message: error.message });
-  }
+  } 
 };
 
 // *API  for the upload profile picture
