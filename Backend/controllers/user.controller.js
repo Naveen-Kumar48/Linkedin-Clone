@@ -4,12 +4,15 @@ import Profile from "../models/profile.model.js";
 import PDFDocument from "pdfkit";
 import crypto from "crypto";
 import fs from "fs";
+import ConnectionRequest from "../models/connections.model.js";
+import { connections } from "mongoose";
 
 //* function to convert user data to pdf
 const convertUserDataToPDF = async (userData) => {
   const doc = new PDFDocument();
 
-  const outputPath = "uploads/" + crypto.randomBytes(32).toString("hex") + ".pdf";
+  const outputPath =
+    "uploads/" + crypto.randomBytes(32).toString("hex") + ".pdf";
   const stream = fs.createWriteStream(outputPath);
 
   doc.pipe(stream);
@@ -29,16 +32,15 @@ const convertUserDataToPDF = async (userData) => {
 
   doc.fontSize(14).text(`Past Work Experience:`);
 
-    userData.pastwork.forEach((work, index) => {
-      doc.fontSize(14).text(`Company Name:${work.company}`);
-      doc.fontSize(14).text(`Position:${work.position}`);
-      doc.fontSize(14).text(`Years:${work.years}`);
-    });
-  
+  userData.pastwork.forEach((work, index) => {
+    doc.fontSize(14).text(`Company Name:${work.company}`);
+    doc.fontSize(14).text(`Position:${work.position}`);
+    doc.fontSize(14).text(`Years:${work.years}`);
+  });
+
   doc.end();
   return outputPath;
 };
-
 
 //*Api to register user
 export const register = async (req, res) => {
@@ -205,34 +207,131 @@ export const getAllUsersProfile = async (req, res) => {
 // *Api to download the profile resume
 
 export const downloadProfile = async (req, res) => {
-  
-    const user_Id = req.query.id;
-    const userProfile = await Profile.findOne({ userId: user_Id }).populate(
-      "userId",
-      "name email username profilePicture"
-    );
+  const user_Id = req.query.id;
+  const userProfile = await Profile.findOne({ userId: user_Id }).populate(
+    "userId",
+    "name email username profilePicture"
+  );
 
-    let outputPath = await convertUserDataToPDF(userProfile);
-    return res.json({"message":outputPath });
-  
+  let outputPath = await convertUserDataToPDF(userProfile);
+  return res.json({ message: outputPath });
 };
+
 
 
 
 // *Api for the user Connection request
 
-export const sendConnectionRequest=async (req,res)=>{
-  const {token,connectionId}=req.body;
+export const sendConnectionRequest = async (req, res) => {
+  const { token, connectionId } = req.body;
   try {
-    const user=await  User.findOne({token:token})
+    const user = await User.findOne({ token: token });
 
-    if(!user){
-      return  res.status(404).json({message:"User Not  Found"})
+    if (!user) {
+      return res.status(404).json({ message: "User Not  Found" });
     }
-    
-  } catch (error) {
-    return res.status(500).json({message:error.message})
-    
-  }
+    const connectionUser = await User.findOne({ _id: connectionId });
+    if (!connectionUser) {
+      return res.status(404).json({
+        message: "Connection User is not found",
+      });
+    }
+    const existingRequest = await ConnectionRequest.findOne({
+      userId: user._id,
+      connectionId: connectionUser._id,
+    });
 
-}
+    if (existingRequest) {
+      return res.status(400).json({
+        message: "Request Already  sent",
+      });
+    }
+
+    const request = new ConnectionRequest({
+      userId: user_id,
+      connectionId: connectionUser._id,
+    });
+    await request.save();
+    return res.json({ message: "Request Sent" });
+  } catch (error) {
+    return res.status(500).json({ message: error.message });
+  }
+};
+
+//*  Get my connection requests
+
+export const getMyConnectionRequests = async (req, res) => {
+  const { token } = req.body;
+  try {
+    const user = await User.findOne({
+      token: token,
+    });
+    if (!user) {
+      return res.status(500).json({
+        message: "User not Found ",
+      });
+    }
+    const connection = await ConnectionRequest.find({
+      userId: user._id,
+    }).populate("connectionId", "name username email profilePicture");
+
+    return register.json({
+      connections,
+    });
+  } catch (error) {
+    return res.status(500).json({
+      message: error.message,
+    });
+  }
+};
+export const whatAreMyConnections = async (req, res) => {
+  try {
+    const { token } = req.body;
+    if (!user) {
+      return res.status(404).res.json({
+        message: "User not found",
+      });
+    }
+    const connections = await ConnectionRequest.find({
+      connectionId: user._id,
+    }).populate("userId", "name username email profilePicture");
+
+    return res.json(connections);
+  } catch (err) {
+    return res.status(500).json({
+      messasge: err.message,
+    });
+  }
+};
+
+export const acceptConnectionRequest = async (req, res) => {
+  const { token, requestId, action_type } = req.body;
+  try {
+    const user=await User.findOne({token})
+    if(!user) return res.status(404).json({
+      message:"User not found"
+    })
+
+    const connection =await ConnectionRequest.findOne({_id:requestId})
+
+    if(!connection){
+      return res.json(404).json({
+        message:"Connection not found"
+      })
+    }
+    if(action_type==="accept"){
+      connection.status_accepted=true;
+
+    }else{
+      connection.status_accepted=false;
+    }
+    await connection.save();
+    return res.json({
+      message:"Request Updated"
+    })
+  } catch (error) {
+    return res.status(500).json({
+      message:err.message
+    })
+  }
+};

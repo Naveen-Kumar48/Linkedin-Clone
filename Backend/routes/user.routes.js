@@ -1,6 +1,6 @@
 import { Router } from "express";
 import multer from "multer";
-import { login, register, uploadprofilepic ,updateUserProfile,getUserProfile, updateProfileData, getAllUsersProfile, downloadProfile} from "../controllers/user.controller.js";
+import { login, register, uploadprofilepic ,updateUserProfile,getUserProfile, updateProfileData, getAllUsersProfile, downloadProfile, sendConnectionRequest, getMyConnectionRequests, whatAreMyConnections, acceptConnectionRequest} from "../controllers/user.controller.js";
 import { get } from "mongoose";
 const router = Router();
 
@@ -29,5 +29,8 @@ router.route('/getuser_profile').get(getUserProfile)
 router.route('/updateprofile_data').post(updateProfileData)
 router.route('/user/get_allusers').get(getAllUsersProfile);
 router.route('/user/download_resume').get(downloadProfile)
-router.route('/user/send_connection_request')
+router.route('/user/send_connection_request').post(sendConnectionRequest)
+router.route('/user/getConnectionRequest').get(getMyConnectionRequests)
+router.route('/user/user_connection_request').get(whatAreMyConnections)
+router.route('/user/accept_connection_request').post(acceptConnectionRequest)
 export default router;
