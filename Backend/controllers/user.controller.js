@@ -90,11 +90,11 @@ export const login = async (req, res) => {
     const token = crypto.randomBytes(32).toString("hex");
     await User.updateOne({ _id: user._id }, { token: token });
     res.json({
-      token: token, 
+      token: token,
     });
   } catch (error) {
     return res.status(500).json({ message: error.message });
-  } 
+  }
 };
 
 // *API  for the upload profile picture
@@ -150,17 +150,18 @@ export const updateUserProfile = async (req, res) => {
 // *Api for getting user profile
 export const getUserProfile = async (req, res) => {
   try {
-    const { token } = req.body;
+    const { token } = req.query;
+    // console.log(`Token:${token}`)
     const user = await User.findOne({ token: token });
     if (!user) {
       return res.status(404).json({ message: "User not found" });
     }
 
-    const userProfile = await Profile.findOne({ userId: user._id }).populate(
+    const profile = await Profile.findOne({ userId: user._id }).populate(
       "userId",
       "name email username profilePicture"
     );
-    return res.json(userProfile);
+    return res.json(profile);
   } catch (error) {
     return res.status(500).json({ message: error.message });
   }
@@ -307,31 +308,31 @@ export const whatAreMyConnections = async (req, res) => {
 export const acceptConnectionRequest = async (req, res) => {
   const { token, requestId, action_type } = req.body;
   try {
-    const user=await User.findOne({token})
-    if(!user) return res.status(404).json({
-      message:"User not found"
+    const user = await User.findOne({ token })
+    if (!user) return res.status(404).json({
+      message: "User not found"
     })
 
-    const connection =await ConnectionRequest.findOne({_id:requestId})
+    const connection = await ConnectionRequest.findOne({ _id: requestId })
 
-    if(!connection){
+    if (!connection) {
       return res.json(404).json({
-        message:"Connection not found"
+        message: "Connection not found"
       })
     }
-    if(action_type==="accept"){
-      connection.status_accepted=true;
+    if (action_type === "accept") {
+      connection.status_accepted = true;
 
-    }else{
-      connection.status_accepted=false;
+    } else {
+      connection.status_accepted = false;
     }
     await connection.save();
     return res.json({
-      message:"Request Updated"
+      message: "Request Updated"
     })
   } catch (error) {
     return res.status(500).json({
-      message:err.message
+      message: err.message
     })
   }
 };

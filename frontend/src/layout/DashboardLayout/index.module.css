@@ -1,0 +1,6 @@
+.homeContainer{
+    display: flex;
+}
+.homeContainer>div::nth-of-child(){
+   flex:0.2;
+}

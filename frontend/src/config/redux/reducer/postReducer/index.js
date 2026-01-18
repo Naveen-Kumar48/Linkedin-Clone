@@ -1,6 +1,6 @@
 
 import { createSlice } from "@reduxjs/toolkit";
-import { getAllPost } from "../action/postAction";
+import { getAllPost } from "../../action/postAction";
 
 const initialState = {
     posts: [],
@@ -28,7 +28,7 @@ const postSlice=createSlice({
     extraReducers:(builder)=>{
         builder.addCase(getAllPost.pending,(state)=>{
             state.isLoading=true,
-            state.message= "Fetching all the   posts..."
+            state.message= "Fetching all the posts..."
         })
         .addCase(getAllPost.fulfilled,(state,action)=>{
             state.isLoading=false,
