@@ -1,0 +1,39 @@
+.container {
+    display: flex;
+    justify-content: center;
+    height: 90svh;
+    align-items: center;
+    background: snow;
+}
+
+
+
+
+.cardContainer {
+    display: flex;
+    height: 80vh;
+    border-radius: 10px;
+    overflow: hidden;
+    width: 80vw;
+    border-radius: 10px;
+    background: white;
+    box-shadow: 10px 10px 15px rgb(173 173 173)
+}
+
+.cardContainer_left {
+    flex: 0.6;
+    text-align: center;
+    padding: 2rem;
+}
+
+.cardleft_heading {
+    font-size: 1.8rem;
+    font-weight: bold;
+}
+.cardContainer_right {
+    flex: 0.4;
+    background: hsl(187, 67%, 71%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
