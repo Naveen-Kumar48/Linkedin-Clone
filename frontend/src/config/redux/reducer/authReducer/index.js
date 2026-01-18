@@ -7,58 +7,70 @@ const initialState = {
     isError: false,
     isLoading: false,
     isSuccess: false,
-    LoadingIn:false,
+    LoggedIn: false,
     message: "",
-   profileFetched:false,
-   connections:[],
-   connectionRequests:[],
-   
+    profileFetched: false,
+    connections: [],
+    connectionRequests: [],
+
 }
 
 const authSlice = createSlice({
-    name:"auth",
+    name: "auth",
     initialState,
-    reducer:{
-        reset:()=>initialState,
-        handleLoginuser:(state)=>{
-            state.message="hello"
+    reducers: {
+        reset: () => initialState,
+        handleLoginuser: (state) => {
+            state.message = {
+                message: "hello"
+            }
+        }, emptyMessage: (state) => {
+            state.message = ""
         }
     },
-    extraReducers:(builder)=>{
-        builder.addCase(loginUser.pending,(state)=>{
+    extraReducers: (builder) => {
+        builder.addCase(loginUser.pending, (state) => {
             state.isLoading = true,
-            state.message="Knocking the door..."
+                state.message = {
+                    message: "Knocking the door..."
+                }
         })
-        .addCase(loginUser.fulfilled,(state,action)=>{
-            state.isLoading = false,
-            state.isError=false,
-            state.isSuccess=true,
-            state.loginIn=true,
-            state.message="login is Succesfull"
-        })
-         .addCase(loginUser.rejected,(state,action)=>{
-            state.isLoading = false,
-            state.isError=true,
-            state.message=action.payload
-         })
-         .addCase(registerUser.pending,(state)=>{
-            state.isLoading = true,
-            state.message="Registering you..."
-         })
-         .addCase(registerUser.fulfilled,(state,action)=>{
-            state.isLoading = false,
-            state.isError=false,
-            state.isSuccess=true,
-            state.loginIn=true,
-            state.message="login is Succesfull"
-         })
-         .addCase (registerUser.rejected,(state,action)=>{
-            state.isLoading = false,
-            state.isError=true,
-            state.message=action.payload
-         })
+            .addCase(loginUser.fulfilled, (state, action) => {
+                state.isLoading = false,
+                    state.isError = false,
+                    state.isSuccess = true,
+                    state.LoggedIn = true,
+                    state.message = {
+                        message: "Login Successful",
+                    }
+            })
+            .addCase(registerUser.fulfilled, (state, action) => {
+                state.isLoading = false,
+                    state.isError = false,
+                    state.isSuccess = true,
+                    state.message = {
+                        message: "Registeration is Succesfull, Please log-in     "
+                    }
+            })
+            .addCase(loginUser.rejected, (state, action) => {
+                state.isLoading = false,
+                    state.isError = true,
+                    state.message = action.payload
+            })
+            .addCase(registerUser.pending, (state) => {
+                state.isLoading = true,
+                    state.message = {
+                        message: "Registering you..."
+                    }
+            })
+            .addCase(registerUser.rejected, (state, action) => {
+                state.isLoading = false,
+                    state.isError = true,
+                    state.message = action.payload
+            })
     }
 })
 
 
+export const { reset, emptyMessage } = authSlice.actions
 export default authSlice.reducer
