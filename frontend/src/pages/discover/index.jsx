@@ -8,8 +8,10 @@ import DashboardLayout from '../../layout/DashboardLayout'
 export default function DiscoverPage() {
 
     const dispatch = useDispatch()
+
     const authState=useSelector((state)=>state.auth)
     useEffect(() => {
+        
     if(!authState.all_profile_fetched){
         dispatch(getAllUsers())
     }

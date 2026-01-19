@@ -2,10 +2,16 @@ import React from 'react'
 import styles from './styles.module.css'
 import { useRouter } from 'next/router'
 import { useSelector } from 'react-redux'
+import { useDispatch } from 'react-redux'
+import { reset } from '../../config/redux/reducer/authReducer'
 const NavbarComponent = () => {
-  const router = useRouter()
 
+
+  const router = useRouter()
   const authState = useSelector((state) => state.auth)
+  const dispatch = useDispatch()
+  const postState = useSelector((state) => state.post)
+
   return (
     <>
       <div className={styles.container}>
@@ -21,8 +27,11 @@ const NavbarComponent = () => {
             {authState.profileFetched && <div>
               <div style={{ display: "flex", gap: "1.2rem" }}>
                 <p>Hey,{authState.user.userId.username}</p>
-                <p style={{ cursor: "pointer",fontWeight: "bold" }}>Profile</p>
-                {/* <p style={{ cursor: "pointer", fontWeight: "bold" }}>Logout</p> */}
+                <p onClick={() => {
+                  localStorage.removeItem("token")
+                  router.push("/login")
+                  dispatch(reset())
+                }} style={{ cursor: "pointer", fontWeight: "bold" }}>Logout</p>
               </div>
             </div>}
 

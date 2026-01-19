@@ -2,7 +2,7 @@ import { createSlice } from "@reduxjs/toolkit";
 import { loginUser, registerUser, getAboutUser, getAllUsers } from "../../action/authAction";
 
 const initialState = {
-    user: [],
+    user: undefined,
     isError: false,
     isLoading: false,
     isSuccess: false,
@@ -21,12 +21,13 @@ const authSlice = createSlice({
     name: "auth",
     initialState,
     reducers: {
-        reset: () => initialState,
+        reset:() => initialState,
         handleLoginuser: (state) => {
             state.message = {
                 message: "hello"
             }
-        }, emptyMessage: (state) => {
+        },
+         emptyMessage: (state) => {
             state.message = ""
         },
         setTokenIsThere: (state) => {
@@ -85,6 +86,7 @@ const authSlice = createSlice({
             .addCase(getAllUsers.fulfilled, (state, action) => {
                 state.isLoading = false,
                     state.isError = false,
+                    state.all_profiles_fetched = true,
                     state.all_users = action.payload.profiles
             })
 
