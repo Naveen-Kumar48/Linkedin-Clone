@@ -17,8 +17,11 @@ export default function ViewProfilePage({ userProfile }) {
     <UserLayout>
       <DashboardLayout> 
         <div className={styles.Container}>
-          
 
+<div className={styles.backDropContainer}>
+<img src={userProfile.profilePicture} alt="" />  
+
+</div>
         </div>
       </DashboardLayout>
     </UserLayout>

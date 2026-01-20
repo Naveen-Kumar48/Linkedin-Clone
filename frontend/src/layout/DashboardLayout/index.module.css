@@ -11,6 +11,7 @@
 }
 
 .homeContainer__leftBar {
+    border-right:1px solid silver; 
     display: flex;
     flex-direction: column;
     gap: 1.2rem;
@@ -36,4 +37,12 @@
 .sideBarOptions>svg {
     height: 1.4rem;
     min-width: fit-content;
+}
+
+.homeContainer__extraContainer{
+ border-left:1px solid silver; 
+ padding:1.2rem;
+}
+.homeContainer__feedContainer{
+    padding-inline:0.8rem;
 }
