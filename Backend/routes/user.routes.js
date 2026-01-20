@@ -1,25 +1,25 @@
 import { Router } from "express";
 import multer from "multer";
-import { login, register, uploadprofilepic ,updateUserProfile,getUserProfile, updateProfileData, getAllUsersProfile, downloadProfile, sendConnectionRequest, getMyConnectionRequests, whatAreMyConnections, acceptConnectionRequest} from "../controllers/user.controller.js";
+import { login, register, uploadprofilepic, updateUserProfile, getUserProfile, updateProfileData, getAllUsersProfile, downloadProfile, sendConnectionRequest, getMyConnectionRequests, whatAreMyConnections, acceptConnectionRequest, getUserProfileAndUserBasedOnUsername } from "../controllers/user.controller.js";
 import { get } from "mongoose";
 const router = Router();
 
 
 
 
-const storage=multer.diskStorage({
+const storage = multer.diskStorage({
 
-    destination:function(req,file,cb){
-        cb(null,'uploads');
+    destination: function (req, file, cb) {
+        cb(null, 'uploads');
     },
-    filename:(req,file,cb)=>{
-        cb(null,file.originalname);
+    filename: (req, file, cb) => {
+        cb(null, file.originalname);
     }
 });
 
-const upload=multer({storage:storage});
+const upload = multer({ storage: storage });
 
-router.route('/uploadprofilepic').post(upload.single('profilePicture'),uploadprofilepic);
+router.route('/uploadprofilepic').post(upload.single('profilePicture'), uploadprofilepic);
 
 
 router.route('/register').post(register)
@@ -33,4 +33,5 @@ router.route('/user/send_connection_request').post(sendConnectionRequest)
 router.route('/user/getConnectionRequest').get(getMyConnectionRequests)
 router.route('/user/user_connection_request').get(whatAreMyConnections)
 router.route('/user/accept_connection_request').post(acceptConnectionRequest)
+router.route('/user/get_profile_based_on_username').get(getUserProfileAndUserBasedOnUsername);
 export default router;

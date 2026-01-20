@@ -336,3 +336,30 @@ export const acceptConnectionRequest = async (req, res) => {
     })
   }
 };
+
+
+//*Api for the Get user profile and user name based on the username
+export const getUserProfileAndUserBasedOnUsername = async (req, res) => {
+
+  const { username } = req.query;
+  try {
+    const user = await User.findOne({
+      username
+    })
+    if (!user) {
+      return res.status(404).json({
+        message: "User Not found"
+      })
+    }
+    const userProfile = await Profile.findOne({ userId: user._id }).populate(
+      'userId', "name username email profilePicture"
+    )
+    return res.json({
+      "profile": userProfile
+    })
+  } catch (err) {
+    return res.status(500).json({
+      message: err.message
+    })
+  }
+}

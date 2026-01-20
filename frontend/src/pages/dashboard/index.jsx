@@ -1,7 +1,11 @@
 import React, { useEffect } from "react";
 import { useDispatch } from "react-redux";
 import { useRouter } from "next/router";
-import { getAllComments, getAllPost,postComment } from "@/config/redux/action/postAction";
+import {
+  getAllComments,
+  getAllPost,
+  postComment,
+} from "@/config/redux/action/postAction";
 import { getAboutUser } from "@/config/redux/action/authAction";
 import { getAllUsers } from "@/config/redux/action/authAction";
 import { useSelector } from "react-redux";
@@ -36,7 +40,7 @@ function Dashboard() {
 
   const [postContent, setPostContent] = useState("");
   const [fileContent, setFileContent] = useState();
-  const [commentText, setCommentText] = useState("")
+  const [commentText, setCommentText] = useState("");
 
   const handleUpload = async () => {
     await dispatch(createPost({ file: fileContent, body: postContent }));
@@ -265,7 +269,21 @@ function Dashboard() {
                 className={styles.allCommentsContainer}
               >
                 {postState.comments.length === 0 && <h2> No Comments</h2>}
-
+                {postState.comments.length !== 0 && (
+                  <div>
+                    {postState.comments.map((comment, index) => (
+                      <div className={styles.singleCommentContainer}>
+                        <img
+                          src={`${BASE_URL}/${comment.userId.profilePicture}`}
+                          alt="Post Media"
+                        />
+                        <p style={{fontWeight:"bold",fontSize:"1.2rem"}}>{comment.userId.name}</p>
+                        <p>@{comment.userId.username}</p>
+                      
+                      </div>
+                    ))}
+                  </div>
+                )}
                 <div className={styles.postCommentContainer}>
                   <input
                     type="text "
@@ -275,9 +293,14 @@ function Dashboard() {
                   />
                   <div
                     onClick={async () => {
-                      await dispatch(postComment({post_id: postState.postId,body: commentText}),
+                      await dispatch(
+                        postComment({
+                          post_id: postState.postId,
+                          body: commentText,
+                        }),
                       );
-                      await dispatch(getAllComments({ post_id: postState.postId }),
+                      await dispatch(
+                        getAllComments({ post_id: postState.postId }),
                       );
                     }}
                     className={styles.postCommentContainer__commentBtn}
@@ -285,7 +308,6 @@ function Dashboard() {
                     <p>Comment</p>
                   </div>
                 </div>
-
               </div>
             </div>
           </div>

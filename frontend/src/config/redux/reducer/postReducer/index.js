@@ -9,45 +9,46 @@ const initialState = {
     isLoading: false,
     isSuccess: false,
     message: "",
-    comments:[],
-    postId:"",
-    
-}   
+    comments: [],
+    postId: "",
 
-const postSlice=createSlice({
-    name:"post",
+}
+
+const postSlice = createSlice({
+    name: "post",
     initialState,
-    reducers:{
-        reset:()=>initialState,
-        resetPostId:(state)=>{
-            state.postId=""
+    reducers: {
+        reset: () => initialState,
+        resetPostId: (state) => {
+            state.postId = ""
         }
-        
-        
+
+
     },
-    extraReducers:(builder)=>{
-        builder.addCase(getAllPost.pending,(state)=>{
-            state.isLoading=true,
-            state.message= "Fetching all the posts..."
+    extraReducers: (builder) => {
+        builder.addCase(getAllPost.pending, (state) => {
+            state.isLoading = true,
+                state.message = "Fetching all the posts..."
         })
-        .addCase(getAllPost.fulfilled,(state,action)=>{
-            state.isLoading=false,
-            state.isError=false, 
-            state.postFetched=true,
-            state.posts=action.payload.posts.reverse(),
-            state.message="Posts fetched successfully"
-        })
-        .addCase(getAllPost.rejected,(state,action)=>{
-            state.isLoading=false,
-            state.isError=true,
-            state.postFetched=false,
-            state.message=action.payload
-        })
-        .addCase(getAllComments.fulfilled,(state,action)=>{
-            state.postId=action.payload.post_id
-        })
+            .addCase(getAllPost.fulfilled, (state, action) => {
+                state.isLoading = false,
+                    state.isError = false,
+                    state.postFetched = true,
+                    state.posts = action.payload.posts.reverse(),
+                    state.message = "Posts fetched successfully"
+            })
+            .addCase(getAllPost.rejected, (state, action) => {
+                state.isLoading = false,
+                    state.isError = true,
+                    state.postFetched = false,
+                    state.message = action.payload
+            })
+            .addCase(getAllComments.fulfilled, (state, action) => {
+                state.postId = action.payload.post_id
+                state.comments = action.payload.comments
+            })
     }
 })
 
-export const {reset,resetPostId}=postSlice.actions
+export const { reset, resetPostId } = postSlice.actions
 export default postSlice.reducer

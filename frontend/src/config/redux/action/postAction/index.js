@@ -64,7 +64,7 @@ export const deletePost = createAsyncThunk(
 
 export const incrementLike = createAsyncThunk(
     "post/incrementLike",
-    async (post, thunkAPI) => {
+    async (post = {}, thunkAPI) => {
         try {
             const response = await clientServer.post('/increment_post_likes', {
                 post_id: post.post_id,
@@ -82,7 +82,7 @@ export const incrementLike = createAsyncThunk(
 //*Action to get all the comments
 export const getAllComments = createAsyncThunk(
     "post/getAllComments",
-    async (postData, thunkAPI) => {
+    async (postData = {}, thunkAPI) => {
         try {
             const response = await clientServer.get('/get_comments', {
                 params: {
@@ -91,26 +91,27 @@ export const getAllComments = createAsyncThunk(
             })
             return thunkAPI.fulfillWithValue({
                 comments: response.data,
+                post_id: postData.post_id
             })
         } catch (error) {
-
+            return thunkAPI.rejectWithValue(error.response.data);
         }
     }
 )
 //*Actions for the post Comments actions
 
-export const postComment=createAsyncThunk(
+export const postComment = createAsyncThunk(
     "post/postComment",
-    async(commentData,thunkAPI)=>{
+    async (commentData = {}, thunkAPI) => {
         try {
             console.log({
-                post_id:commentData.post._id,
-                body:commentData.body
+                post_id: commentData.post_id,
+                body: commentData.body
             })
-            const response=await clientServer.post('/comment',{
-                token:localStorage.getItem('token'),
-                post_id:commentData.post_id,
-                comment_text:commentData.body
+            const response = await clientServer.post('/comment', {
+                token: localStorage.getItem('token'),
+                post_id: commentData.post_id,
+                commentBody: commentData.body
             })
             return thunkAPI.fulfillWithValue(response.data)
         } catch (error) {
