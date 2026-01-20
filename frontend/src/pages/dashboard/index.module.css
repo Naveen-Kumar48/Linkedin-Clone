@@ -13,7 +13,7 @@
     flex-direction: column;
     gap: 1.5rem;
     width: 100%;
-    max-width: 555px;
+    max-width: 80%;
     /* LinkedIn narrow feed width */
 }
 
@@ -21,7 +21,7 @@
 .createPostContainer {
     display: flex;
     align-items: center;
-    gap: 1rem;
+    gap: 1rem; 
     background-color: #ffffff;
     border-radius: 0.8rem;
     padding: 1rem 1.5rem;
@@ -196,7 +196,7 @@
 .postMediaContainer img {
     max-width: 100%;
     max-height: 600px;
-    object-fit: contain;
+    object-fit: cover;
     display: block;
 }
 
@@ -222,7 +222,7 @@
     color: #666666;
     font-weight: 600;
     font-size: 0.9rem;
-    flex-grow: 1;
+   
     /* Make touch targets larger */
     justify-content: center;
 }
@@ -255,4 +255,59 @@
 .deleteButton svg {
     width: 20px;
     height: 20px;
+}
+.commentsContainer{
+    position:absolute;
+    width: 100vw;
+    height: 100vh;
+    top:0;
+    left:0;
+    z-index:2;
+    background: rgb(0, 0, 0,0.7);
+    overflow: hidden;
+    justify-content: center;
+    display: flex;
+    align-items: center ;
+
+}
+.allCommentsContainer{
+    width: 40vw;
+    height:80vh;
+    background: white;
+    border-radius:  10px;
+    position: relative;
+    padding:1.4rem;
+
+}
+.postCommentContainer{
+    position: absolute;
+    bottom:1.2rem   ;
+    left:1.2rem;
+    width: 90%;
+    display: flex;
+    align-items: center;
+    justify-content:center;
+    gap:1.2rem;
+}
+.postCommentContainer>input{
+    flex:0.9;
+    padding-inline: 1.5rem;
+    padding-block: 1.2rem ;
+    border: none;
+    outline: none;
+    background-color: rgb(228,228,228);
+    border-radius: 10px;
+}
+.postCommentContainer>input:focus{
+    border:1px solid silver;
+}
+.postCommentContainer__commentBtn{
+    flex:0.1;
+    width: fit-content;
+    padding: 1.2rem;
+    background: orange;
+    border-radius: 10px;
+    align-items: center;
+    color:white;
+    cursor: pointer;
 }

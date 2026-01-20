@@ -41,6 +41,7 @@ export const createPost = createAsyncThunk(
         }
     })
 
+//*Api for the delete post
 
 export const deletePost = createAsyncThunk(
     "post/deletePost",
@@ -58,3 +59,62 @@ export const deletePost = createAsyncThunk(
             return thunkAPI.rejectWithValue("Something went wrong");
         }
     })
+
+//*Actions for the increment of the likes
+
+export const incrementLike = createAsyncThunk(
+    "post/incrementLike",
+    async (post, thunkAPI) => {
+        try {
+            const response = await clientServer.post('/increment_post_likes', {
+                post_id: post.post_id,
+            })
+
+            return thunkAPI.fulfillWithValue(response.data)
+        } catch (error) {
+            return thunkAPI.rejectWithValue(error.response.data.message)
+
+        }
+    }
+
+)
+
+//*Action to get all the comments
+export const getAllComments = createAsyncThunk(
+    "post/getAllComments",
+    async (postData, thunkAPI) => {
+        try {
+            const response = await clientServer.get('/get_comments', {
+                params: {
+                    post_id: postData.post_id
+                }
+            })
+            return thunkAPI.fulfillWithValue({
+                comments: response.data,
+            })
+        } catch (error) {
+
+        }
+    }
+)
+//*Actions for the post Comments actions
+
+export const postComment=createAsyncThunk(
+    "post/postComment",
+    async(commentData,thunkAPI)=>{
+        try {
+            console.log({
+                post_id:commentData.post._id,
+                body:commentData.body
+            })
+            const response=await clientServer.post('/comment',{
+                token:localStorage.getItem('token'),
+                post_id:commentData.post_id,
+                comment_text:commentData.body
+            })
+            return thunkAPI.fulfillWithValue(response.data)
+        } catch (error) {
+            return thunkAPI.rejectWithValue("Something went Wrong")
+        }
+    }
+)

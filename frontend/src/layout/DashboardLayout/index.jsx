@@ -95,7 +95,7 @@ export default function DashboardLayout({ children }) {
             </div>
           </div>
 
-          <div className={styles.homeContainer__feedContainer}>{children}</div>
+          <div className={styles.homeContainer__feedContainer}>{children} </div>
 
           <div className={styles.homeContainer__extraContainer}>
             <h3>Top Profiles</h3>
