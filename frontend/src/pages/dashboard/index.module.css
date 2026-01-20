@@ -237,3 +237,22 @@
     height: 20px;
     stroke-width: 1.8;
 }
+
+.deleteButton {
+    margin-left: auto;
+    cursor: pointer;
+    color: #666;
+    padding: 0.4rem;
+    border-radius: 50%;
+    transition: background-color 0.2s;
+}
+
+.deleteButton:hover {
+    background-color: #f3f3f3;
+    color: #cc1016;
+}
+
+.deleteButton svg {
+    width: 20px;
+    height: 20px;
+}

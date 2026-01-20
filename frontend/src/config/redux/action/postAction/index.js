@@ -40,3 +40,21 @@ export const createPost = createAsyncThunk(
             return thunkAPI.rejectWithValue(error.response.data);
         }
     })
+
+
+export const deletePost = createAsyncThunk(
+    "post/deletePost",
+    async (postData, thunkAPI) => {
+        const { postId, token } = postData;
+        try {
+            const response = await clientServer.delete('/delete_post', {
+                data: {
+                    token: token,
+                    post_id: postId
+                }
+            });
+            return thunkAPI.fulfillWithValue(response.data);
+        } catch (error) {
+            return thunkAPI.rejectWithValue("Something went wrong");
+        }
+    })
