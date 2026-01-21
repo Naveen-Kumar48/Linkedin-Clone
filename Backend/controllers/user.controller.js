@@ -249,7 +249,7 @@ export const sendConnectionRequest = async (req, res) => {
     }
 
     const request = new ConnectionRequest({
-      userId: user_id,
+      userId: user._id,
       connectionId: connectionUser._id,
     });
     await request.save();
@@ -276,7 +276,7 @@ export const getMyConnectionRequests = async (req, res) => {
       userId: user._id,
     }).populate("connectionId", "name username email profilePicture");
 
-    return register.json({
+    return res.json({
       connections,
     });
   } catch (error) {

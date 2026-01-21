@@ -1,5 +1,5 @@
 import { createSlice } from "@reduxjs/toolkit";
-import { loginUser, registerUser, getAboutUser, getAllUsers } from "../../action/authAction";
+import { loginUser, registerUser, getAboutUser, getAllUsers, getConnectionsRequest, getMyConnectionRequests } from "../../action/authAction";
 
 const initialState = {
     user: undefined,
@@ -21,13 +21,13 @@ const authSlice = createSlice({
     name: "auth",
     initialState,
     reducers: {
-        reset:() => initialState,
+        reset: () => initialState,
         handleLoginuser: (state) => {
             state.message = {
                 message: "hello"
             }
         },
-         emptyMessage: (state) => {
+        emptyMessage: (state) => {
             state.message = ""
         },
         setTokenIsThere: (state) => {
@@ -66,12 +66,6 @@ const authSlice = createSlice({
                     state.isError = true,
                     state.message = action.payload
             })
-            .addCase(registerUser.pending, (state) => {
-                state.isLoading = true,
-                    state.message = {
-                        message: "Registering you..."
-                    }
-            })
             .addCase(registerUser.rejected, (state, action) => {
                 state.isLoading = false,
                     state.isError = true,
@@ -88,6 +82,36 @@ const authSlice = createSlice({
                     state.isError = false,
                     state.all_profiles_fetched = true,
                     state.all_users = action.payload.profiles
+            })
+            .addCase(getConnectionsRequest.fulfilled, (state, action) => {
+                state.isLoading = false,
+                    state.isError = false,
+                    state.connections = action.payload
+            })
+            .addCase(getConnectionsRequest.pending, (state) => {
+                state.isLoading = true,
+                    state.message = {
+                        message: "Getting connections..."
+                    }
+            })
+            .addCase(getConnectionsRequest.rejected, (state, action) => {
+                state.isLoading = false,
+                    state.isError = true,
+                    state.message = action.payload
+            })
+            .addCase(getMyConnectionRequests.fulfilled, (state, action) => {
+                state.isLoading = false,
+                    state.isError = false,
+                    state.connections = action.payload
+            })
+            .addCase(getMyConnectionRequests.pending, (state) => {
+                state.isLoading = true,
+                    state.message = {
+                        message: "Getting connections..."
+                    }
+            })
+            .addCase(getMyConnectionRequests.rejected, (state, action) => {
+                state.message = action.payload
             })
 
     }

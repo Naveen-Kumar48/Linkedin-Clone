@@ -1,28 +1,103 @@
 .Container {
-  padding: 1.3rem;
-  background: #ffffff;
-}
-.backDropContainer {
   width: 100%;
-  height: 30vh;
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 1rem;
+}
+
+.backDropContainer {
+  position: relative;
+  width: 100%;
+  background-color: #ffffff;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.08), 0 4px 12px rgba(0, 0, 0, 0.1);
+  min-height: 400px;
+}
+
+/* Banner Image using pseudo-element */
+.backDropContainer::before {
+  content: "";
+  display: block;
+  width: 100%;
+  height: 200px;
   background: url("https://images.pexels.com/photos/2080964/pexels-photo-2080964.jpeg");
   background-size: cover;
+  background-position: center;
   background-repeat: no-repeat;
-  position: relative;
-  border-radius: 20px;
 }
-.backDropContainer img {
-  width: 10em;
-  height: 10em;
+
+/* Specific class for profile picture to avoid affecting other images */
+.backDrop {
+  width: 160px;
+  height: 160px;
   object-fit: cover;
   border-radius: 50%;
+  border: 5px solid #ffffff;
   position: absolute;
-  bottom: -30%;
-  left: 8%;
+  top: 120px;
+  /* Banner height (200px) - Half Image Height (80px) */
+  left: 2rem;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+  z-index: 10;
+}
+
+/* Recent Activity Section */
+.postCard {
+  margin-bottom: 1rem;
+  transition: transform 0.2s;
+}
+
+.postCard:hover {
+  transform: translateY(-2px);
+}
+
+.Card {
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+  background-color: #fff;
+  border: 1px solid #efefef;
+}
+
+.card__profileContainer {
+  width: 100%;
+  background: #f3f3f3;
+  display: flex;
   align-items: center;
+  justify-content: center;
+  min-height: 80px;
+}
+
+/* Post Images inside Recent Activity */
+.card__profileContainer img {
+  width: 100%;
+  height: 100px;
+  /* Thumbnail height */
+  object-fit: cover;
+  display: block;
+}
+
+.card__profileContainer p {
+  padding: 0.8rem;
+  font-size: 0.85rem;
+  color: #555;
+  margin: 0;
+  text-align: center;
 }
 
 .profileContainer_details {
-  padding-top:6.6rem;
+  /* Push content down to clear the overlapping profile picture */
+  padding-top: 90px;
+  padding-left: 2rem;
+  padding-right: 2rem;
+  padding-bottom: 2rem;
+  position: relative;
+}
 
+/* Optional: Typography enhancements for children if needed, 
+   though usually handled in global or component styles. 
+   Adding a subtle fade-in or transition can heighten the premium feel. */
+.backDropContainer {
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
 }

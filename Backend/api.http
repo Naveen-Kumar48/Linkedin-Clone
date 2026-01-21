@@ -40,7 +40,7 @@ content-Type: application/json
 
     
 {
-  "token":"53258f428921c5646a126904278cd5afbde1954813edbf95a8d2c8a32bba03a2",
+  "token":"d2d790bff72be279662f29dc97fc3e1ba48f8e2c6639c8810a433ec9563717a2",
    "bio": "Experienced technology leader with expertise in product architecture, team building, and scalable system design.",
   "currentPost": "CTO",
   "pastwork": [
