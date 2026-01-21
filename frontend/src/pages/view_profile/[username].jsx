@@ -22,7 +22,7 @@ export default function ViewProfilePage({ userProfile }) {
   const [isCurrentUserInConnection, setCurrentUserInConnection] = useState(false);
   const getUsersPost = async () => {
     await dispatch(getAllPost());
-    // await dispatch(getConnectionsRequest({ token: localStorage.getItem("token") }))
+    await dispatch(getConnectionsRequest({ token: localStorage.getItem("token") }))
   }
 
   useEffect(() => {
@@ -62,9 +62,9 @@ export default function ViewProfilePage({ userProfile }) {
 
                 <p style={{ color: "grey" }}>@{userProfile.userId.username}</p>
 
-                {isCurrentUserInConnection ? <button>Connected</button> : <button onClick={() => {
-                  dispatch(sendConnectionRequest({ token: localStorage.getItem("token"), connectionId: userProfile.userId._id }))
-                  console.log("Connection request");
+                {isCurrentUserInConnection ? <button>Pending</button> : <button onClick={async () => {
+                  await dispatch(sendConnectionRequest({ token: localStorage.getItem("token"), connectionId: userProfile.userId._id }));
+                  setCurrentUserInConnection(true);
                 }} >
                   Connect
                 </button>}
@@ -73,7 +73,7 @@ export default function ViewProfilePage({ userProfile }) {
 
                 <p>{userProfile.bio}</p>
               </div>
-                <div style={{ display: "flex", gap: "0.7rem" }}>
+              <div style={{ display: "flex", gap: "0.7rem" }}>
                 <div style={{ flex: "0.2" }}>
                   <h3>Recent Activity</h3>
                   {userPosts.map((post) => {
@@ -82,11 +82,11 @@ export default function ViewProfilePage({ userProfile }) {
                         <div className={styles.Card}>
                           <div className={styles.card__profileContainer}>
                             {
-                              post.media!==""?<img src={`${BASE_URL}/${post.media}`} alt="" />: <div style={{width:"3.4rem",height:"3.4rem",borderRadius:"50%",overflow:"hidden",display:"flex",alignItems:"center",justifyContent:"center",backgroundColor:"#efefef"}}>
-                                
-                                <div style={{width:"100%",height:"100%",backgroundColor:"#efefef"}}/>
-                                
-                                </div> 
+                              post.media !== "" ? <img src={`${BASE_URL}/${post.media}`} alt="" /> : <div style={{ width: "3.4rem", height: "3.4rem", borderRadius: "50%", overflow: "hidden", display: "flex", alignItems: "center", justifyContent: "center", backgroundColor: "#efefef" }}>
+
+                                <div style={{ width: "100%", height: "100%", backgroundColor: "#efefef" }} />
+
+                              </div>
                             }
                           </div>
                           <p>{post.body}</p>
