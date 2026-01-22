@@ -51,7 +51,7 @@ export const getAboutUser = createAsyncThunk("user/getAboutUser", async (user, t
     }
 })
 
-//*Get all users
+//*Get all users 
 
 export const getAllUsers = createAsyncThunk("user/getAllUsers", async (_, thunkAPI) => {
     try {
@@ -69,7 +69,7 @@ export const sendConnectionRequest = createAsyncThunk("user/sendConnectionReques
     try {
         const response = await clientServer.post("/user/send_connection_request", {
             token: user.token,
-            connectionId: user.connectionId
+            connectionId: user.user_id
         })
         return thunkAPI.fulfillWithValue(response.data);
     } catch (error) {
@@ -77,7 +77,7 @@ export const sendConnectionRequest = createAsyncThunk("user/sendConnectionReques
     }
 })
 
-//*action fro the get connection request
+//*action from the get connection request
 export const getConnectionsRequest = createAsyncThunk("user/getConnectionsRequest", async (user, thunkAPI) => {
     try {
         const response = await clientServer.get("/user/getConnectionRequest", {
@@ -89,7 +89,7 @@ export const getConnectionsRequest = createAsyncThunk("user/getConnectionsReques
     }
 })
 
-//action for the get my connection request
+//*action for the get my connection request
 
 export const getMyConnectionRequests = createAsyncThunk("/user/getConnectionRequest", async (user, thunkAPI) => {
     try {
@@ -109,7 +109,7 @@ export const acceptConnectionRequest = createAsyncThunk("user/acceptConnectionRe
         const response = await clientServer.post("/user/accept_connection_request", {
             token: user.token,
             connectionId: user.connectionId,
-            action: user.action
+            action_type:user.action
         })
         return thunkAPI.fulfillWithValue(response.data);
     } catch (error) {

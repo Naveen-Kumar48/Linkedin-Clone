@@ -77,38 +77,24 @@ const authSlice = createSlice({
                     state.profileFetched = true,
                     state.user = action.payload
             })
+
+
             .addCase(getAllUsers.fulfilled, (state, action) => {
                 state.isLoading = false,
                     state.isError = false,
                     state.all_profiles_fetched = true,
                     state.all_users = action.payload.profiles
+                    console.log(state.all_users)
             })
             .addCase(getConnectionsRequest.fulfilled, (state, action) => {
-                state.isLoading = false,
-                    state.isError = false,
                     state.connections = action.payload
             })
-            .addCase(getConnectionsRequest.pending, (state) => {
-                state.isLoading = true,
-                    state.message = {
-                        message: "Getting connections..."
-                    }
-            })
+            
             .addCase(getConnectionsRequest.rejected, (state, action) => {
-                state.isLoading = false,
-                    state.isError = true,
                     state.message = action.payload
             })
-            .addCase(getMyConnectionRequests.fulfilled, (state, action) => {
-                state.isLoading = false,
-                    state.isError = false,
+            .addCase(getMyConnectionRequests.fulfilled, (state, action) => {     
                     state.connections = action.payload
-            })
-            .addCase(getMyConnectionRequests.pending, (state) => {
-                state.isLoading = true,
-                    state.message = {
-                        message: "Getting connections..."
-                    }
             })
             .addCase(getMyConnectionRequests.rejected, (state, action) => {
                 state.message = action.payload

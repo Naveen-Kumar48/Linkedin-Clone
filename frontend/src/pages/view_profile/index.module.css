@@ -101,3 +101,13 @@
 .backDropContainer {
   transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
+.connectButton{
+      padding-inline:0.8rem;
+      padding-block:0.3rem;
+      background: rgb(0, 128, 130);
+      outline: none;
+      border:none;
+      color:white;
+      border-radius: 10px;
+      cursor: pointer;  
+}
