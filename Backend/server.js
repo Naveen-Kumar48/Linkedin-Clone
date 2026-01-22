@@ -11,7 +11,8 @@ app.use(cors());
 app.use(postRoutes);
 app.use(userRoutes);
 app.use(express.static('uploads'))
-const PORT = process.env.PORT || 9090;
+app.use('/uploads', express.static('uploads'))
+const PORT = process.env.PORT 
 
 const start = async () => {
   try {

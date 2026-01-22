@@ -209,13 +209,19 @@ export const getAllUsersProfile = async (req, res) => {
 
 export const downloadProfile = async (req, res) => {
   const user_Id = req.query.id;
+  console.log(user_Id)
+
   const userProfile = await Profile.findOne({ userId: user_Id }).populate(
     "userId",
     "name email username profilePicture"
   );
 
+  if (!userProfile) {
+    return res.status(404).json({ message: "Profile not found" });
+  }
+
   let outputPath = await convertUserDataToPDF(userProfile);
-  return res.json({ message: outputPath });
+  return res.json({ "message": outputPath });
 };
 
 
@@ -262,7 +268,7 @@ export const sendConnectionRequest = async (req, res) => {
 //*  Get my connection requests
 
 export const getMyConnectionRequests = async (req, res) => {
-  const { token } = req.body;
+  const { token } = req.query;
   try {
     const user = await User.findOne({
       token: token,
@@ -276,9 +282,7 @@ export const getMyConnectionRequests = async (req, res) => {
       userId: user._id,
     }).populate("connectionId", "name username email profilePicture");
 
-    return res.json({
-      connections,
-    });
+    return res.json(connection);
   } catch (error) {
     return res.status(500).json({
       message: error.message,
@@ -287,9 +291,10 @@ export const getMyConnectionRequests = async (req, res) => {
 };
 export const whatAreMyConnections = async (req, res) => {
   try {
-    const { token } = req.body;
+    const { token } = req.query;
+    const user = await User.findOne({ token: token });
     if (!user) {
-      return res.status(404).res.json({
+      return res.status(404).json({
         message: "User not found",
       });
     }

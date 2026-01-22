@@ -1,113 +1,240 @@
 .Container {
   width: 100%;
-  max-width: 1000px;
+  max-width: 1100px;
   margin: 0 auto;
-  padding: 1rem;
+  padding: 2rem 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  color: #1a202c;
 }
 
 .backDropContainer {
   position: relative;
   width: 100%;
   background-color: #ffffff;
-  border-radius: 12px;
+  border-radius: 16px;
+  box-shadow: 0 10px 40px -10px rgba(0, 0, 0, 0.1);
   overflow: hidden;
-  box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.08), 0 4px 12px rgba(0, 0, 0, 0.1);
-  min-height: 400px;
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-/* Banner Image using pseudo-element */
+/* Banner Image */
 .backDropContainer::before {
   content: "";
   display: block;
   width: 100%;
-  height: 200px;
-  background: url("https://images.pexels.com/photos/2080964/pexels-photo-2080964.jpeg");
+  height: 240px;
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.3)), url("https://images.pexels.com/photos/2080964/pexels-photo-2080964.jpeg");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
 }
 
-/* Specific class for profile picture to avoid affecting other images */
+/* Profile Picture */
 .backDrop {
-  width: 160px;
-  height: 160px;
+  width: 168px;
+  height: 168px;
   object-fit: cover;
   border-radius: 50%;
-  border: 5px solid #ffffff;
+  border: 4px solid #ffffff;
   position: absolute;
-  top: 120px;
-  /* Banner height (200px) - Half Image Height (80px) */
-  left: 2rem;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+  top: 156px;
+  /* Banner (240) - Approx half (+ adjustment) */
+  left: 3rem;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
   z-index: 10;
+  transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
 
-/* Recent Activity Section */
+.backDrop:hover {
+  transform: scale(1.05);
+}
+
+/* Details Section */
+.profileContainer_details {
+  padding: 100px 3rem 3rem;
+  /* Top padding clears the profile pic */
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.profileContainer_details h2 {
+  font-size: 2.2rem;
+  font-weight: 800;
+  color: #2d3748;
+  margin: 0;
+  letter-spacing: -0.02em;
+}
+
+.profileContainer_details p {
+  color: #718096;
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+/* Buttons */
+.connectButton {
+  padding: 0.6rem 2rem;
+  background: linear-gradient(135deg, #008080 0%, #006060 100%);
+  border: none;
+  color: white;
+  border-radius: 50px;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 1rem;
+  letter-spacing: 0.02em;
+  box-shadow: 0 4px 15px rgba(0, 128, 128, 0.3);
+  transition: all 0.3s ease;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.connectButton:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(0, 128, 128, 0.4);
+  background: linear-gradient(135deg, #009999 0%, #007070 100%);
+}
+
+.connectButton:active {
+  transform: translateY(0);
+}
+
+/* Recent Activity */
 .postCard {
-  margin-bottom: 1rem;
-  transition: transform 0.2s;
+  margin-bottom: 1.5rem;
+  transition: transform 0.2s ease;
 }
 
 .postCard:hover {
-  transform: translateY(-2px);
+  transform: translateY(-4px);
 }
 
 .Card {
-  border-radius: 8px;
+  border-radius: 12px;
   overflow: hidden;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
   background-color: #fff;
-  border: 1px solid #efefef;
+  border: 1px solid #edf2f7;
+  transition: box-shadow 0.2s ease;
+}
+
+.Card:hover {
+  box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
 }
 
 .card__profileContainer {
   width: 100%;
-  background: #f3f3f3;
+  background: #ffffff;
   display: flex;
-  align-items: center;
-  justify-content: center;
-  min-height: 80px;
+  flex-direction: column;
+  overflow: hidden;
 }
 
-/* Post Images inside Recent Activity */
 .card__profileContainer img {
   width: 100%;
-  height: 100px;
-  /* Thumbnail height */
+  height: 180px;
   object-fit: cover;
-  display: block;
+  transition: transform 0.5s ease;
+}
+
+.Card:hover .card__profileContainer img {
+  transform: scale(1.05);
 }
 
 .card__profileContainer p {
-  padding: 0.8rem;
-  font-size: 0.85rem;
-  color: #555;
+  padding: 1.2rem;
+  font-size: 0.95rem;
+  color: #4a5568;
   margin: 0;
-  text-align: center;
+  text-align: left;
+  background: #fff;
 }
 
-.profileContainer_details {
-  /* Push content down to clear the overlapping profile picture */
-  padding-top: 90px;
-  padding-left: 2rem;
-  padding-right: 2rem;
-  padding-bottom: 2rem;
+/* Work History Section */
+.workhistory {
+  margin-top: 1rem;
+  padding-top: 2rem;
+  border-top: 1px solid #edf2f7;
+}
+
+.workhistory h4 {
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: #2d3748;
+  margin-bottom: 1.5rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  font-size: 0.9rem;
+  color: #a0aec0;
+}
+
+.workHistoryContainer {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 1.5rem;
+  padding-bottom: 1rem;
+}
+
+.workHistoryCard {
+  background-color: #fff;
+  padding: 1.5rem;
+  border-radius: 12px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.04);
+  border: 1px solid #edf2f7;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  transition: all 0.3s ease;
   position: relative;
+  overflow: hidden;
 }
 
-/* Optional: Typography enhancements for children if needed, 
-   though usually handled in global or component styles. 
-   Adding a subtle fade-in or transition can heighten the premium feel. */
-.backDropContainer {
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
+.workHistoryCard::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 4px;
+  height: 100%;
+  background: #008080;
+  opacity: 0;
+  transition: opacity 0.3s ease;
 }
-.connectButton{
-      padding-inline:0.8rem;
-      padding-block:0.3rem;
-      background: rgb(0, 128, 130);
-      outline: none;
-      border:none;
-      color:white;
-      border-radius: 10px;
-      cursor: pointer;  
+
+.workHistoryCard:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 24px -4px rgba(0, 0, 0, 0.1);
+  border-color: transparent;
+}
+
+.workHistoryCard:hover::before {
+  opacity: 1;
+}
+
+.workHistoryCard p {
+  margin: 0;
+  /* Override inline styles if we move to classes later, 
+     but for now these targets act as defaults */
+  font-size: 1rem;
+  color: #4a5568;
+}
+
+/* For the download icon container manually added in JSX */
+.iconContainer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #718096;
+  transition: color 0.2s;
+  cursor: pointer;
+}
+
+.iconContainer:hover {
+  color: #2d3748;
 }
