@@ -1,7 +1,6 @@
 import { Router } from "express";
 import multer from "multer";
 import { login, register, uploadprofilepic, updateUserProfile, getUserProfile, updateProfileData, getAllUsersProfile, downloadProfile, sendConnectionRequest, getMyConnectionRequests, whatAreMyConnections, acceptConnectionRequest, getUserProfileAndUserBasedOnUsername } from "../controllers/user.controller.js";
-import { get } from "mongoose";
 const router = Router();
 
 

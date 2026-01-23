@@ -3,7 +3,7 @@ import DashboardLayout from "@/layout/DashboardLayout";
 import UserLayout from "@/layout/UserLayout";
 import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { BASE_URL } from "@/config";
+import { BASE_URL, clientServer } from "@/config";
 import styles from "./Index.module.css";
 import { getAllPost } from "@/config/redux/action/postAction";
 export default function ProfilePage() {
@@ -41,6 +41,21 @@ export default function ProfilePage() {
     }
   }, [authState.user, postReducer.posts]);
 
+
+
+
+  const updateProfilePicture =async(file)=>{
+    const formData=new FormData();
+    formData.append("profilePicture",file);
+   formData.append("token",localStorage.getItem("token"));
+   const respose=await clientServer.post("/uploadprofilepic",formData,{
+    headers:{
+      "Content-Type":"multipart/form-data"
+    }
+   });
+   dispatch(getAboutUser({ token: localStorage.getItem("token") }));
+
+  }
   return (
     <UserLayout>
       <DashboardLayout>
@@ -48,9 +63,10 @@ export default function ProfilePage() {
           <div className={styles.Container}>
             <div className={styles.backDropContainer}>
               <div className={styles.profileImageWrapper}>
-                <div className={styles.backDrop__overlay}>
+                <label  htmlFor="profilePictureUpload"  className={styles.backDrop__overlay}>
                   <p>Edit</p>
-                </div>
+                </label>
+                <input hidden  type="file"id="profilePictureUpload" onChange={(e)=>updateProfilePicture(e.target.files[0])} />
                 <img
                   className={styles.backDrop}
                   src={`${BASE_URL}/${userProfile.userId.profilePicture}`}

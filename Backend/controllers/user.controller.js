@@ -5,7 +5,6 @@ import PDFDocument from "pdfkit";
 import crypto from "crypto";
 import fs from "fs";
 import ConnectionRequest from "../models/connections.model.js";
-import { connections } from "mongoose";
 
 //* function to convert user data to pdf
 const convertUserDataToPDF = async (userData) => {
