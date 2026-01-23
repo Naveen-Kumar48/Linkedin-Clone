@@ -1,118 +1,115 @@
-import React, { useEffect } from 'react';
-import UserLayout from '../../layout/UserLayout';
-import DashboardLayout from '../../layout/DashboardLayout';
-import styles from './index.module.css';
-import { useDispatch, useSelector } from 'react-redux';
-import { BASE_URL } from '@/config/index';
-import { acceptConnectionRequest, getMyConnectionRequests } from '@/config/redux/action/authAction';
-import { useRouter } from 'next/router';
+import React, { useEffect } from "react";
+import UserLayout from "../../layout/UserLayout";
+import DashboardLayout from "../../layout/DashboardLayout";
+import styles from "./index.module.css";
+import { useDispatch, useSelector } from "react-redux";
+import { BASE_URL } from "@/config/index";
+import {
+    acceptConnectionRequest,
+    getMyConnectionRequests,
+    getAllUsers,
+} from "@/config/redux/action/authAction";
+import { useRouter } from "next/router";
 
 export default function MyConnectionsPage() {
     const dispatch = useDispatch();
     const router = useRouter();
-    // Access authState correctly. If state.auth is undefined for some reason, provide default
+
     const authState = useSelector((state) => state.auth);
-    // connections might be undefined initially
+
     const connections = authState.connections;
 
     useEffect(() => {
         dispatch(getMyConnectionRequests({ token: localStorage.getItem("token") }));
-    }, [dispatch]);
+    }, []);
 
+    useEffect(() => {
+        if (authState.connections.length != 0) {
+        }
+    }, [authState.connections]);
+
+    useEffect(() => {
+        getAllUsers();
+    }, []);
+
+    console.log(authState.connections);
     return (
         <UserLayout>
             <DashboardLayout>
-                <div className={styles.container}>
-                    <h5 className={styles.title}>My Connections</h5>
-
-                    {/* Empty State */}
-                    {connections.length === 0 && (
-                        <div className={styles.emptyState}>No connections found</div>
+        <div style={{display:"flex",flexDirection:"column",gap:"1.7rem"}}>
+                    <h4>My connections</h4>
+                    {authState.connections.length === 0 && (
+                        <h1> No Connection Request Pending</h1>
                     )}
-
-                    {/* Pending Requests Section */}
-                    {connections.some(c => c.status_accepted === null) && (
-                        <>
-                            <h6 style={{ marginBottom: '1rem', color: '#718096' }}>Pending Requests</h6>
-                            <div className={styles.connectionsGrid}>
-                                {connections
-                                    .filter(connection => connection.status_accepted === null)
-                                    .map((user) => (
-                                        <div
-                                            key={user._id}
-                                            className={styles.usercard}
-                                            onClick={() => router.push(`/view_profile/${user.userId.username}`)}
-                                        >
-                                            <div className={styles.profilepicture}>
-                                                <img src={`${BASE_URL}/${user.userId.profilePicture}`} alt="" />
+                    {authState.connections.length != 0 &&
+                        authState.connections
+                            .filter((connection) => connection.status_accepted == null)
+                            .map((user) => {
+                                return (
+                                    <div
+                                        onClick={() => {
+                                            router.push(`/view_profile/${user.userId.username}`);
+                                        }}
+                                        key={user._id}
+                                        className={styles.userCard}
+                                    >
+                                        <div>
+                                            <div className={styles.profilePicture}>
+                                                <img
+                                                    src={`${BASE_URL}/${user.userId.profilePicture}`}
+                                                    alt="Profile-picture"
+                                                />
                                             </div>
-                                            <div className={styles.userinfo}>
-                                                <h2>{user.userId.name}</h2>
-                                                <p>@{user.userId.username}</p>
+                                            <div className={styles.userInfo}>
+                                                <h3>{user.userId.name}</h3>
+                                                <h3>{user.userId.username}</h3>
                                             </div>
-                                            <div className={styles.actions}>
-                                                <button
-                                                    className={styles.acceptBtn}
-                                                    onClick={(e) => {
-                                                        e.stopPropagation();
-                                                        dispatch(acceptConnectionRequest({
-                                                            requestId: user._id,
+                                            <button
+                                                onClick={(e) => {
+                                                    e.stopPropagation();
+                                                    dispatch(
+                                                        acceptConnectionRequest({
+                                                            connectionId: user._id,
                                                             token: localStorage.getItem("token"),
-                                                            action_type: "accept"
-                                                        }));
-                                                    }}
-                                                >
-                                                    Accept
-                                                </button>
-                                                <button
-                                                    className={styles.ignoreBtn}
-                                                    onClick={(e) => {
-                                                        e.stopPropagation();
-                                                        // Implement Ignore logic if needed
-                                                    }}
-                                                >
-                                                    Ignore
-                                                </button>
-                                            </div>
+                                                            action: "accept",
+                                                        }),
+                                                    );
+                                                }}
+                                                className={styles.connectBtn}
+                                            >
+                                                Accept
+                                            </button>
                                         </div>
-                                    ))}
-                            </div>
-                        </>
-                    )}
+                                    </div>
+                                );
+                            })}
 
-                    {/* Accepted Connections Section */}
-                    {connections.some(c => c.status_accepted === true) && (
-                        <>
-                            <h6 style={{ marginTop: '2rem', marginBottom: '1rem', color: '#718096' }}>Active Connections</h6>
-                            <div className={styles.connectionsGrid}>
-                                {connections
-                                    .filter(connection => connection.status_accepted === true)
-                                    .map((user) => (
-                                        <div
-                                            key={user._id}
-                                            className={styles.usercard}
-                                            onClick={() => router.push(`/view_profile/${user.userId.username}`)}
-                                        >
-                                            <div className={styles.profilepicture}>
-                                                <img src={`${BASE_URL}/${user.userId.profilePicture}`} alt="" />
-                                            </div>
-                                            <div className={styles.userinfo}>
-                                                <h2>{user.userId.name}</h2>
-                                                <p>@{user.userId.username}</p>
-                                            </div>
-                                            <div className={styles.actions}>
-                                                <button
-                                                    className={styles.acceptBtn}
-                                                    style={{ backgroundColor: '#718096', cursor: 'default' }}
-                                                >
-                                                    Connected
-                                                </button>
-                                            </div>
-                                        </div>
-                                    ))}
+                    <h4> My Network </h4>
+                    
+                    {authState.connections.filter((connection) => connection.status_accepted !== null).map((user) => {
+                        return (
+                            <div
+                                onClick={() => {
+                                    router.push(`/view_profile/${user.userId.username}`);
+                                }}
+                                key={user._id}
+                                className={styles.userCard}
+                            >
+                                <div>
+                                    <div className={styles.profilePicture}>
+                                        <img
+                                            src={`${BASE_URL}/${user.userId.profilePicture}`}
+                                            alt="Profile-picture"
+                                        />
+                                    </div>
+                                    <div className={styles.userInfo}>
+                                        <h3>{user.userId.name}</h3>
+                                        <h3>{user.userId.username}</h3>
+                                    </div>
+                                </div>
                             </div>
-                        </>
-                    )}
+                        )
+                    })}
                 </div>
             </DashboardLayout>
         </UserLayout>

@@ -321,7 +321,7 @@ export const acceptConnectionRequest = async (req, res) => {
     const connection = await ConnectionRequest.findOne({ _id: requestId })
 
     if (!connection) {
-      return res.json(404).json({
+      return res.status(404).json({
         message: "Connection not found"
       })
     }
@@ -337,7 +337,7 @@ export const acceptConnectionRequest = async (req, res) => {
     })
   } catch (error) {
     return res.status(500).json({
-      message: err.message
+      message: error.message
     })
   }
 };
