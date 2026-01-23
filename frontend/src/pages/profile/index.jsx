@@ -44,18 +44,16 @@ export default function ProfilePage() {
 
 
 
-  const updateProfilePicture =async(file)=>{
-    const formData=new FormData();
-    formData.append("profilePicture",file);
-   formData.append("token",localStorage.getItem("token"));
-   const respose=await clientServer.post("/uploadprofilepic",formData,{
-    headers:{
-      "Content-Type":"multipart/form-data"
-    }
-   });
-   dispatch(getAboutUser({ token: localStorage.getItem("token") }));
+  const updateProfilePicture = async (file) => {
+    if (!file) return;
+    const formData = new FormData();
+    formData.append("token", localStorage.getItem("token"));
+    formData.append("profilePicture", file);
 
-  }
+    await clientServer.post("/uploadprofilepic", formData);
+
+    dispatch(getAboutUser({ token: localStorage.getItem("token") }));
+  };
   return (
     <UserLayout>
       <DashboardLayout>
@@ -63,13 +61,13 @@ export default function ProfilePage() {
           <div className={styles.Container}>
             <div className={styles.backDropContainer}>
               <div className={styles.profileImageWrapper}>
-                <label  htmlFor="profilePictureUpload"  className={styles.backDrop__overlay}>
+                <label htmlFor="profilePictureUpload" className={styles.backDrop__overlay}>
                   <p>Edit</p>
                 </label>
-                <input hidden  type="file"id="profilePictureUpload" onChange={(e)=>updateProfilePicture(e.target.files[0])} />
+                <input hidden type="file" id="profilePictureUpload" onChange={(e) => updateProfilePicture(e.target.files[0])} />
                 <img
                   className={styles.backDrop}
-                  src={`${BASE_URL}/${userProfile.userId.profilePicture}`}
+                  src={`${BASE_URL}/${userProfile.userId.profilePicture}?t=${Date.now()}`}
                   alt=""
                 />
               </div>
