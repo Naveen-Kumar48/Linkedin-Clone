@@ -6,7 +6,11 @@
   display: flex;
   flex-direction: column;
   gap: 2rem;
-  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  font-family:
+    "Inter",
+    system-ui,
+    -apple-system,
+    sans-serif;
   color: #1a202c;
 }
 
@@ -19,7 +23,9 @@
   overflow: hidden;
   display: flex;
   flex-direction: column;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
 }
 
 /* Banner Image */
@@ -28,30 +34,62 @@
   display: block;
   width: 100%;
   height: 240px;
-  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.3)), url("https://images.pexels.com/photos/2080964/pexels-photo-2080964.jpeg");
+  background:
+    linear-gradient(to bottom, rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.3)),
+    url("https://images.pexels.com/photos/2080964/pexels-photo-2080964.jpeg");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
 }
 
 /* Profile Picture */
-.backDrop {
-  width: 168px;
-  height: 168px;
-  object-fit: cover;
-  border-radius: 50%;
-  border: 4px solid #ffffff;
+/* Profile Picture Wrapper */
+.profileImageWrapper {
   position: absolute;
   top: 156px;
-  /* Banner (240) - Approx half (+ adjustment) */
   left: 3rem;
+  width: 168px;
+  height: 168px;
+  border-radius: 50%;
+  border: 4px solid #ffffff;
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
   z-index: 10;
+  cursor: pointer;
+  overflow: hidden;
+}
+
+/* Profile Picture */
+.backDrop {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
   transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
 
-.backDrop:hover {
+.backDrop__overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  color: white;
+  font-weight: 600;
+  font-size: 1.2rem;
+}
+
+.profileImageWrapper:hover .backDrop__overlay {
+  opacity: 1;
+}
+
+.profileImageWrapper:hover .backDrop {
   transform: scale(1.05);
+  /* Optional: keep or remove zoom effect */
 }
 
 /* Details Section */
@@ -76,30 +114,6 @@
   font-size: 1rem;
   line-height: 1.6;
 }
-
-/* Buttons */
-.connectButton {
-  padding: 0.6rem 2rem;
-  background: linear-gradient(135deg, #008080 0%, #006060 100%);
-  border: none;
-  color: white;
-  border-radius: 50px;
-  cursor: pointer;
-  font-weight: 600;
-  font-size: 1rem;
-  letter-spacing: 0.02em;
-  box-shadow: 0 4px 15px rgba(0, 128, 128, 0.3);
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.connectButton:hover {
-  box-shadow: 0 6px 20px rgba(0, 128, 128, 0.4);
-  background: linear-gradient(135deg, #009999 0%, #007070 100%);
-}
-
-.connectButton:active {}
 
 /* Recent Activity */
 .postCard {

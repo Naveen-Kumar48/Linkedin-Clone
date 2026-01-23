@@ -31,13 +31,13 @@ export default function ProfilePage() {
   }, []);
 
   useEffect(() => {
-      if (authState.user!=undefined) {
-        setUserProfile( authState.user);
+    if (authState.user != undefined) {
+      setUserProfile(authState.user);
       let post = postReducer.posts.filter((post) => {
         return post.userId.username === authState.user.userId.username;
-    });
-    console.log(post, authState.user.userId.username)
-    setUserPosts(post);
+      });
+      console.log(post, authState.user.userId.username)
+      setUserPosts(post);
     }
   }, [authState.user, postReducer.posts]);
 
@@ -47,11 +47,16 @@ export default function ProfilePage() {
         {authState.user && userProfile?.userId && (
           <div className={styles.Container}>
             <div className={styles.backDropContainer}>
-              <img
-                className={styles.backDrop}
-                src={`${BASE_URL}/${userProfile.userId.profilePicture}`}
-                alt=""
-              />
+              <div className={styles.profileImageWrapper}>
+                <div className={styles.backDrop__overlay}>
+                  <p>Edit</p>
+                </div>
+                <img
+                  className={styles.backDrop}
+                  src={`${BASE_URL}/${userProfile.userId.profilePicture}`}
+                  alt=""
+                />
+              </div>
               <div className={styles.profileContainer_details}>
                 <div
                   style={{
