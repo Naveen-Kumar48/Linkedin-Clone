@@ -18,31 +18,32 @@ export default function ProfilePage() {
   //     bio:"",
   //     pastWork:[]
   // })
+
   const authState = useSelector((state) => state.auth);
-  const postreducer=useSelector((state)=>state.postreducer)
+  const postReducer = useSelector((state) => state.posts);
   const [userProfile, setUserProfile] = useState({});
-  const [userPosts, setUserPosts] = useState([])
+  const [userPosts, setUserPosts] = useState([]);
+
   useEffect(() => {
     dispatch(getAboutUser({ token: localStorage.getItem("token") }));
-    dispatch(getAllPost())
+
+    dispatch(getAllPost());
   }, []);
 
-   useEffect(() => {
-      let post = postreducer.posts.filter((post) => {
-        return post.userId.username === authState.user.username
-    });
-    setUserPosts(post);
-    }, [postreducer.posts]);
-
-
   useEffect(() => {
+      if (authState.user!=undefined) {
+        setUserProfile( authState.user);
+      let post = postReducer.posts.filter((post) => {
+        return post.userId.username === authState.user.userId.username;
+    });
+    console.log(post, authState.user.userId.username)
+    setUserPosts(post);
+    }
+  }, [authState.user, postReducer.posts]);
 
-    setUserProfile(authState.user)
-  }, [authState.user])
   return (
     <UserLayout>
       <DashboardLayout>
-
         {authState.user && userProfile?.userId && (
           <div className={styles.Container}>
             <div className={styles.backDropContainer}>
@@ -117,7 +118,6 @@ export default function ProfilePage() {
             </div>
           </div>
         )}
-
       </DashboardLayout>
     </UserLayout>
   );
