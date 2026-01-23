@@ -250,3 +250,37 @@
 .iconContainer:hover {
   color: #2d3748;
 }
+
+.nameEdit{
+  border: none;
+  outline: none;
+  background: transparent;
+  color: #2d3748;
+  font-size: 1.2rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  &:hover{
+    color: #008080;
+  }
+  &:focus{
+    outline: none;
+  }
+  &:active{
+    color: #008080;
+  }
+
+}
+.updateButton{
+  width: fit-content;
+  background-color: #008080;
+  color: #fff;
+  border: none; 
+  padding: 0.5rem 1rem;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  &:hover{
+    background-color: #006666;
+  }
+}

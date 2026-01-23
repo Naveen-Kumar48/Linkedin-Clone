@@ -54,6 +54,25 @@ export default function ProfilePage() {
 
     dispatch(getAboutUser({ token: localStorage.getItem("token") }));
   };
+
+
+
+  const updateProfileData = async () => {
+
+    const request = await clientServer.post("/userupdate", {
+      token: localStorage.getItem("token"),
+      name: userProfile.userId?.name || ""
+    })
+    const response = await clientServer.post("/updateprofile_data", {
+      token: localStorage.getItem("token"),
+      bio: userProfile.bio,
+      currentWork: userProfile.currentWork,
+      currentPost: userProfile.currentPost,
+      education: userProfile.education,
+
+    })
+    dispatch(getAboutUser({ token: localStorage.getItem("token") }));
+  }
   return (
     <UserLayout>
       <DashboardLayout>
@@ -80,7 +99,7 @@ export default function ProfilePage() {
                     gap: "1.2rem",
                   }}
                 >
-                  <h2>{userProfile.userId.name}</h2>
+                  <input className={styles.nameEdit} type="text" value={userProfile.userId?.name} onChange={(e) => { setUserProfile({ ...userProfile, userId: { ...userProfile.userId, name: e.target.value } }) }} />
 
                   <p style={{ color: "grey" }}>
                     @{userProfile.userId.username}
@@ -134,7 +153,15 @@ export default function ProfilePage() {
                   })}
                 </div>
               </div>
+
             </div>
+            {
+              userProfile != authState.user && (
+                <button onClick={() => {
+                  updateProfileData()
+                }} className={styles.updateButton}>Update</button>
+              )
+            }
           </div>
         )}
       </DashboardLayout>

@@ -119,8 +119,8 @@ export const uploadprofilepic = async (req, res) => {
 export const updateUserProfile = async (req, res) => {
   try {
     const { token, ...newUserData } = req.body;
-    const user = await user.findOne({ token: token });
-    if (!user) {
+    const foundUser = await User.findOne({ token: token });
+    if (!foundUser) {
       return res.status(404).json({ message: "User not found" });
     }
 
@@ -131,15 +131,15 @@ export const updateUserProfile = async (req, res) => {
     });
 
     if (existingUser) {
-      if (existingUser || String(existingUser._id) !== String(user._id)) {
+      if (String(existingUser._id) !== String(foundUser._id)) {
         return res
           .status(400)
           .json({ message: "Username or email already Exists" });
       }
     }
 
-    Object.assign(user, newUserData);
-    await user.save();
+    Object.assign(foundUser, newUserData);
+    await foundUser.save();
     return res.json({ message: "Profile updated successfully" });
   } catch (error) {
     return res.status(500).json({ message: error.message });
