@@ -1,91 +1,141 @@
-# Linked Clone Backend
+# Linked Clone - Professional Networking Platform
 
-This is the backend for the Linked Clone application, a social networking platform similar to LinkedIn. It is built using Node.js, Express, and MongoDB.
+A full-stack social networking application inspired by LinkedIn, designed to facilitate professional connections, profile management, and interactive content sharing. This project connects users through a robust backend and a responsive, dynamic frontend.
 
-## Table of Contents
-- [Project Overview](#project-overview)
-- [Tech Stack](#tech-stack)
-- [Project Flow & Features](#project-flow--features)
-  - [Authentication](#authentication)
-  - [User Profile Management](#user-profile-management)
-  - [Networking (Connections)](#networking-connections)
-  - [Posts & Interactions](#posts--interactions)
-- [API Endpoints](#api-endpoints)
-- [Usage](#usage)
+## 🚀 Live Demo
+**[Insert Your Live Link Here]**
 
-## Project Overview
-The backend serves as the core logic handler, managing user data, authentication, social connections, and content creation (posts/comments). It exposes a RESTful API consumed by the frontend.
+---
 
-## Tech Stack
+## 📖 Table of Contents
+- [Project Overview](#-project-overview)
+- [✨ Key Features](#-key-features)
+- [🛠 Tech Stack](#-tech-stack)
+- [🏗 Architecture & Flow](#-architecture--flow)
+- [🔌 API Endpoints](#-api-endpoints)
+- [🚀 Getting Started](#-getting-started)
+- [📸 Screenshots](#-screenshots)
+
+---
+
+## 🌐 Project Overview
+Linked Clone is a comprehensive web application that replicates core functionalities of professional networking sites. It allows users to create detailed profiles, build a network of connections, share updates via posts (with media support), and interact with others through likes and comments. The platform is built with a focus on a seamless user experience, featuring responsive design for mobile and desktop.
+
+---
+
+## ✨ Key Features
+
+### 🔐 Authentication & Security
+- **User Registration & Login**: Secure sign-up and sign-in processes using email and password.
+- **Token-Based Auth**: Custom token implementation for maintaining user sessions securely.
+- **Password Hashing**: BCrypt is used to hash passwords before storage.
+
+### 👤 User Profile Management
+- **Profile Customization**: Users can update their bio, current position, and basic info.
+- **Work History**: A dedicated section to add and manage past work experiences.
+- **Profile Picture**: Users can upload and update their profile pictures (stored locally).
+- **Resume Generation**: Dynamically generate and download a PDF resume based on profile data.
+
+### 🤝 Networking (Connections)
+- **Connect with Peers**: Send connection requests to other users.
+- **Request Management**: View sent and received connection requests.
+- **Accept/Ignore**: Users can accept requests to form a connection or ignore them.
+- **My Network**: View a list of all accepted professional connections.
+
+### 📝 Posts & Interactions
+- **Create Posts**: Share thoughts and updates with text and optional image uploads.
+- **Rich Feed**: A dynamic feed displaying posts from the network and community.
+- **Likes**: interactive like system (toggle functionality).
+- **Comments**: Engage with posts by adding comments; users can see who commented.
+- **Mobile Responsive**: Fully optimized layout for mobile devices, including a dedicated bottom navigation bar.
+
+---
+
+## 🛠 Tech Stack
+
+### Frontend
+- **Framework**: Next.js (React)
+- **State Management**: Redux (for auth and post state)
+- **Styling**: CSS Modules (with responsive design interactions)
+- **Routing**: Next.js Router
+
+### Backend
 - **Runtime**: Node.js
 - **Framework**: Express.js
-- **Database**: MongoDB (Mongoose ODM)
-- **File Uploads**: Multer
-- **PDF Generation**: PDFKit (for resume generation)
-- **Authentication**: Custom Token-based auth
-- **Security**: BCrypt (Password hashing), CORS
+- **Database**: MongoDB (with Mongoose ODM)
+- **File Handling**: Multer (for image uploads)
+- **PDF Generation**: PDFKit
+- **Security**: CORS, BCrypt
 
-## Project Flow & Features
+---
 
-### Authentication
-1.  **Registration**: Users sign up with name, email, password, and username. This creates a `User` document and an empty `Profile` document.
-2.  **Login**: Users authenticate with email and password. Upon success, a random hex token is generated, saved to the user's record, and returned to the client. This token is used for subsequent authenticated requests.
+## 🏗 Architecture & Flow
 
-### User Profile Management
--   **Profile Data**: Users can update their bio, work experience, and educational details.
--   **Profile Picture**: Users can upload a profile picture which is stored locally in the `uploads/` directory.
--   **Resume Download**: The system can dynamically generate a PDF resume based on the user's profile data using `pdfkit`.
+1.  **Auth Flow**:
+    - User signs up -> Data saved to MongoDB (User & Profile models).
+    - User logs in -> Server verifies credentials -> Returns a session token.
+    - Token is stored in `localStorage` on the client and sent with subsequent API requests.
 
-### Networking (Connections)
-The platform allows users to build a professional network:
-1.  **Send Request**: A user sends a connection request to another user.
-2.  **Manage Requests**: Users can view incoming connection requests.
-3.  **Accept/Ignore**: Users can accept requests (setting `status_accepted: true`) or ignore them.
-4.  **View Network**: Users can view their list of connected peers.
+2.  **Profile & Resume**:
+    - Profile data is fetched on load.
+    - "Download Resume" triggers a backend endpoint that generates a PDF stream using `pdfkit` and sends it to the client.
 
-### Posts & Interactions
--   **Create Post**: Users can create posts with text and optional media attachments.
--   **Feed**: A stream of posts is available for users to view.
--   **Interactions**:
-    -   **Likes**: Users can like posts.
-    -   **Comments**: Users can comment on posts and delete their comments.
+3.  **Content & Social**:
+    - **Posts**: Created with text/media. Images are uploaded to the `uploads/` directory on the server.
+    - **Feed**: Fetches all posts, populating user details (name, avatar).
+    - **Connections**: A request-response model. Status changes from `pending` to `accepted` upon approval.
 
-## API Endpoints
+---
 
-### User Routes
--   `POST /register` - Register a new user
--   `POST /login` - Login user
--   `GET /user/get_allusers` - Get all user profiles
--   `GET /getuser_profile` - Get a specific user's profile
--   `POST /userupdate` - Update user basic info (username/email)
--   `POST /updateprofile_data` - Update extended profile info (bio, work, etc.)
--   `POST /uploadprofilepic` - Upload profile picture
--   `GET /user/download_resume` - Download user profile as PDF
+## 🔌 API Endpoints
 
-### Connection Routes
--   `POST /user/send_connection_request` - Send a connection request
--   `GET /user/getConnectionRequest` - Get sent requests
--   `GET /user/user_connection_request` - Get received requests
--   `POST /user/accept_connection_request` - Accept or reject a request
+### 👤 User
+- `POST /register` - Create a new account.
+- `POST /login` - Authenticate user.
+- `GET /user/get_allusers` - specific content.
+- `GET /getuser_profile` - specific user details.
+- `POST /userupdate` - update basic info.
+- `POST /updateprofile_data` - update extended profile (bio, works).
+- `POST /uploadprofilepic` - upload avatar.
+- `GET /user/download_resume` - get PDF resume.
 
-### Post Routes
--   `POST /post` - Create a new post
--   `GET /posts` - Get all posts
--   `DELETE /delete_post` - Delete a post
--   `POST /increment_post_likes` - Like a post
--   `POST /comment` - Add a comment
--   `GET /get_comments` - Get comments for a post
--   `DELETE /delete_comment` - Delete a comment
+### 🔗 Connections
+- `POST /user/send_connection_request` - Initiate connection.
+- `GET /user/getConnectionRequest` - View outgoing requests.
+- `GET /user/user_connection_request` - View incoming requests.
+- `POST /user/accept_connection_request` - Approve a connection.
 
-## Usage
+### 💬 Posts
+- `POST /post` - Create a new post (supports `multipart/form-data`).
+- `GET /posts` - Retrieve all posts.
+- `DELETE /delete_post` - Remove a post.
+- `POST /increment_post_likes` - Toggle like on a post.
+- `POST /comment` - Add a comment.
+- `GET /get_comments` - Retrieve comments for a post.
 
-1.  **Install Dependencies**:
+---
+
+## 🚀 Getting Started
+
+### Prerequisites
+- Node.js installed
+- MongoDB installed and running 
+
+### Installation
+
+1.  **Clone the repository**
     ```bash
-    npm install
+    git clone https://github.com/your-username/linked-clone.git
+    cd linked-clone
     ```
-2.  **Start Server**:
-    ```bash
-    npm start
-    # or
-    node server.js
-    ```
+
+    
+3.  **Frontend Setup**
+    
+    npm run dev
+    
+
+---
+
+## 📸 Screenshots
+*(Add screenshots of your Dashboard, Profile, and Login pages here)*
