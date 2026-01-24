@@ -1,0 +1,42 @@
+/* [project]/src/layout/DashboardLayout/index.module.css [client] (css) */
+.index-module__H6bjfq__homeContainer {
+  display: flex;
+}
+
+.index-module__H6bjfq__homeContainer > div:nth-of-type(odd) {
+  flex: .2;
+}
+
+.index-module__H6bjfq__homeContainer > div:nth-of-type(2n) {
+  flex: .6;
+}
+
+.index-module__H6bjfq__homeContainer__leftBar {
+  flex-direction: column;
+  align-items: start;
+  gap: 1.2rem;
+  display: flex;
+}
+
+.index-module__H6bjfq__sideBarOptions {
+  cursor: pointer;
+  align-items: center;
+  gap: 1.3rem;
+  width: 80%;
+  min-width: 100px;
+  max-width: 80%;
+  font-size: 1.4rem;
+  transition: all .2s;
+  display: flex;
+}
+
+.index-module__H6bjfq__sideBarOptions:hover {
+  transform: scale(1.04);
+}
+
+.index-module__H6bjfq__sideBarOptions > svg {
+  min-width: fit-content;
+  height: 1.4rem;
+}
+
+/*# sourceMappingURL=src_layout_DashboardLayout_index_module_88e9fc04.css.map*/

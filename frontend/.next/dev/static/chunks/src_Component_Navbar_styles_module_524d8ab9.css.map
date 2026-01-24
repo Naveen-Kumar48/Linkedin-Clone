@@ -1,0 +1,6 @@
+{
+  "version": 3,
+  "sources": [],
+  "sections": [
+    {"offset": {"line": 1, "column": 0}, "map": {"version":3,"sources":["file:///D:/Web%20Development/Projects/Linked%20Clone/frontend/src/Component/Navbar/styles.module.css"],"sourcesContent":[".container {\r\n  padding: 1.2rem;\r\n}\r\n.navbar{\r\n    display: flex;\r\n    align-items: center;\r\n    justify-content: space-between;\r\n}\r\n.navBaroptionContainer{\r\n    display: flex;\r\n}\r\n.buttonJoin {\r\n    background-color: #cd8987;\r\n    border-radius:10px; \r\n    padding-block :0.6rem;\r\n    padding-inline :1.2rem;\r\n    color:white;\r\n    font-size:0.7rem;\r\n    cursor:pointer;\r\n    font-weight:bold  ;\r\n}"],"names":[],"mappings":"AAAA;;;;AAGA;;;;;;AAKA;;;;AAGA"}}]
+}

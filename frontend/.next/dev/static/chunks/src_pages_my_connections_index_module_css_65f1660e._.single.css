@@ -1,0 +1,33 @@
+/* [project]/src/pages/my_connections/index.module.css [client] (css) */
+.index-module__ceZrkW__userCard {
+  align-items: center;
+  gap: 1.2rem;
+  width: 100%;
+  padding: 1.3rem;
+  display: flex;
+  box-shadow: 10px 10px 10px #0000001a;
+}
+
+.index-module__ceZrkW__profilePicture > img {
+  border-radius: 50%;
+  width: 6.5rem;
+}
+
+.index-module__ceZrkW__myConnection {
+  cursor: pointer;
+  justify-content: space-around;
+  width: 100%;
+  padding-top: 1.5rem;
+  display: flex;
+}
+
+.index-module__ceZrkW__connectBtn {
+  cursor: pointer;
+  border: 1px solid #00f;
+  border-radius: 10px;
+  outline: none;
+  padding-block: .3rem;
+  padding-inline: .8rem;
+}
+
+/*# sourceMappingURL=src_pages_my_connections_index_module_css_65f1660e._.single.css.map*/

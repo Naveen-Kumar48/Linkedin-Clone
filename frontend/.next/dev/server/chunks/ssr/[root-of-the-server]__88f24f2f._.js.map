@@ -1,0 +1,6 @@
+{
+  "version": 3,
+  "sources": [],
+  "sections": [
+    {"offset": {"line": 4, "column": 0}, "map": {"version":3,"sources":["file:///D:/Web%20Development/Projects/Linked%20Clone/frontend/src/pages/blog/index.jsx"],"sourcesContent":["import React from 'react'\r\n\r\nexport default function Homepage() {\r\n  return (\r\n    <div>blog page</div>\r\n  )\r\n}\r\n"],"names":[],"mappings":";;;;;AAAA;;;AAEe,SAAS;IACtB,qBACE,qKAAC;kBAAI;;;;;;AAET"}}]
+}

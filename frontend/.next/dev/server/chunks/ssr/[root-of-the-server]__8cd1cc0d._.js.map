@@ -1,0 +1,7 @@
+{
+  "version": 3,
+  "sources": [],
+  "sections": [
+    {"offset": {"line": 4, "column": 0}, "map": {"version":3,"sources":["file:///D:/Web%20Development/Projects/Linked%20Clone/frontend/src/layout/UserLayout/index.jsx"],"sourcesContent":["import React from 'react'\r\n\r\nfunction UserLayout({children}) {\r\n  return (\r\n    <div>\r\n<h1>  hello</h1>\r\n        {children}\r\n    </div>\r\n  )\r\n}\r\n\r\nexport default UserLayout"],"names":[],"mappings":";;;;;AAAA;;;AAEA,SAAS,WAAW,EAAC,QAAQ,EAAC;IAC5B,qBACE,qKAAC;;0BACL,qKAAC;0BAAG;;;;;;YACK;;;;;;;AAGT;uCAEe"}},
+    {"offset": {"line": 35, "column": 0}, "map": {"version":3,"sources":["file:///D:/Web%20Development/Projects/Linked%20Clone/frontend/src/pages/login/index.jsx"],"sourcesContent":["import UserLayout from '@/layout/UserLayout'\r\nimport React from 'react'\r\n\r\nconst LoginComponent = () => {\r\n  return (\r\n\r\n    <UserLayout>\r\n      <h2>login page</h2>\r\n    </UserLayout>\r\n  )\r\n}\r\n\r\nexport default LoginComponent"],"names":[],"mappings":";;;;;AAAA;AACA;;;;AAEA,MAAM,iBAAiB;IACrB,qBAEE,qKAAC,yIAAU;kBACT,cAAA,qKAAC;sBAAG;;;;;;;;;;;AAGV;uCAEe"}}]
+}

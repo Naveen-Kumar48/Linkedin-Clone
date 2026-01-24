@@ -1,0 +1,7 @@
+{
+  "version": 3,
+  "sources": [],
+  "sections": [
+    {"offset": {"line": 9, "column": 0}, "map": {"version":3,"sources":["turbopack:///[project]/src/styles/Home.module.css [ssr] (css module)"],"sourcesContent":["__turbopack_context__.v({\n});\n"],"names":[],"mappings":"AAAA;AACA"}},
+    {"offset": {"line": 15, "column": 0}, "map": {"version":3,"sources":["file:///D:/Web%20Development/Projects/Linked%20Clone/frontend/src/pages/index.jsx"],"sourcesContent":["import Head from \"next/head\";\nimport Image from \"next/image\";\nimport styles from \"@/styles/Home.module.css\";\n\n\n\nexport default function Home() {\n  const router =use\n  return (\n    <>\n      \n<div className=\"container\">\n\n   <div className=\"mainContainer\">\n\n    <div className=\"mainContainer_left\">\n      <p>Connect  with friends without Exaggeration </p>\n      <p>A true  socila media platform ,woth stores no bluff!</p>\n      <button onClick={()=>{}}>buttonJoin</button>\n    <p>join Now</p> \n\n    </div>\n    <div className=\"mainContainer_right\">\n      <img src=\"\" alt=\"\" />\n\n    </div>\n   </div> \n</div>\n      \n    </>\n\n\n  );\n}\n"],"names":[],"mappings":";;;;;AAAA;AACA;AACA;;;;;AAIe,SAAS;IACtB,MAAM,SAAQ;IACd,qBACE;kBAEJ,cAAA,qKAAC;YAAI,WAAU;sBAEZ,cAAA,qKAAC;gBAAI,WAAU;;kCAEd,qKAAC;wBAAI,WAAU;;0CACb,qKAAC;0CAAE;;;;;;0CACH,qKAAC;0CAAE;;;;;;0CACH,qKAAC;gCAAO,SAAS,KAAK;0CAAG;;;;;;0CAC3B,qKAAC;0CAAE;;;;;;;;;;;;kCAGH,qKAAC;wBAAI,WAAU;kCACb,cAAA,qKAAC;4BAAI,KAAI;4BAAG,KAAI;;;;;;;;;;;;;;;;;;;;;;;AAUtB"}}]
+}

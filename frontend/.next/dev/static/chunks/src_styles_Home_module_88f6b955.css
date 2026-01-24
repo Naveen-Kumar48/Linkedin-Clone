@@ -1,0 +1,63 @@
+/* [project]/src/styles/Home.module.css [client] (css) */
+.Home-module__Ho9lYW__container {
+  padding: 1.2rem;
+  font-family: Poppins;
+}
+
+.Home-module__Ho9lYW__mainContainer {
+  justify-content: center;
+  align-items: center;
+  gap: 4rem;
+  height: 80vh;
+  padding-inline: 2rem;
+  display: flex;
+}
+
+.Home-module__Ho9lYW__mainContainer_left, .Home-module__Ho9lYW__mainContainer_right {
+  flex: .5rem;
+}
+
+.Home-module__Ho9lYW__mainContainer_left > p:first-child {
+  -webkit-text-fill-color: transparent;
+  background: -webkit-linear-gradient(45deg, #000, #982525);
+  -webkit-background-clip: text;
+  background-clip: text;
+  font-size: 2.9rem;
+  font-weight: bold;
+  animation: 3s linear infinite Home-module__Ho9lYW__gradient;
+}
+
+@keyframes Home-module__Ho9lYW__gradient {
+  0% {
+    background-position: 0%;
+  }
+
+  50% {
+    background-position: 50%;
+  }
+
+  100% {
+    background-position: 100%;
+  }
+}
+
+.Home-module__Ho9lYW__mainContainer_left > p:nth-child(2) {
+  color: #4d4d4d;
+  font-size: 1.9rem;
+}
+
+.Home-module__Ho9lYW__mainContainer_left > div.Home-module__Ho9lYW__buttonJoin {
+  cursor: pointer;
+  -webkit-user-select: none;
+  user-select: none;
+  color: #fff;
+  background-color: #0077b6;
+  border-radius: 5px;
+  width: fit-content;
+  margin-top: .8rem;
+  padding: .5rem 1rem;
+  font-size: 1.4rem;
+  transition: all .2s;
+}
+
+/*# sourceMappingURL=src_styles_Home_module_88f6b955.css.map*/

@@ -1,0 +1,27 @@
+/* [project]/src/Component/Navbar/styles.module.css [client] (css) */
+.styles-module__2oEZSG__container {
+  padding: 1.2rem;
+}
+
+.styles-module__2oEZSG__navbar {
+  justify-content: space-between;
+  align-items: center;
+  display: flex;
+}
+
+.styles-module__2oEZSG__navBaroptionContainer {
+  display: flex;
+}
+
+.styles-module__2oEZSG__buttonJoin {
+  color: #fff;
+  cursor: pointer;
+  background-color: #cd8987;
+  border-radius: 10px;
+  padding-block: .6rem;
+  padding-inline: 1.2rem;
+  font-size: .7rem;
+  font-weight: bold;
+}
+
+/*# sourceMappingURL=src_Component_Navbar_styles_module_css_65f1660e._.single.css.map*/
