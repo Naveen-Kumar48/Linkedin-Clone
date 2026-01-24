@@ -254,6 +254,7 @@ function Dashboard() {
             </div>
           </div>
         )}
+        
         {postState.postId !== "" && (
           <div
             onClick={() => {

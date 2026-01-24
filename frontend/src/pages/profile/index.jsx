@@ -23,6 +23,18 @@ export default function ProfilePage() {
   const postReducer = useSelector((state) => state.posts);
   const [userProfile, setUserProfile] = useState({});
   const [userPosts, setUserPosts] = useState([]);
+  const [isModalOpen, setIsModalOpen] = useState(false)
+
+  const [inputData, setInputData] = useState({
+    company: "",
+    position: "",
+    years: ""
+  })
+
+  const handleWorkInputChange = (e) => {
+    const { name, value } = e.target;
+    setInputData({ ...inputData, [name]: value });
+  }
 
   useEffect(() => {
     dispatch(getAboutUser({ token: localStorage.getItem("token") }));
@@ -69,7 +81,7 @@ export default function ProfilePage() {
       currentWork: userProfile.currentWork,
       currentPost: userProfile.currentPost,
       education: userProfile.education,
-
+      pastwork: userProfile.pastwork,
     })
     dispatch(getAboutUser({ token: localStorage.getItem("token") }));
   }
@@ -107,7 +119,15 @@ export default function ProfilePage() {
                 </div>
 
                 <div>
-                  <p>{userProfile.bio}</p>
+                  <textarea
+                    className={styles.bioEdit}
+                    value={userProfile.bio}
+                    onChange={(e) => setUserProfile({
+                      ...userProfile,
+                      bio: e.target.value
+                    })}
+                    rows={Math.max(3, userProfile.bio.length / 80)}//adjust as needded
+                  ></textarea>
                 </div>
                 <div style={{ display: "flex", gap: "0.7rem", width: "100%" }}>
                   <div style={{ flex: "1" }}>
@@ -133,8 +153,11 @@ export default function ProfilePage() {
                   </div>
                 </div>
               </div>
+
+
               <div className={styles.workhistory}>
                 <h4>work history</h4>
+
                 <div className={styles.workHistoryContainer}>
                   {userProfile.pastwork.map((work, index) => {
                     return (
@@ -151,6 +174,11 @@ export default function ProfilePage() {
                       </div>
                     );
                   })}
+                  <button className={styles.addWorkButton}
+                    onClick={() => {
+                      setIsModalOpen(true)
+
+                    }}>Add Work</button>
                 </div>
               </div>
 
@@ -162,6 +190,41 @@ export default function ProfilePage() {
                 }} className={styles.updateButton}>Update</button>
               )
             }
+          </div>
+        )}
+
+
+
+        {isModalOpen && (
+          <div
+            onClick={() => {
+              setIsModalOpen(false);
+            }}
+            className={styles.commentsContainer}
+          >
+            <div>
+              <div
+                onClick={(e) => {
+                  e.stopPropagation();
+                }}
+                className={styles.allCommentsContainer}>
+                <input onChange={handleWorkInputChange} name="company" type="text" className={styles.inputField} placeholder="Enter Work Space" />
+                <input onChange={handleWorkInputChange} name="position" type="text" className={styles.inputField} placeholder="Enter Your Position" />
+                <input onChange={handleWorkInputChange} name="years" type="number" className={styles.inputField} placeholder="Enter Years" />
+                <div>
+
+
+                  <button onClick={() => {
+                    setUserProfile({
+                      ...userProfile,
+                      pastwork: [...userProfile.pastwork, inputData]
+                    })
+                    setIsModalOpen(false);
+                  }} className={styles.updateButton}>Add Work</button>
+
+                </div>
+              </div>
+            </div>
           </div>
         )}
       </DashboardLayout>
