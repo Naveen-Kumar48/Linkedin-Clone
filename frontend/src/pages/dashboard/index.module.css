@@ -21,7 +21,7 @@
 .createPostContainer {
     display: flex;
     align-items: center;
-    gap: 1rem; 
+    gap: 1rem;
     background-color: #ffffff;
     border-radius: 0.8rem;
     padding: 1rem 1.5rem;
@@ -222,7 +222,7 @@
     color: #666666;
     font-weight: 600;
     font-size: 0.9rem;
-   
+
     /* Make touch targets larger */
     justify-content: center;
 }
@@ -256,58 +256,136 @@
     width: 20px;
     height: 20px;
 }
-.commentsContainer{
-    position:absolute;
+
+.commentsContainer {
+    position: fixed;
     width: 100vw;
     height: 100vh;
-    top:0;
-    left:0;
-    z-index:2;
-    background: rgb(0, 0, 0,0.7);
+    top: 0;
+    left: 0;
+    z-index: 2000;
+    background: rgb(0, 0, 0, 0.7);
     overflow: hidden;
     justify-content: center;
     display: flex;
-    align-items: center ;
-
+    align-items: center;
 }
-.allCommentsContainer{
+
+.allCommentsContainer {
     width: 40vw;
-    height:80vh;
+    height: 80vh;
     background: white;
-    border-radius:  10px;
+    border-radius: 10px;
     position: relative;
-    padding:1.4rem;
-
+    padding: 1.4rem;
+    display: flex;
+    flex-direction: column;
 }
-.postCommentContainer{
+
+/* Scrollable area for comments */
+.allCommentsContainer>div:first-of-type {
+    overflow-y: auto;
+    flex: 1;
+    /* Take available space */
+    margin-bottom: 4rem;
+    /* Space for the input area */
+    padding-bottom: 1rem;
+}
+
+.singleCommentContainer {
+    display: flex;
+    align-items: flex-start;
+    /* Align to top for longer comments */
+    gap: 12px;
+    margin-bottom: 15px;
+    padding: 5px;
+}
+
+.singleCommentContainer img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    object-fit: cover;
+    flex-shrink: 0;
+    /* Prevent image shrinking */
+}
+
+/* Add style for the text content next to avatar */
+.singleCommentContainer>div {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+}
+
+.singleCommentContainer p {
+    margin: 0;
+    line-height: 1.4;
+    word-break: break-word;
+    /* Handle long words */
+}
+
+.postCommentContainer {
     position: absolute;
-    bottom:1.2rem   ;
-    left:1.2rem;
+    bottom: 1.2rem;
+    left: 50%;
+    transform: translateX(-50%);
     width: 90%;
     display: flex;
     align-items: center;
-    justify-content:center;
-    gap:1.2rem;
+    justify-content: center;
+    gap: 1.2rem;
+    background-color: white;
+    /* Ensure transparency doesn't show comments behind */
 }
-.postCommentContainer>input{
-    flex:0.9;
+
+.postCommentContainer>input {
+    flex: 1;
     padding-inline: 1.5rem;
-    padding-block: 1.2rem ;
+    padding-block: 1.2rem;
     border: none;
     outline: none;
-    background-color: rgb(228,228,228);
+    background-color: rgb(228, 228, 228);
     border-radius: 10px;
 }
-.postCommentContainer>input:focus{
-    border:1px solid silver;
+
+.postCommentContainer>input:focus {
+    border: 1px solid silver;
 }
-.postCommentContainer__commentBtn{
-    flex:0.1;
+
+.postCommentContainer__commentBtn {
     width: fit-content;
     padding: 1.2rem;
     background: orange;
     border-radius: 10px;
     align-items: center;
-    color:white;
+    color: white;
     cursor: pointer;
+    font-weight: 600;
+    white-space: nowrap;
+}
+
+@media screen and (max-width: 768px) {
+    .allCommentsContainer {
+        width: 95vw;
+        height: 70vh;
+        /* Slightly smaller on mobile to avoid keyboard issues */
+        padding: 1rem;
+    }
+
+    .postCommentContainer {
+        width: 95%;
+        gap: 0.5rem;
+        bottom: 0.8rem;
+    }
+
+    .postCommentContainer>input {
+        padding-block: 0.8rem;
+        padding-inline: 1rem;
+        font-size: 0.9rem;
+    }
+
+    .postCommentContainer__commentBtn {
+        padding: 0.8rem 1rem;
+        font-size: 0.9rem;
+    }
 }

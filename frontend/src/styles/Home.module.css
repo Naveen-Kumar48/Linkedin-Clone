@@ -1,58 +1,101 @@
-.container{
-    font-family: 'Poppins';
-    padding:1.2rem;
+.container {
+  font-family: 'Poppins';
+  padding: 1.2rem;
 }
-.mainContainer{
+
+.mainContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 4rem;
+  padding-inline: 2rem;
+  height: 80vh;
+}
+
+.mainContainer_left {
+  flex: 1;
+}
+
+.mainContainer_right {
+  flex: 1;
+}
+
+.mainContainer_right img {
+  width: 100%;
+}
+
+.mainContainer_left>p:nth-child(1) {
+  font-size: 2.9rem;
+  background: -webkit-linear-gradient(45deg, #000000, #982525);
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-weight: bold;
+  animation: gradient 3s linear infinite;
+}
+
+@keyframes gradient {
+  0% {
+    background-position: 0% 50%;
+  }
+
+  50% {
+    background-position: 50% 50%;
+  }
+
+  100% {
+    background-position: 100% 50%;
+  }
+}
+
+.mainContainer_left>p:nth-child(2) {
+  font-size: 1.9rem;
+  color: #4D4D4D;
+}
+
+.mainContainer_left>div.buttonJoin {
+  width: fit-content;
+  cursor: pointer;
+  user-select: none;
+  transition: all 0.2s;
+  margin-top: 0.8rem;
+  font-size: 1.4rem;
+  background-color: #0077B6;
+  color: #fff;
+  padding: 0.5rem 1rem;
+  border-radius: 5px;
+}
+
+@media screen and (max-width: 768px) {
+  .mainContainer {
+    flex-direction: column-reverse;
+    /* Put image on top, text below */
+    height: auto;
+    gap: 2rem;
+    padding-inline: 1rem;
+    text-align: center;
+    padding-bottom: 3rem;
+  }
+
+  .mainContainer_left {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .mainContainer_left>p:nth-child(1) {
+    font-size: 2rem;
+    /* Smaller heading */
+  }
+
+  .mainContainer_left>p:nth-child(2) {
+    font-size: 1.2rem;
+    /* Smaller subtitle */
+  }
+
+  .buttonJoin {
+    width: 100%;
+    /* Full width button on mobile */
     display: flex;
     justify-content: center;
-    align-items: center;
-    gap:4rem;
-    padding-inline:2rem;
-    height: 80vh;
-}
-
-.mainContainer_left{
-flex:0.5rem
-}
-
-.mainContainer_right{
-flex:0.5rem
-}
-.mainContainer_left >p:nth-child(1){
-    font-size: 2.9rem;
-    background:-webkit-linear-gradient(45deg,#000000,#982525);
-    background-clip:text;
-    -webkit-text-fill-color:transparent;
-    font-weight: bold;
-    animation: gradient 3s linear infinite;
-    }
-@keyframes gradient {
-0% {
-  background-position: 0% 50%;
-    }
-
-    50% {
-      background-position: 50% 50%;    
-    }       
-    100% {
-      background-position: 100% 50%;    
-    }   
-}
-.mainContainer_left >p:nth-child(2){
-    font-size: 1.9rem;
-    color:#4D4D4D;
-}
-.mainContainer_left > div.buttonJoin {
-    width:fit-content;
-    cursor:pointer;
-    user-select:none;
-    transition:all 0.2s;
-    margin-top:0.8rem;
-    font-size:1.4rem;
-    background-color: #0077B6;
-    color:#fff;
-    padding:0.5rem 1rem;
-    border-radius: 5px; 
-    
-   
+  }
 }

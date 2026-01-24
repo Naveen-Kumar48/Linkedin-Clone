@@ -231,6 +231,61 @@
   cursor: pointer;
 }
 
-.iconContainer:hover {
-  color: #2d3748;
+@media screen and (max-width: 768px) {
+  .Container {
+    padding: 1rem 0.5rem;
+    padding-bottom: 6rem;
+    /* Extra padding for bottom nav */
+  }
+
+  /* Profile Picture adjustments */
+  .backDrop {
+    width: 120px;
+    height: 120px;
+    left: 50%;
+    transform: translateX(-50%);
+    top: 180px;
+    /* Adjust based on banner height */
+  }
+
+  .backDrop:hover {
+    transform: translateX(-50%) scale(1.05);
+  }
+
+  /* Details section adjustments */
+  .profileContainer_details {
+    padding: 70px 1.5rem 2rem;
+    /* Adjusted top padding */
+    align-items: center;
+    text-align: center;
+    gap: 1rem;
+  }
+
+  .profileContainer_details>div:first-child {
+    flex-direction: column;
+    gap: 0.5rem;
+    width: 100%;
+    justify-content: center;
+  }
+
+  /* Flex container for Name, Username, Buttons */
+  .profileContainer_details>div:first-child>div:last-child {
+    justify-content: center;
+    width: 100%;
+    margin-top: 0.5rem;
+  }
+
+  .profileContainer_details h2 {
+    font-size: 1.6rem;
+  }
+
+  .profileContainer_details p {
+    font-size: 0.9rem;
+  }
+
+  /* Work History Grid */
+  .workHistoryContainer {
+    grid-template-columns: 1fr;
+    /* Single column layout */
+  }
 }

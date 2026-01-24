@@ -100,7 +100,7 @@ export const getCommentsByPost = async (req, res) => {
 
     const comments = await Comment.find({
       postId: post_id
-    }).populate("userId", "username name");
+    }).populate("userId", "username name profilePicture");
     return res.status(200).json(comments.reverse());
 
   } catch (error) {

@@ -31,7 +31,7 @@ const NavbarComponent = () => {
                 onClick={()=>{
                   router.push('/profile')
                   
-                }} >Hey,{authState.user.userId.username}</p>
+                }} >{authState.user.userId.username}</p>
                 <p onClick={() => {
                   localStorage.removeItem("token")
                   router.push("/login")

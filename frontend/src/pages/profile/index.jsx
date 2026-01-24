@@ -129,27 +129,29 @@ export default function ProfilePage() {
                     rows={Math.max(3, userProfile.bio.length / 80)}//adjust as needded
                   ></textarea>
                 </div>
-                <div style={{ display: "flex", gap: "0.7rem", width: "100%" }}>
-                  <div style={{ flex: "1" }}>
+                <div style={{ width: "100%" }}>
+                  <div>
                     <h3>Recent Activity</h3>
-                    {userPosts.map((post) => {
-                      return (
-                        <div key={post._id} className={styles.postCard}>
-                          <div className={styles.Card}>
-                            <div className={styles.card__profileContainer}>
-                              {post.media !== "" ? (
-                                <img src={`${BASE_URL}/${post.media}`} alt="" />
-                              ) : (
-                                <div
-                                  style={{ width: "3.rem", height: "3.4rem" }}
-                                ></div>
-                              )}
-                              <p>{post.body}</p>
+                    <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fill, minmax(300px, 1fr))", gap: "1rem" }}>
+                      {userPosts.map((post) => {
+                        return (
+                          <div key={post._id} className={styles.postCard}>
+                            <div className={styles.Card}>
+                              <div className={styles.card__profileContainer}>
+                                {post.media && post.media !== "" && post.media !== "undefined" ? (
+                                  <img src={`${BASE_URL}/uploads/${post.media}`} alt="Post Media" />
+                                ) : (
+                                  <div
+                                    style={{ width: "3.rem", height: "3.4rem" }}
+                                  ></div>
+                                )}
+                                <p>{post.body}</p>
+                              </div>
                             </div>
                           </div>
-                        </div>
-                      );
-                    })}
+                        );
+                      })}
+                    </div>
                   </div>
                 </div>
               </div>
