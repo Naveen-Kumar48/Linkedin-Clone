@@ -1,4 +1,7 @@
+# Environment variables
 .env
+
+# API Client files
 api.http
 
 
