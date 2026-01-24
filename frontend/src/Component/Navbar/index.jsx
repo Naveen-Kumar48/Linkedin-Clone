@@ -20,18 +20,18 @@ const NavbarComponent = () => {
             router.push('/')
 
           }}>
-            Pro Connect
+            Pro Link
           </h1>
           <div className={styles.navBaroptionContainer}>
 
             {authState.profileFetched && <div>
               <div style={{ display: "flex", gap: "1.2rem" }}>
-                <p 
-                style={{cursor:"pointer"}}
-                onClick={()=>{
-                  router.push('/profile')
-                  
-                }} >{authState.user.userId.username}</p>
+                <p
+                  style={{ cursor: "pointer" }}
+                  onClick={() => {
+                    router.push('/profile')
+
+                  }} >{authState.user.userId.username}</p>
                 <p onClick={() => {
                   localStorage.removeItem("token")
                   router.push("/login")
