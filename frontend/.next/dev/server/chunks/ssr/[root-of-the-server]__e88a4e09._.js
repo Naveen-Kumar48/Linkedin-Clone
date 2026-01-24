@@ -290,7 +290,6 @@ const LoginComponent = ()=>{
         authState.LoggedIn
     ]);
     const handleRegister = ()=>{
-        console.log("Registring.... ");
         dispath((0, __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$config$2f$redux$2f$action$2f$authAction$2f$index$2e$js__$5b$ssr$5d$__$28$ecmascript$29$__["registerUser"])({
             username: username,
             password: password,
@@ -299,7 +298,6 @@ const LoginComponent = ()=>{
         }));
     };
     const handleLogin = ()=>{
-        console.log("Login....");
         dispath((0, __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$config$2f$redux$2f$action$2f$authAction$2f$index$2e$js__$5b$ssr$5d$__$28$ecmascript$29$__["loginUser"])({
             email: email,
             password: password

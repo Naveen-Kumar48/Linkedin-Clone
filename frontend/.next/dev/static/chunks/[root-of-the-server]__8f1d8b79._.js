@@ -482,7 +482,7 @@ __turbopack_context__.s([
 ]);
 var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$axios$2f$lib$2f$axios$2e$js__$5b$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/node_modules/axios/lib/axios.js [client] (ecmascript)");
 ;
-const BASE_URL = 'http://localhost:9090';
+const BASE_URL = 'https://linkedin-clone-4gta.onrender.com/';
 const clientServer = __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$axios$2f$lib$2f$axios$2e$js__$5b$client$5d$__$28$ecmascript$29$__["default"].create({
     baseURL: BASE_URL
 });
@@ -1039,11 +1039,11 @@ var _s = __turbopack_context__.k.signature();
 const LoginComponent = ()=>{
     _s();
     const $ = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$compiler$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["c"])(79);
-    if ($[0] !== "8ffff7eab321399ea31ca06518fc5398f34153a4277af205cea006260639b2c7") {
+    if ($[0] !== "0defd6cd2b988ebea0b43039b74645e84a858ccd75632513ef9a05bedf9ed9d1") {
         for(let $i = 0; $i < 79; $i += 1){
             $[$i] = Symbol.for("react.memo_cache_sentinel");
         }
-        $[0] = "8ffff7eab321399ea31ca06518fc5398f34153a4277af205cea006260639b2c7";
+        $[0] = "0defd6cd2b988ebea0b43039b74645e84a858ccd75632513ef9a05bedf9ed9d1";
     }
     const authState = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2d$redux$2f$dist$2f$react$2d$redux$2e$mjs__$5b$client$5d$__$28$ecmascript$29$__["useSelector"])(_temp);
     const router = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$router$2e$js__$5b$client$5d$__$28$ecmascript$29$__["useRouter"])();
@@ -1145,7 +1145,6 @@ const LoginComponent = ()=>{
     let t8;
     if ($[18] !== dispath || $[19] !== email || $[20] !== name || $[21] !== password || $[22] !== username) {
         t8 = ()=>{
-            console.log("Registring.... ");
             dispath((0, __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$config$2f$redux$2f$action$2f$authAction$2f$index$2e$js__$5b$client$5d$__$28$ecmascript$29$__["registerUser"])({
                 username,
                 password,
@@ -1166,7 +1165,6 @@ const LoginComponent = ()=>{
     let t9;
     if ($[24] !== dispath || $[25] !== email || $[26] !== password) {
         t9 = ()=>{
-            console.log("Login....");
             dispath((0, __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$config$2f$redux$2f$action$2f$authAction$2f$index$2e$js__$5b$client$5d$__$28$ecmascript$29$__["loginUser"])({
                 email,
                 password
@@ -1188,7 +1186,7 @@ const LoginComponent = ()=>{
             children: t10
         }, void 0, false, {
             fileName: "[project]/src/pages/login/index.jsx",
-            lineNumber: 149,
+            lineNumber: 147,
             columnNumber: 11
         }, ("TURBOPACK compile-time value", void 0));
         $[28] = t10;
@@ -1218,7 +1216,7 @@ const LoginComponent = ()=>{
             ]
         }, void 0, true, {
             fileName: "[project]/src/pages/login/index.jsx",
-            lineNumber: 168,
+            lineNumber: 166,
             columnNumber: 11
         }, ("TURBOPACK compile-time value", void 0));
         $[32] = authState.message.message;
@@ -1240,7 +1238,7 @@ const LoginComponent = ()=>{
                     placeholder: "Username"
                 }, void 0, false, {
                     fileName: "[project]/src/pages/login/index.jsx",
-                    lineNumber: 177,
+                    lineNumber: 175,
                     columnNumber: 62
                 }, ("TURBOPACK compile-time value", void 0)),
                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("input", {
@@ -1251,13 +1249,13 @@ const LoginComponent = ()=>{
                     placeholder: "Name"
                 }, void 0, false, {
                     fileName: "[project]/src/pages/login/index.jsx",
-                    lineNumber: 177,
+                    lineNumber: 175,
                     columnNumber: 197
                 }, ("TURBOPACK compile-time value", void 0))
             ]
         }, void 0, true, {
             fileName: "[project]/src/pages/login/index.jsx",
-            lineNumber: 177,
+            lineNumber: 175,
             columnNumber: 29
         }, ("TURBOPACK compile-time value", void 0));
         $[35] = isLoginMethod;
@@ -1284,7 +1282,7 @@ const LoginComponent = ()=>{
             placeholder: "email"
         }, void 0, false, {
             fileName: "[project]/src/pages/login/index.jsx",
-            lineNumber: 194,
+            lineNumber: 192,
             columnNumber: 11
         }, ("TURBOPACK compile-time value", void 0));
         $[40] = email;
@@ -1309,7 +1307,7 @@ const LoginComponent = ()=>{
             placeholder: "Password"
         }, void 0, false, {
             fileName: "[project]/src/pages/login/index.jsx",
-            lineNumber: 209,
+            lineNumber: 207,
             columnNumber: 11
         }, ("TURBOPACK compile-time value", void 0));
         $[43] = password;
@@ -1340,7 +1338,7 @@ const LoginComponent = ()=>{
             children: t21
         }, void 0, false, {
             fileName: "[project]/src/pages/login/index.jsx",
-            lineNumber: 234,
+            lineNumber: 232,
             columnNumber: 11
         }, ("TURBOPACK compile-time value", void 0));
         $[49] = t21;
@@ -1357,7 +1355,7 @@ const LoginComponent = ()=>{
             children: t22
         }, void 0, false, {
             fileName: "[project]/src/pages/login/index.jsx",
-            lineNumber: 242,
+            lineNumber: 240,
             columnNumber: 11
         }, ("TURBOPACK compile-time value", void 0));
         $[51] = t20;
@@ -1378,7 +1376,7 @@ const LoginComponent = ()=>{
             ]
         }, void 0, true, {
             fileName: "[project]/src/pages/login/index.jsx",
-            lineNumber: 251,
+            lineNumber: 249,
             columnNumber: 11
         }, ("TURBOPACK compile-time value", void 0));
         $[54] = t15;
@@ -1400,7 +1398,7 @@ const LoginComponent = ()=>{
             ]
         }, void 0, true, {
             fileName: "[project]/src/pages/login/index.jsx",
-            lineNumber: 262,
+            lineNumber: 260,
             columnNumber: 11
         }, ("TURBOPACK compile-time value", void 0));
         $[59] = t11;
@@ -1417,7 +1415,7 @@ const LoginComponent = ()=>{
             children: t26
         }, void 0, false, {
             fileName: "[project]/src/pages/login/index.jsx",
-            lineNumber: 273,
+            lineNumber: 271,
             columnNumber: 11
         }, ("TURBOPACK compile-time value", void 0));
         $[63] = t26;
@@ -1455,7 +1453,7 @@ const LoginComponent = ()=>{
             ]
         }, void 0, true, {
             fileName: "[project]/src/pages/login/index.jsx",
-            lineNumber: 302,
+            lineNumber: 300,
             columnNumber: 11
         }, ("TURBOPACK compile-time value", void 0));
         $[68] = t30;
@@ -1473,7 +1471,7 @@ const LoginComponent = ()=>{
             children: t31
         }, void 0, false, {
             fileName: "[project]/src/pages/login/index.jsx",
-            lineNumber: 310,
+            lineNumber: 308,
             columnNumber: 11
         }, ("TURBOPACK compile-time value", void 0));
         $[70] = t28;
@@ -1492,7 +1490,7 @@ const LoginComponent = ()=>{
             ]
         }, void 0, true, {
             fileName: "[project]/src/pages/login/index.jsx",
-            lineNumber: 319,
+            lineNumber: 317,
             columnNumber: 11
         }, ("TURBOPACK compile-time value", void 0));
         $[73] = t27;
@@ -1514,17 +1512,17 @@ const LoginComponent = ()=>{
                     ]
                 }, void 0, true, {
                     fileName: "[project]/src/pages/login/index.jsx",
-                    lineNumber: 328,
+                    lineNumber: 326,
                     columnNumber: 57
                 }, ("TURBOPACK compile-time value", void 0))
             }, void 0, false, {
                 fileName: "[project]/src/pages/login/index.jsx",
-                lineNumber: 328,
+                lineNumber: 326,
                 columnNumber: 23
             }, ("TURBOPACK compile-time value", void 0))
         }, void 0, false, {
             fileName: "[project]/src/pages/login/index.jsx",
-            lineNumber: 328,
+            lineNumber: 326,
             columnNumber: 11
         }, ("TURBOPACK compile-time value", void 0));
         $[76] = t25;

@@ -482,7 +482,7 @@ __turbopack_context__.s([
 ]);
 var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$axios$2f$lib$2f$axios$2e$js__$5b$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/node_modules/axios/lib/axios.js [client] (ecmascript)");
 ;
-const BASE_URL = 'http://localhost:9090';
+const BASE_URL = 'https://linkedin-clone-4gta.onrender.com/';
 const clientServer = __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$axios$2f$lib$2f$axios$2e$js__$5b$client$5d$__$28$ecmascript$29$__["default"].create({
     baseURL: BASE_URL
 });
@@ -1788,11 +1788,11 @@ var _s = __turbopack_context__.k.signature();
 function MyConnectionsPage() {
     _s();
     const $ = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$compiler$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["c"])(27);
-    if ($[0] !== "4f4b80f582d2f41e35d1e4f071c764017624fd170886df118fd637a2b4a1dced") {
+    if ($[0] !== "50f54f3be12d68e4a6b40c63ad4e7c5e05c9de6bc4aaa29b697c766993b38405") {
         for(let $i = 0; $i < 27; $i += 1){
             $[$i] = Symbol.for("react.memo_cache_sentinel");
         }
-        $[0] = "4f4b80f582d2f41e35d1e4f071c764017624fd170886df118fd637a2b4a1dced";
+        $[0] = "50f54f3be12d68e4a6b40c63ad4e7c5e05c9de6bc4aaa29b697c766993b38405";
     }
     const dispatch = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2d$redux$2f$dist$2f$react$2d$redux$2e$mjs__$5b$client$5d$__$28$ecmascript$29$__["useDispatch"])();
     const router = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$router$2e$js__$5b$client$5d$__$28$ecmascript$29$__["useRouter"])();
@@ -1850,7 +1850,6 @@ function MyConnectionsPage() {
         t4 = $[8];
     }
     (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$index$2e$js__$5b$client$5d$__$28$ecmascript$29$__["useEffect"])(_MyConnectionsPageUseEffect, t4);
-    console.log(authState.connections);
     let t5;
     let t6;
     if ($[9] === Symbol.for("react.memo_cache_sentinel")) {
@@ -1863,7 +1862,7 @@ function MyConnectionsPage() {
             children: "My connections"
         }, void 0, false, {
             fileName: "[project]/src/pages/my_connections/index.jsx",
-            lineNumber: 81,
+            lineNumber: 80,
             columnNumber: 10
         }, this);
         $[9] = t5;
@@ -1878,7 +1877,7 @@ function MyConnectionsPage() {
             children: " No Connection Request Pending"
         }, void 0, false, {
             fileName: "[project]/src/pages/my_connections/index.jsx",
-            lineNumber: 90,
+            lineNumber: 89,
             columnNumber: 48
         }, this);
         $[11] = authState.connections.length;
@@ -1905,12 +1904,12 @@ function MyConnectionsPage() {
                                     alt: "Profile-picture"
                                 }, void 0, false, {
                                     fileName: "[project]/src/pages/my_connections/index.jsx",
-                                    lineNumber: 103,
+                                    lineNumber: 102,
                                     columnNumber: 149
                                 }, this)
                             }, void 0, false, {
                                 fileName: "[project]/src/pages/my_connections/index.jsx",
-                                lineNumber: 103,
+                                lineNumber: 102,
                                 columnNumber: 110
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1920,20 +1919,20 @@ function MyConnectionsPage() {
                                         children: user.userId.name
                                     }, void 0, false, {
                                         fileName: "[project]/src/pages/my_connections/index.jsx",
-                                        lineNumber: 103,
+                                        lineNumber: 102,
                                         columnNumber: 267
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("h3", {
                                         children: user.userId.username
                                     }, void 0, false, {
                                         fileName: "[project]/src/pages/my_connections/index.jsx",
-                                        lineNumber: 103,
+                                        lineNumber: 102,
                                         columnNumber: 294
                                     }, this)
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/src/pages/my_connections/index.jsx",
-                                lineNumber: 103,
+                                lineNumber: 102,
                                 columnNumber: 234
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
@@ -1951,18 +1950,18 @@ function MyConnectionsPage() {
                                 children: "Accept"
                             }, void 0, false, {
                                 fileName: "[project]/src/pages/my_connections/index.jsx",
-                                lineNumber: 103,
+                                lineNumber: 102,
                                 columnNumber: 331
                             }, this)
                         ]
                     }, void 0, true, {
                         fileName: "[project]/src/pages/my_connections/index.jsx",
-                        lineNumber: 103,
+                        lineNumber: 102,
                         columnNumber: 105
                     }, this)
                 }, user._id, false, {
                     fileName: "[project]/src/pages/my_connections/index.jsx",
-                    lineNumber: 99,
+                    lineNumber: 98,
                     columnNumber: 51
                 }, this)
         }["MyConnectionsPage[(anonymous)()]"]);
@@ -1979,7 +1978,7 @@ function MyConnectionsPage() {
             children: " My Network "
         }, void 0, false, {
             fileName: "[project]/src/pages/my_connections/index.jsx",
-            lineNumber: 123,
+            lineNumber: 122,
             columnNumber: 10
         }, this);
         $[17] = t9;
@@ -2007,12 +2006,12 @@ function MyConnectionsPage() {
                                         alt: "Profile-picture"
                                     }, void 0, false, {
                                         fileName: "[project]/src/pages/my_connections/index.jsx",
-                                        lineNumber: 137,
+                                        lineNumber: 136,
                                         columnNumber: 153
                                     }, this)
                                 }, void 0, false, {
                                     fileName: "[project]/src/pages/my_connections/index.jsx",
-                                    lineNumber: 137,
+                                    lineNumber: 136,
                                     columnNumber: 114
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -2022,31 +2021,31 @@ function MyConnectionsPage() {
                                             children: user_0.userId.name
                                         }, void 0, false, {
                                             fileName: "[project]/src/pages/my_connections/index.jsx",
-                                            lineNumber: 137,
+                                            lineNumber: 136,
                                             columnNumber: 273
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("h3", {
                                             children: user_0.userId.username
                                         }, void 0, false, {
                                             fileName: "[project]/src/pages/my_connections/index.jsx",
-                                            lineNumber: 137,
+                                            lineNumber: 136,
                                             columnNumber: 302
                                         }, this)
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/src/pages/my_connections/index.jsx",
-                                    lineNumber: 137,
+                                    lineNumber: 136,
                                     columnNumber: 240
                                 }, this)
                             ]
                         }, void 0, true, {
                             fileName: "[project]/src/pages/my_connections/index.jsx",
-                            lineNumber: 137,
+                            lineNumber: 136,
                             columnNumber: 109
                         }, this)
                     }, user_0._id, false, {
                         fileName: "[project]/src/pages/my_connections/index.jsx",
-                        lineNumber: 133,
+                        lineNumber: 132,
                         columnNumber: 55
                     }, this)
             })["MyConnectionsPage[(anonymous)()]"];
@@ -2077,17 +2076,17 @@ function MyConnectionsPage() {
                     ]
                 }, void 0, true, {
                     fileName: "[project]/src/pages/my_connections/index.jsx",
-                    lineNumber: 153,
+                    lineNumber: 152,
                     columnNumber: 40
                 }, this)
             }, void 0, false, {
                 fileName: "[project]/src/pages/my_connections/index.jsx",
-                lineNumber: 153,
+                lineNumber: 152,
                 columnNumber: 23
             }, this)
         }, void 0, false, {
             fileName: "[project]/src/pages/my_connections/index.jsx",
-            lineNumber: 153,
+            lineNumber: 152,
             columnNumber: 11
         }, this);
         $[23] = t10;

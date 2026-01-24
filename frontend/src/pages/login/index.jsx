@@ -41,7 +41,7 @@ const LoginComponent = () => {
   }, [authState.LoggedIn])
 
   const handleRegister = () => {
-    console.log("Registring.... ")
+   
     dispath(
       registerUser({
         username: username,
@@ -55,7 +55,7 @@ const LoginComponent = () => {
 
 
   const handleLogin = () => {
-    console.log("Login....")
+  
     dispath(
       loginUser({
         email: email,

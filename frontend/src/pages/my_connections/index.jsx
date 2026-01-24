@@ -32,7 +32,6 @@ export default function MyConnectionsPage() {
         getAllUsers();
     }, []);
 
-    console.log(authState.connections);
     return (
         <UserLayout>
             <DashboardLayout>

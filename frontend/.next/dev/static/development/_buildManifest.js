@@ -2,9 +2,6 @@ self.__BUILD_MANIFEST = {
   "/": [
     "static/chunks/pages/index.js"
   ],
-  "/_error": [
-    "static/chunks/pages/_error.js"
-  ],
   "/dashboard": [
     "static/chunks/pages/dashboard.js"
   ],
@@ -19,9 +16,6 @@ self.__BUILD_MANIFEST = {
   ],
   "/profile": [
     "static/chunks/pages/profile.js"
-  ],
-  "/view_profile/[username]": [
-    "static/chunks/pages/view_profile/[username].js"
   ],
   "__rewrites": {
     "afterFiles": [],

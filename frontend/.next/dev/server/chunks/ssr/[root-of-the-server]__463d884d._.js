@@ -742,7 +742,6 @@ function ProfilePage() {
             let post = postReducer.posts.filter((post)=>{
                 return post.userId.username === authState.user.userId.username;
             });
-            console.log(post, authState.user.userId.username);
             setUserPosts(post);
         }
     }, [

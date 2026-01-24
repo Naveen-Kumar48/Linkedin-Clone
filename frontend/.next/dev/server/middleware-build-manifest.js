@@ -27,19 +27,6 @@ globalThis.__BUILD_MANIFEST = {
       "static/chunks/src_pages__app_2da965e7._.js",
       "static/chunks/turbopack-src_pages__app_4164b321._.js"
     ],
-    "/_error": [
-      "static/chunks/node_modules_next_dist_compiled_8ca6b690._.js",
-      "static/chunks/node_modules_next_dist_shared_lib_9a2a7093._.js",
-      "static/chunks/node_modules_next_dist_client_5a8a528e._.js",
-      "static/chunks/node_modules_next_dist_a183fb77._.js",
-      "static/chunks/node_modules_next_error_1cfbb379.js",
-      "static/chunks/[next]_entry_page-loader_ts_43b523b5._.js",
-      "static/chunks/node_modules_react-dom_4411d9bd._.js",
-      "static/chunks/node_modules_7f09fef0._.js",
-      "static/chunks/[root-of-the-server]__a2d5dfc8._.js",
-      "static/chunks/src_pages__error_2da965e7._.js",
-      "static/chunks/turbopack-src_pages__error_91df4ec0._.js"
-    ],
     "/dashboard": [
       "static/chunks/[root-of-the-server]__00da0774._.js",
       "static/chunks/node_modules_next_dist_compiled_caaa605a._.js",
@@ -109,20 +96,6 @@ globalThis.__BUILD_MANIFEST = {
       "static/chunks/src_dce89574._.css",
       "static/chunks/src_pages_profile_index_jsx_2da965e7._.js",
       "static/chunks/turbopack-src_pages_profile_index_jsx_35fcd818._.js"
-    ],
-    "/view_profile/[username]": [
-      "static/chunks/node_modules_next_dist_compiled_caaa605a._.js",
-      "static/chunks/node_modules_next_dist_shared_lib_8bac8163._.js",
-      "static/chunks/node_modules_next_dist_client_5a8a528e._.js",
-      "static/chunks/node_modules_next_dist_75b597d7._.js",
-      "static/chunks/node_modules_next_router_104fab1c.js",
-      "static/chunks/node_modules_react-dom_4411d9bd._.js",
-      "static/chunks/node_modules_axios_lib_2c8bf6cb._.js",
-      "static/chunks/node_modules_402ce1c9._.js",
-      "static/chunks/[root-of-the-server]__e98c8f18._.js",
-      "static/chunks/src_b526a3c9._.css",
-      "static/chunks/src_pages_view_profile_[username]_jsx_2da965e7._.js",
-      "static/chunks/turbopack-src_pages_view_profile_[username]_jsx_5f466a22._.js"
     ]
   },
   "devFiles": [],

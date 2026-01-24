@@ -38,7 +38,7 @@ export default function ViewProfilePage({ userProfile }) {
   }, [postreducer.posts]);
 
   useEffect(() => {
-    // console.log(authState.connections,userProfile.userId._id)
+   
     if(authState.connections.some(user=>user.connectionId._id===userProfile.userId._id)){
       setCurrentUserInConnection(true)
       if(authState.connections.find(user=>user.connectionId._id===userProfile.userId._id).status_accepted===true){
@@ -164,7 +164,7 @@ export default function ViewProfilePage({ userProfile }) {
 }
 
 export async function getServerSideProps(context) {
-  console.log("From View SSR");
+ 
 
   const { username } = context.query;
 
