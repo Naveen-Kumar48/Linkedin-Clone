@@ -10,6 +10,8 @@ module.exports = mod;
 __turbopack_context__.v({
   "buttonJoin": "Home-module__Ho9lYW__buttonJoin",
   "container": "Home-module__Ho9lYW__container",
+  "fadeInLeft": "Home-module__Ho9lYW__fadeInLeft",
+  "float": "Home-module__Ho9lYW__float",
   "gradient": "Home-module__Ho9lYW__gradient",
   "mainContainer": "Home-module__Ho9lYW__mainContainer",
   "mainContainer_left": "Home-module__Ho9lYW__mainContainer_left",
@@ -88,7 +90,7 @@ const NavbarComponent = ()=>{
                         onClick: ()=>{
                             router.push('/');
                         },
-                        children: "Pro Connect"
+                        children: "Pro Link"
                     }, void 0, false, {
                         fileName: "[project]/src/Component/Navbar/index.jsx",
                         lineNumber: 19,

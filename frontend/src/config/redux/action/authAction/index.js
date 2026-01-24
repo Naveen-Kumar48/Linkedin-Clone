@@ -53,9 +53,11 @@ export const getAboutUser = createAsyncThunk("user/getAboutUser", async (user, t
 
 //*Get all users 
 
-export const getAllUsers = createAsyncThunk("user/getAllUsers", async (_, thunkAPI) => {
+export const getAllUsers = createAsyncThunk("user/getAllUsers", async (user, thunkAPI) => {
     try {
-        const response = await clientServer.get("user/get_allusers");
+        const response = await clientServer.get("user/get_allusers", {
+            params: { token: user?.token }
+        });
         return thunkAPI.fulfillWithValue(response.data);
     } catch (error) {
         return thunkAPI.rejectWithValue(error.response.data);
@@ -72,8 +74,8 @@ export const sendConnectionRequest = createAsyncThunk("user/sendConnectionReques
             connectionId: user.connectionId
         })
 
-        thunkAPI.dispatch(getConnectionsRequest({token:user.token}))
-        
+        thunkAPI.dispatch(getConnectionsRequest({ token: user.token }))
+
         return thunkAPI.fulfillWithValue(response.data);
     } catch (error) {
         return thunkAPI.rejectWithValue(error.response.data.message);
@@ -112,10 +114,10 @@ export const acceptConnectionRequest = createAsyncThunk("user/acceptConnectionRe
         const response = await clientServer.post("/user/accept_connection_request", {
             token: user.token,
             requestId: user.connectionId,
-            action_type:user.action
+            action_type: user.action
         })
-        thunkAPI.dispatch(getConnectionsRequest({token:user.token}))
-        thunkAPI.dispatch(getMyConnectionRequests({token:user.token}))
+        thunkAPI.dispatch(getConnectionsRequest({ token: user.token }))
+        thunkAPI.dispatch(getMyConnectionRequests({ token: user.token }))
         return thunkAPI.fulfillWithValue(response.data);
     } catch (error) {
         return thunkAPI.rejectWithValue(error.response.data.message);

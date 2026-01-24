@@ -1,6 +1,7 @@
 import Post from "../models/posts.model.js";
 import User from "../models/user.model.js";
 import Comment from "../models/comments.model.js";
+import Like from "../models/likes.model.js";
 
 
 
@@ -79,6 +80,12 @@ export const commentPost = async (req, res) => {
       postId: post_id,
       body: commentBody
     })
+
+    const existingComment = await Comment.findOne({ userId: user._id, postId: post_id });
+    if (existingComment) {
+      return res.status(400).json({ message: "You have already commented on this post" });
+    }
+
     await comment.save();
 
     return res.status(200).json({ message: "Comment added successfully" });
@@ -145,20 +152,31 @@ export const delete_comment_of_user = async (req, res) => {
 //* LIKES INCREMENT 
 
 export const increment_likes = async (req, res) => {
-  const { post_id } = req.body;
+  const { post_id, token } = req.body;
   try {
+    const user = await User.findOne({ token: token }).select('_id');
+    if (!user) return res.status(404).json({ message: "User not found" });
 
-    const post = await Post.findOne({
-      _id: post_id
-    })
+    const post = await Post.findOne({ _id: post_id });
     if (!post) {
       return res.status(404).json({ message: "Post not found" })
     }
+
+    // Create a like entry (will fail if duplicate due to unique index)
+    const newLike = new Like({
+      userId: user._id,
+      postId: post._id
+    });
+
+    await newLike.save();
+
     post.likes = post.likes + 1;
     await post.save();
     return res.status(200).json({ message: "Like added successfully" })
   } catch (error) {
+    if (error.code === 11000) {
+      return res.status(400).json({ message: "You have already liked this post" });
+    }
     return res.status(500).json({ message: error.message });
   }
-
 }

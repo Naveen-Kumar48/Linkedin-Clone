@@ -194,7 +194,17 @@ export const updateProfileData = async (req, res) => {
 // *Api to get all the user data
 export const getAllUsersProfile = async (req, res) => {
   try {
-    const profiles = await Profile.find().populate(
+    const { token } = req.query;
+    let filter = {};
+
+    if (token) {
+      const user = await User.findOne({ token: token });
+      if (user) {
+        filter = { userId: { $ne: user._id } };
+      }
+    }
+
+    const profiles = await Profile.find(filter).populate(
       "userId",
       "name email username profilePicture"
     );

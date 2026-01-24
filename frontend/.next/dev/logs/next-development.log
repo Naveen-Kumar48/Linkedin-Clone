@@ -1,15 +1,24 @@
-[00:00:09.867] Server  LOG     ✓ Ready in 9.2s
-[00:00:12.957] Server  LOG     ○ Compiling / ...
-[00:01:26.242] Browser LOG     []
-[00:01:26.242] Browser LOG     []
-[00:01:27.568] Browser LOG     [{"__v":0,"_id":"69747db3022e1c530cf4fdcb","connectionId":"696e47e856649a515632d9a8","status_accepted":null,"userId":{"_id":"69723f38394764f5e0047a2e","email":"sunny@gmail.com","name":"Sunny","profilePicture":"1769239970419_default.jpg","username":"sunny"}}]
-[00:01:27.568] Browser LOG     [{"__v":0,"_id":"69747db3022e1c530cf4fdcb","connectionId":"696e47e856649a515632d9a8","status_accepted":null,"userId":{"_id":"69723f38394764f5e0047a2e","email":"sunny@gmail.com","name":"Sunny","profilePicture":"1769239970419_default.jpg","username":"sunny"}}]
-[00:01:28.758] Browser LOG     [{"__v":0,"_id":"69747db3022e1c530cf4fdcb","connectionId":"696e47e856649a515632d9a8","status_accepted":null,"userId":{"_id":"69723f38394764f5e0047a2e","email":"sunny@gmail.com","name":"Sunny","profilePicture":"1769239970419_default.jpg","username":"sunny"}}]
-[00:01:28.758] Browser LOG     [{"__v":0,"_id":"69747db3022e1c530cf4fdcb","connectionId":"696e47e856649a515632d9a8","status_accepted":null,"userId":{"_id":"69723f38394764f5e0047a2e","email":"sunny@gmail.com","name":"Sunny","profilePicture":"1769239970419_default.jpg","username":"sunny"}}]
-[00:01:33.485] Browser LOG     []
-[00:01:33.485] Browser LOG     []
-[00:01:33.593] Browser LOG     [{"__v":0,"_id":"69747db3022e1c530cf4fdcb","connectionId":"696e47e856649a515632d9a8","status_accepted":true,"userId":{"_id":"69723f38394764f5e0047a2e","email":"sunny@gmail.com","name":"Sunny","profilePicture":"1769239970419_default.jpg","username":"sunny"}}]
-[00:01:33.593] Browser LOG     [{"__v":0,"_id":"69747db3022e1c530cf4fdcb","connectionId":"696e47e856649a515632d9a8","status_accepted":true,"userId":{"_id":"69723f38394764f5e0047a2e","email":"sunny@gmail.com","name":"Sunny","profilePicture":"1769239970419_default.jpg","username":"sunny"}}]
-[00:03:26.656] Server  LOG     ✓ Compiled in 147ms
-[00:04:26.482] Server  LOG     ✓ Compiled in 181ms
-[00:04:33.155] Server  LOG     ✓ Compiled in 384ms
+[00:00:02.431] Server  LOG     ✓ Ready in 1753ms
+[00:00:22.301] Browser ERROR   Each child in a list should have a unique "key" prop.%s%s See https://react.dev/link/warning-keys for more information. 
+
+Check the render method of `Dashboard`. 
+[00:05:01.680] Server  LOG     ○ Compiling /view_profile/[username] ...
+[00:10:20.290] Server  LOG     ✓ Compiled in 79ms
+[00:10:33.041] Server  LOG     ✓ Compiled in 107ms
+[00:11:36.241] Server  LOG     ✓ Compiled in 64ms
+[00:11:58.148] Server  LOG     ✓ Compiled in 338ms
+[00:15:21.722] Browser LOG     {"body":"hello","post_id":"6974a20cf0006fcd87d622ed"}
+[00:15:23.825] Browser ERROR   Each child in a list should have a unique "key" prop.%s%s See https://react.dev/link/warning-keys for more information. 
+
+Check the render method of `Dashboard`. 
+[00:16:12.953] Server  LOG     ✓ Compiled in 257ms
+[00:18:56.001] Server  LOG     ✓ Compiled in 11ms
+[00:19:06.913] Server  LOG     ✓ Compiled in 320ms
+[00:20:53.145] Browser ERROR   Each child in a list should have a unique "key" prop.%s%s See https://react.dev/link/warning-keys for more information. 
+
+Check the render method of `Dashboard`. 
+[00:20:56.811] Browser LOG     {"body":"hhh","post_id":"6974a20cf0006fcd87d622ed"}
+[00:21:58.107] Browser ERROR   Each child in a list should have a unique "key" prop.%s%s See https://react.dev/link/warning-keys for more information. 
+
+Check the render method of `Dashboard`. 
+[00:22:01.660] Browser LOG     {"body":"nnn","post_id":"6974a20cf0006fcd87d622ed"}

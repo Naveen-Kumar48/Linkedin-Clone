@@ -508,7 +508,7 @@ const NavbarComponent = ()=>{
                         onClick: ()=>{
                             router.push('/');
                         },
-                        children: "Pro Connect"
+                        children: "Pro Link"
                     }, void 0, false, {
                         fileName: "[project]/src/Component/Navbar/index.jsx",
                         lineNumber: 19,
@@ -728,7 +728,6 @@ function ViewProfilePage({ userProfile }) {
         postreducer.posts
     ]);
     (0, __TURBOPACK__imported__module__$5b$externals$5d2f$react__$5b$external$5d$__$28$react$2c$__cjs$29$__["useEffect"])(()=>{
-        // console.log(authState.connections,userProfile.userId._id)
         if (authState.connections.some((user)=>user.connectionId._id === userProfile.userId._id)) {
             setCurrentUserInConnection(true);
             if (authState.connections.find((user)=>user.connectionId._id === userProfile.userId._id).status_accepted === true) {
@@ -1058,7 +1057,6 @@ function ViewProfilePage({ userProfile }) {
     }, this);
 }
 async function getServerSideProps(context) {
-    console.log("From View SSR");
     const { username } = context.query;
     const request = await __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$config$2f$index$2e$js__$5b$ssr$5d$__$28$ecmascript$29$__["clientServer"].get("/user/get_profile_based_on_username", {
         params: {

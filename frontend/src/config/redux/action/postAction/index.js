@@ -68,11 +68,12 @@ export const incrementLike = createAsyncThunk(
         try {
             const response = await clientServer.post('/increment_post_likes', {
                 post_id: post.post_id,
+                token: localStorage.getItem('token')
             })
 
             return thunkAPI.fulfillWithValue(response.data)
         } catch (error) {
-            return thunkAPI.rejectWithValue(error.response.data.message)
+            return thunkAPI.rejectWithValue(error.response.data)
 
         }
     }
@@ -115,7 +116,7 @@ export const postComment = createAsyncThunk(
             })
             return thunkAPI.fulfillWithValue(response.data)
         } catch (error) {
-            return thunkAPI.rejectWithValue("Something went Wrong")
+            return thunkAPI.rejectWithValue(error.response.data);
         }
     }
 )

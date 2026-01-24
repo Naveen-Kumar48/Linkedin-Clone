@@ -559,9 +559,13 @@ const getAboutUser = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_mo
         return thunkAPI.rejectWithValue(error.response.data);
     }
 });
-const getAllUsers = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$reduxjs$2f$toolkit$2f$dist$2f$redux$2d$toolkit$2e$modern$2e$mjs__$5b$client$5d$__$28$ecmascript$29$__$3c$locals$3e$__["createAsyncThunk"])("user/getAllUsers", async (_, thunkAPI)=>{
+const getAllUsers = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$reduxjs$2f$toolkit$2f$dist$2f$redux$2d$toolkit$2e$modern$2e$mjs__$5b$client$5d$__$28$ecmascript$29$__$3c$locals$3e$__["createAsyncThunk"])("user/getAllUsers", async (user, thunkAPI)=>{
     try {
-        const response = await __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$config$2f$index$2e$js__$5b$client$5d$__$28$ecmascript$29$__["clientServer"].get("user/get_allusers");
+        const response = await __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$config$2f$index$2e$js__$5b$client$5d$__$28$ecmascript$29$__["clientServer"].get("user/get_allusers", {
+            params: {
+                token: user?.token
+            }
+        });
         return thunkAPI.fulfillWithValue(response.data);
     } catch (error) {
         return thunkAPI.rejectWithValue(error.response.data);
@@ -744,11 +748,11 @@ var _s = __turbopack_context__.k.signature();
 const NavbarComponent = ()=>{
     _s();
     const $ = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$compiler$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["c"])(18);
-    if ($[0] !== "b7211ff075ada00c9bb6b1d401505a3a3fc7fa5123578636ed367fa2774bbd6e") {
+    if ($[0] !== "2dd71d8c9a217766568dcd409fbfd998d7ec0b494ef282af085e4b48e78a5714") {
         for(let $i = 0; $i < 18; $i += 1){
             $[$i] = Symbol.for("react.memo_cache_sentinel");
         }
-        $[0] = "b7211ff075ada00c9bb6b1d401505a3a3fc7fa5123578636ed367fa2774bbd6e";
+        $[0] = "2dd71d8c9a217766568dcd409fbfd998d7ec0b494ef282af085e4b48e78a5714";
     }
     const router = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$router$2e$js__$5b$client$5d$__$28$ecmascript$29$__["useRouter"])();
     const authState = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2d$redux$2f$dist$2f$react$2d$redux$2e$mjs__$5b$client$5d$__$28$ecmascript$29$__["useSelector"])(_temp);
@@ -770,7 +774,7 @@ const NavbarComponent = ()=>{
             onClick: ()=>{
                 router.push("/");
             },
-            children: "Pro Connect"
+            children: "Pro Link"
         }, void 0, false, {
             fileName: "[project]/src/Component/Navbar/index.jsx",
             lineNumber: 31,
@@ -1789,11 +1793,11 @@ var _s = __turbopack_context__.k.signature();
 function DiscoverPage() {
     _s();
     const $ = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$compiler$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["c"])(12);
-    if ($[0] !== "8cd33581655d95910b9185ed395e35ceb6f8d9e25bcf6100f91118fcad44dd83") {
+    if ($[0] !== "d5f59efba8f4269fe1b8f112dd695facd2b51a76ec5e906749c3a68837e5ecd5") {
         for(let $i = 0; $i < 12; $i += 1){
             $[$i] = Symbol.for("react.memo_cache_sentinel");
         }
-        $[0] = "8cd33581655d95910b9185ed395e35ceb6f8d9e25bcf6100f91118fcad44dd83";
+        $[0] = "d5f59efba8f4269fe1b8f112dd695facd2b51a76ec5e906749c3a68837e5ecd5";
     }
     const dispatch = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2d$redux$2f$dist$2f$react$2d$redux$2e$mjs__$5b$client$5d$__$28$ecmascript$29$__["useDispatch"])();
     const router = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$router$2e$js__$5b$client$5d$__$28$ecmascript$29$__["useRouter"])();
@@ -1803,7 +1807,9 @@ function DiscoverPage() {
         t0 = ({
             "DiscoverPage[useEffect()]": ()=>{
                 if (!authState.all_profile_fetched) {
-                    dispatch((0, __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$config$2f$redux$2f$action$2f$authAction$2f$index$2e$js__$5b$client$5d$__$28$ecmascript$29$__["getAllUsers"])());
+                    dispatch((0, __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$config$2f$redux$2f$action$2f$authAction$2f$index$2e$js__$5b$client$5d$__$28$ecmascript$29$__["getAllUsers"])({
+                        token: localStorage.getItem("token")
+                    }));
                 }
             }
         })["DiscoverPage[useEffect()]"];
@@ -1841,7 +1847,7 @@ function DiscoverPage() {
                             alt: "Profile"
                         }, void 0, false, {
                             fileName: "[project]/src/pages/discover/index.jsx",
-                            lineNumber: 54,
+                            lineNumber: 56,
                             columnNumber: 112
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1850,26 +1856,26 @@ function DiscoverPage() {
                                     children: user.userId.name
                                 }, void 0, false, {
                                     fileName: "[project]/src/pages/discover/index.jsx",
-                                    lineNumber: 54,
+                                    lineNumber: 56,
                                     columnNumber: 222
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
                                     children: user.userId.username
                                 }, void 0, false, {
                                     fileName: "[project]/src/pages/discover/index.jsx",
-                                    lineNumber: 54,
+                                    lineNumber: 56,
                                     columnNumber: 249
                                 }, this)
                             ]
                         }, void 0, true, {
                             fileName: "[project]/src/pages/discover/index.jsx",
-                            lineNumber: 54,
+                            lineNumber: 56,
                             columnNumber: 217
                         }, this)
                     ]
                 }, user._id, true, {
                     fileName: "[project]/src/pages/discover/index.jsx",
-                    lineNumber: 50,
+                    lineNumber: 52,
                     columnNumber: 58
                 }, this)
         }["DiscoverPage[authState.all_users.map()]"]);
@@ -1894,33 +1900,33 @@ function DiscoverPage() {
                                     children: t2
                                 }, void 0, false, {
                                     fileName: "[project]/src/pages/discover/index.jsx",
-                                    lineNumber: 65,
+                                    lineNumber: 67,
                                     columnNumber: 66
                                 }, this)
                             ]
                         }, void 0, true, {
                             fileName: "[project]/src/pages/discover/index.jsx",
-                            lineNumber: 65,
+                            lineNumber: 67,
                             columnNumber: 49
                         }, this)
                     }, void 0, false, {
                         fileName: "[project]/src/pages/discover/index.jsx",
-                        lineNumber: 65,
+                        lineNumber: 67,
                         columnNumber: 44
                     }, this)
                 }, void 0, false, {
                     fileName: "[project]/src/pages/discover/index.jsx",
-                    lineNumber: 65,
+                    lineNumber: 67,
                     columnNumber: 27
                 }, this)
             }, void 0, false, {
                 fileName: "[project]/src/pages/discover/index.jsx",
-                lineNumber: 65,
+                lineNumber: 67,
                 columnNumber: 15
             }, this)
         }, void 0, false, {
             fileName: "[project]/src/pages/discover/index.jsx",
-            lineNumber: 65,
+            lineNumber: 67,
             columnNumber: 10
         }, this);
         $[10] = t2;

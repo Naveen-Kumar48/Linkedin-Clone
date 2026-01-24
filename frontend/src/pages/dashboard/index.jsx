@@ -157,10 +157,14 @@ function Dashboard() {
                       <div className={styles.cardFooter}>
                         <div
                           onClick={async () => {
-                            await dispatch(
+                            const result = await dispatch(
                               incrementLike({ post_id: post._id }),
                             );
-                            dispatch(getAllPost());
+                            if (result.type === "post/incrementLike/fulfilled") {
+                              dispatch(getAllPost());
+                            } else {
+                              alert(result.payload.message || "Something went wrong");
+                            }
                           }}
                           className={styles.actionButton}
                         >
@@ -254,7 +258,7 @@ function Dashboard() {
             </div>
           </div>
         )}
-        
+
         {postState.postId !== "" && (
           <div
             onClick={() => {
@@ -278,9 +282,10 @@ function Dashboard() {
                           src={`${BASE_URL}/${comment.userId.profilePicture}`}
                           alt="Post Media"
                         />
-                        <p style={{fontWeight:"bold",fontSize:"1.2rem"}}>{comment.userId.name}</p>
+                        <p style={{ fontWeight: "bold", fontSize: "1.2rem" }}>{comment.userId.name}</p>
                         <p>@{comment.userId.username}</p>
-                      
+                        <p>{comment.body}</p>
+
                       </div>
                     ))}
                   </div>
@@ -294,15 +299,20 @@ function Dashboard() {
                   />
                   <div
                     onClick={async () => {
-                      await dispatch(
+                      const result = await dispatch(
                         postComment({
                           post_id: postState.postId,
                           body: commentText,
                         }),
                       );
-                      await dispatch(
-                        getAllComments({ post_id: postState.postId }),
-                      );
+                      if (result.type === "post/postComment/fulfilled") {
+                        setCommentText(""); // clear input
+                        await dispatch(
+                          getAllComments({ post_id: postState.postId }),
+                        );
+                      } else {
+                        alert(result.payload.message || "Something went wrong");
+                      }
                     }}
                     className={styles.postCommentContainer__commentBtn}
                   >

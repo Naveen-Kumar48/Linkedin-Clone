@@ -77,7 +77,7 @@ const NavbarComponent = ()=>{
                         onClick: ()=>{
                             router.push('/');
                         },
-                        children: "Pro Connect"
+                        children: "Pro Link"
                     }, void 0, false, {
                         fileName: "[project]/src/Component/Navbar/index.jsx",
                         lineNumber: 19,

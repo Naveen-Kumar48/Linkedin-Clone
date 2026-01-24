@@ -98,9 +98,13 @@ const getAboutUser = (0, __TURBOPACK__imported__module__$5b$externals$5d2f40$red
         return thunkAPI.rejectWithValue(error.response.data);
     }
 });
-const getAllUsers = (0, __TURBOPACK__imported__module__$5b$externals$5d2f40$reduxjs$2f$toolkit__$5b$external$5d$__$2840$reduxjs$2f$toolkit$2c$__esm_import$2c$__$5b$project$5d2f$node_modules$2f40$reduxjs$2f$toolkit$29$__["createAsyncThunk"])("user/getAllUsers", async (_, thunkAPI)=>{
+const getAllUsers = (0, __TURBOPACK__imported__module__$5b$externals$5d2f40$reduxjs$2f$toolkit__$5b$external$5d$__$2840$reduxjs$2f$toolkit$2c$__esm_import$2c$__$5b$project$5d2f$node_modules$2f40$reduxjs$2f$toolkit$29$__["createAsyncThunk"])("user/getAllUsers", async (user, thunkAPI)=>{
     try {
-        const response = await __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$config$2f$index$2e$js__$5b$ssr$5d$__$28$ecmascript$29$__["clientServer"].get("user/get_allusers");
+        const response = await __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$config$2f$index$2e$js__$5b$ssr$5d$__$28$ecmascript$29$__["clientServer"].get("user/get_allusers", {
+            params: {
+                token: user?.token
+            }
+        });
         return thunkAPI.fulfillWithValue(response.data);
     } catch (error) {
         return thunkAPI.rejectWithValue(error.response.data);
@@ -334,11 +338,12 @@ const deletePost = (0, __TURBOPACK__imported__module__$5b$externals$5d2f40$redux
 const incrementLike = (0, __TURBOPACK__imported__module__$5b$externals$5d2f40$reduxjs$2f$toolkit__$5b$external$5d$__$2840$reduxjs$2f$toolkit$2c$__esm_import$2c$__$5b$project$5d2f$node_modules$2f40$reduxjs$2f$toolkit$29$__["createAsyncThunk"])("post/incrementLike", async (post = {}, thunkAPI)=>{
     try {
         const response = await __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$config$2f$index$2e$js__$5b$ssr$5d$__$28$ecmascript$29$__["clientServer"].post('/increment_post_likes', {
-            post_id: post.post_id
+            post_id: post.post_id,
+            token: localStorage.getItem('token')
         });
         return thunkAPI.fulfillWithValue(response.data);
     } catch (error) {
-        return thunkAPI.rejectWithValue(error.response.data.message);
+        return thunkAPI.rejectWithValue(error.response.data);
     }
 });
 const getAllComments = (0, __TURBOPACK__imported__module__$5b$externals$5d2f40$reduxjs$2f$toolkit__$5b$external$5d$__$2840$reduxjs$2f$toolkit$2c$__esm_import$2c$__$5b$project$5d2f$node_modules$2f40$reduxjs$2f$toolkit$29$__["createAsyncThunk"])("post/getAllComments", async (postData = {}, thunkAPI)=>{
@@ -369,7 +374,7 @@ const postComment = (0, __TURBOPACK__imported__module__$5b$externals$5d2f40$redu
         });
         return thunkAPI.fulfillWithValue(response.data);
     } catch (error) {
-        return thunkAPI.rejectWithValue("Something went Wrong");
+        return thunkAPI.rejectWithValue(error.response.data);
     }
 });
 __turbopack_async_result__();

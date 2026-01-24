@@ -548,11 +548,12 @@ const deletePost = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modu
 const incrementLike = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$reduxjs$2f$toolkit$2f$dist$2f$redux$2d$toolkit$2e$modern$2e$mjs__$5b$client$5d$__$28$ecmascript$29$__$3c$locals$3e$__["createAsyncThunk"])("post/incrementLike", async (post = {}, thunkAPI)=>{
     try {
         const response = await __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$config$2f$index$2e$js__$5b$client$5d$__$28$ecmascript$29$__["clientServer"].post('/increment_post_likes', {
-            post_id: post.post_id
+            post_id: post.post_id,
+            token: localStorage.getItem('token')
         });
         return thunkAPI.fulfillWithValue(response.data);
     } catch (error) {
-        return thunkAPI.rejectWithValue(error.response.data.message);
+        return thunkAPI.rejectWithValue(error.response.data);
     }
 });
 const getAllComments = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$reduxjs$2f$toolkit$2f$dist$2f$redux$2d$toolkit$2e$modern$2e$mjs__$5b$client$5d$__$28$ecmascript$29$__$3c$locals$3e$__["createAsyncThunk"])("post/getAllComments", async (postData = {}, thunkAPI)=>{
@@ -583,7 +584,7 @@ const postComment = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_mod
         });
         return thunkAPI.fulfillWithValue(response.data);
     } catch (error) {
-        return thunkAPI.rejectWithValue("Something went Wrong");
+        return thunkAPI.rejectWithValue(error.response.data);
     }
 });
 if (typeof globalThis.$RefreshHelpers$ === 'object' && globalThis.$RefreshHelpers !== null) {
@@ -659,9 +660,13 @@ const getAboutUser = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_mo
         return thunkAPI.rejectWithValue(error.response.data);
     }
 });
-const getAllUsers = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$reduxjs$2f$toolkit$2f$dist$2f$redux$2d$toolkit$2e$modern$2e$mjs__$5b$client$5d$__$28$ecmascript$29$__$3c$locals$3e$__["createAsyncThunk"])("user/getAllUsers", async (_, thunkAPI)=>{
+const getAllUsers = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$reduxjs$2f$toolkit$2f$dist$2f$redux$2d$toolkit$2e$modern$2e$mjs__$5b$client$5d$__$28$ecmascript$29$__$3c$locals$3e$__["createAsyncThunk"])("user/getAllUsers", async (user, thunkAPI)=>{
     try {
-        const response = await __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$config$2f$index$2e$js__$5b$client$5d$__$28$ecmascript$29$__["clientServer"].get("user/get_allusers");
+        const response = await __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$config$2f$index$2e$js__$5b$client$5d$__$28$ecmascript$29$__["clientServer"].get("user/get_allusers", {
+            params: {
+                token: user?.token
+            }
+        });
         return thunkAPI.fulfillWithValue(response.data);
     } catch (error) {
         return thunkAPI.rejectWithValue(error.response.data);
@@ -853,11 +858,11 @@ var _s = __turbopack_context__.k.signature();
 const NavbarComponent = ()=>{
     _s();
     const $ = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$compiler$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["c"])(18);
-    if ($[0] !== "b7211ff075ada00c9bb6b1d401505a3a3fc7fa5123578636ed367fa2774bbd6e") {
+    if ($[0] !== "2dd71d8c9a217766568dcd409fbfd998d7ec0b494ef282af085e4b48e78a5714") {
         for(let $i = 0; $i < 18; $i += 1){
             $[$i] = Symbol.for("react.memo_cache_sentinel");
         }
-        $[0] = "b7211ff075ada00c9bb6b1d401505a3a3fc7fa5123578636ed367fa2774bbd6e";
+        $[0] = "2dd71d8c9a217766568dcd409fbfd998d7ec0b494ef282af085e4b48e78a5714";
     }
     const router = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$router$2e$js__$5b$client$5d$__$28$ecmascript$29$__["useRouter"])();
     const authState = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2d$redux$2f$dist$2f$react$2d$redux$2e$mjs__$5b$client$5d$__$28$ecmascript$29$__["useSelector"])(_temp);
@@ -879,7 +884,7 @@ const NavbarComponent = ()=>{
             onClick: ()=>{
                 router.push("/");
             },
-            children: "Pro Connect"
+            children: "Pro Link"
         }, void 0, false, {
             fileName: "[project]/src/Component/Navbar/index.jsx",
             lineNumber: 31,
@@ -1978,11 +1983,11 @@ var _s = __turbopack_context__.k.signature();
 function Dashboard() {
     _s();
     const $ = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$compiler$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["c"])(28);
-    if ($[0] !== "77fcd0599f2a00cca5561eee790235a04eca45f56c265767e08bee671838ca78") {
+    if ($[0] !== "d01a69e64e13f5e6820ab7ba303d3610df26640066287ee3c7599dc42b3d314c") {
         for(let $i = 0; $i < 28; $i += 1){
             $[$i] = Symbol.for("react.memo_cache_sentinel");
         }
-        $[0] = "77fcd0599f2a00cca5561eee790235a04eca45f56c265767e08bee671838ca78";
+        $[0] = "d01a69e64e13f5e6820ab7ba303d3610df26640066287ee3c7599dc42b3d314c";
     }
     const dispatch = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2d$redux$2f$dist$2f$react$2d$redux$2e$mjs__$5b$client$5d$__$28$ecmascript$29$__["useDispatch"])();
     const authState = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2d$redux$2f$dist$2f$react$2d$redux$2e$mjs__$5b$client$5d$__$28$ecmascript$29$__["useSelector"])(_DashboardUseSelector);
@@ -2277,10 +2282,14 @@ function Dashboard() {
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                                                     onClick: {
                                                         "Dashboard[postState.posts.map() > <div>.onClick]": async ()=>{
-                                                            await dispatch((0, __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$config$2f$redux$2f$action$2f$postAction$2f$index$2e$js__$5b$client$5d$__$28$ecmascript$29$__["incrementLike"])({
+                                                            const result = await dispatch((0, __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$config$2f$redux$2f$action$2f$postAction$2f$index$2e$js__$5b$client$5d$__$28$ecmascript$29$__["incrementLike"])({
                                                                 post_id: post._id
                                                             }));
-                                                            dispatch((0, __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$config$2f$redux$2f$action$2f$postAction$2f$index$2e$js__$5b$client$5d$__$28$ecmascript$29$__["getAllPost"])());
+                                                            if (result.type === "post/incrementLike/fulfilled") {
+                                                                dispatch((0, __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$config$2f$redux$2f$action$2f$postAction$2f$index$2e$js__$5b$client$5d$__$28$ecmascript$29$__["getAllPost"])());
+                                                            } else {
+                                                                alert(result.payload.message || "Something went wrong");
+                                                            }
                                                         }
                                                     }["Dashboard[postState.posts.map() > <div>.onClick]"],
                                                     className: __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$pages$2f$dashboard$2f$index$2e$module$2e$css__$5b$client$5d$__$28$css__module$29$__["default"].actionButton,
@@ -2297,12 +2306,12 @@ function Dashboard() {
                                                                 d: "M6.633 10.5c.806 0 1.533-.446 2.031-1.08a9.041 9.041 0 012.861-2.4c.723-.384 1.35-.956 1.653-1.715a4.498 4.498 0 00.322-1.672V3a.75.75 0 01.75-.75A2.25 2.25 0 0116.5 4.5c0 1.152-.26 2.247-.723 3.218-.266.558.107 1.282.725 1.282h3.126c1.026 0 1.945.694 2.054 1.715.045.422.068.85.068 1.285a11.95 11.95 0 01-2.649 7.521c-.388.482-.987.729-1.605.729H13.48c-.483 0-.964-.078-1.423-.23l-3.114-1.04a4.501 4.501 0 00-1.423-.23H5.904M14.25 9h2.25M5.904 18.75c.083.205.176.405.278.602.282.543.654.914 1.144.914H8c.55 0 .905-.398 1.022-1.002a7.59 7.59 0 00.125-1.524 3.126 3.126 0 00.312-3.575C8.379 11.121 7.239 10.5 5.904 10.5H5.197"
                                                             }, void 0, false, {
                                                                 fileName: "[project]/src/pages/dashboard/index.jsx",
-                                                                lineNumber: 117,
+                                                                lineNumber: 121,
                                                                 columnNumber: 216
                                                             }, this)
                                                         }, void 0, false, {
                                                             fileName: "[project]/src/pages/dashboard/index.jsx",
-                                                            lineNumber: 117,
+                                                            lineNumber: 121,
                                                             columnNumber: 104
                                                         }, this),
                                                         post.likes,
@@ -2310,7 +2319,7 @@ function Dashboard() {
                                                             children: "Like"
                                                         }, void 0, false, {
                                                             fileName: "[project]/src/pages/dashboard/index.jsx",
-                                                            lineNumber: 117,
+                                                            lineNumber: 121,
                                                             columnNumber: 916
                                                         }, this)
                                                     ]
@@ -2341,25 +2350,25 @@ function Dashboard() {
                                                                 d: "M7.5 8.25h9m-9 3H12m-9.75 1.51c0 1.6 1.123 2.994 2.707 3.227 1.129.166 2.27.293 3.423.379.35.026.67.21.865.501L12 21l2.755-4.133a1.14 1.14 0 01.865-.501 48.172 48.172 0 003.423-.379c1.584-.233 2.707-1.626 2.707-3.228V6.741c0-1.602-1.123-2.995-2.707-3.228A48.394 48.394 0 0012 3c-2.392 0-4.744.175-7.043.513C3.373 3.746 2.25 5.14 2.25 6.741v6.018z"
                                                             }, void 0, false, {
                                                                 fileName: "[project]/src/pages/dashboard/index.jsx",
-                                                                lineNumber: 123,
+                                                                lineNumber: 127,
                                                                 columnNumber: 216
                                                             }, this)
                                                         }, void 0, false, {
                                                             fileName: "[project]/src/pages/dashboard/index.jsx",
-                                                            lineNumber: 123,
+                                                            lineNumber: 127,
                                                             columnNumber: 104
                                                         }, this),
                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
                                                             children: "Comment"
                                                         }, void 0, false, {
                                                             fileName: "[project]/src/pages/dashboard/index.jsx",
-                                                            lineNumber: 123,
+                                                            lineNumber: 127,
                                                             columnNumber: 626
                                                         }, this)
                                                     ]
                                                 }, void 0, true, {
                                                     fileName: "[project]/src/pages/dashboard/index.jsx",
-                                                    lineNumber: 117,
+                                                    lineNumber: 121,
                                                     columnNumber: 939
                                                 }, this),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -2386,25 +2395,25 @@ function Dashboard() {
                                                                 d: "M6 12L3.269 3.126A59.768 59.768 0 0121.485 12 59.77 59.77 0 013.27 20.876L5.999 12zm0 0h7.5"
                                                             }, void 0, false, {
                                                                 fileName: "[project]/src/pages/dashboard/index.jsx",
-                                                                lineNumber: 130,
+                                                                lineNumber: 134,
                                                                 columnNumber: 240
                                                             }, this)
                                                         }, void 0, false, {
                                                             fileName: "[project]/src/pages/dashboard/index.jsx",
-                                                            lineNumber: 130,
+                                                            lineNumber: 134,
                                                             columnNumber: 104
                                                         }, this),
                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
                                                             children: "Send"
                                                         }, void 0, false, {
                                                             fileName: "[project]/src/pages/dashboard/index.jsx",
-                                                            lineNumber: 130,
+                                                            lineNumber: 134,
                                                             columnNumber: 395
                                                         }, this)
                                                     ]
                                                 }, void 0, true, {
                                                     fileName: "[project]/src/pages/dashboard/index.jsx",
-                                                    lineNumber: 123,
+                                                    lineNumber: 127,
                                                     columnNumber: 652
                                                 }, this)
                                             ]
@@ -2464,14 +2473,14 @@ function Dashboard() {
                             children: " No Comments"
                         }, void 0, false, {
                             fileName: "[project]/src/pages/dashboard/index.jsx",
-                            lineNumber: 148,
+                            lineNumber: 152,
                             columnNumber: 190
                         }, this),
                         postState.comments.length !== 0 && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                             children: postState.comments.map(_DashboardPostStateCommentsMap)
                         }, void 0, false, {
                             fileName: "[project]/src/pages/dashboard/index.jsx",
-                            lineNumber: 148,
+                            lineNumber: 152,
                             columnNumber: 248
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -2486,19 +2495,24 @@ function Dashboard() {
                                     placeholder: "Comment"
                                 }, void 0, false, {
                                     fileName: "[project]/src/pages/dashboard/index.jsx",
-                                    lineNumber: 148,
+                                    lineNumber: 152,
                                     columnNumber: 361
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                                     onClick: {
                                         "Dashboard[<div>.onClick]": async ()=>{
-                                            await dispatch((0, __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$config$2f$redux$2f$action$2f$postAction$2f$index$2e$js__$5b$client$5d$__$28$ecmascript$29$__["postComment"])({
+                                            const result_0 = await dispatch((0, __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$config$2f$redux$2f$action$2f$postAction$2f$index$2e$js__$5b$client$5d$__$28$ecmascript$29$__["postComment"])({
                                                 post_id: postState.postId,
                                                 body: commentText
                                             }));
-                                            await dispatch((0, __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$config$2f$redux$2f$action$2f$postAction$2f$index$2e$js__$5b$client$5d$__$28$ecmascript$29$__["getAllComments"])({
-                                                post_id: postState.postId
-                                            }));
+                                            if (result_0.type === "post/postComment/fulfilled") {
+                                                setCommentText("");
+                                                await dispatch((0, __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$config$2f$redux$2f$action$2f$postAction$2f$index$2e$js__$5b$client$5d$__$28$ecmascript$29$__["getAllComments"])({
+                                                    post_id: postState.postId
+                                                }));
+                                            } else {
+                                                alert(result_0.payload.message || "Something went wrong");
+                                            }
                                         }
                                     }["Dashboard[<div>.onClick]"],
                                     className: __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$pages$2f$dashboard$2f$index$2e$module$2e$css__$5b$client$5d$__$28$css__module$29$__["default"].postCommentContainer__commentBtn,
@@ -2506,34 +2520,34 @@ function Dashboard() {
                                         children: "Comment"
                                     }, void 0, false, {
                                         fileName: "[project]/src/pages/dashboard/index.jsx",
-                                        lineNumber: 160,
+                                        lineNumber: 169,
                                         columnNumber: 96
                                     }, this)
                                 }, void 0, false, {
                                     fileName: "[project]/src/pages/dashboard/index.jsx",
-                                    lineNumber: 150,
+                                    lineNumber: 154,
                                     columnNumber: 71
                                 }, this)
                             ]
                         }, void 0, true, {
                             fileName: "[project]/src/pages/dashboard/index.jsx",
-                            lineNumber: 148,
+                            lineNumber: 152,
                             columnNumber: 316
                         }, this)
                     ]
                 }, void 0, true, {
                     fileName: "[project]/src/pages/dashboard/index.jsx",
-                    lineNumber: 148,
+                    lineNumber: 152,
                     columnNumber: 78
                 }, this)
             }, void 0, false, {
                 fileName: "[project]/src/pages/dashboard/index.jsx",
-                lineNumber: 148,
+                lineNumber: 152,
                 columnNumber: 73
             }, this)
         }, void 0, false, {
             fileName: "[project]/src/pages/dashboard/index.jsx",
-            lineNumber: 144,
+            lineNumber: 148,
             columnNumber: 37
         }, this);
         $[20] = commentText;
@@ -2554,12 +2568,12 @@ function Dashboard() {
                 ]
             }, void 0, true, {
                 fileName: "[project]/src/pages/dashboard/index.jsx",
-                lineNumber: 171,
+                lineNumber: 180,
                 columnNumber: 22
             }, this)
         }, void 0, false, {
             fileName: "[project]/src/pages/dashboard/index.jsx",
-            lineNumber: 171,
+            lineNumber: 180,
             columnNumber: 10
         }, this);
         $[25] = t4;
@@ -2588,7 +2602,7 @@ function _DashboardPostStateCommentsMap(comment, index) {
                 alt: "Post Media"
             }, void 0, false, {
                 fileName: "[project]/src/pages/dashboard/index.jsx",
-                lineNumber: 181,
+                lineNumber: 190,
                 columnNumber: 57
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -2599,7 +2613,7 @@ function _DashboardPostStateCommentsMap(comment, index) {
                 children: comment.userId.name
             }, void 0, false, {
                 fileName: "[project]/src/pages/dashboard/index.jsx",
-                lineNumber: 181,
+                lineNumber: 190,
                 columnNumber: 134
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -2609,13 +2623,20 @@ function _DashboardPostStateCommentsMap(comment, index) {
                 ]
             }, void 0, true, {
                 fileName: "[project]/src/pages/dashboard/index.jsx",
-                lineNumber: 184,
+                lineNumber: 193,
                 columnNumber: 33
+            }, this),
+            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
+                children: comment.body
+            }, void 0, false, {
+                fileName: "[project]/src/pages/dashboard/index.jsx",
+                lineNumber: 193,
+                columnNumber: 66
             }, this)
         ]
     }, void 0, true, {
         fileName: "[project]/src/pages/dashboard/index.jsx",
-        lineNumber: 181,
+        lineNumber: 190,
         columnNumber: 10
     }, this);
 }

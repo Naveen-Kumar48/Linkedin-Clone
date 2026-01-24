@@ -473,7 +473,7 @@ __turbopack_context__.s([
 ]);
 var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$axios$2f$lib$2f$axios$2e$js__$5b$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/node_modules/axios/lib/axios.js [client] (ecmascript)");
 ;
-const BASE_URL = 'http://localhost:9090';
+const BASE_URL = 'https://linkedin-clone-4gta.onrender.com/';
 const clientServer = __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$axios$2f$lib$2f$axios$2e$js__$5b$client$5d$__$28$ecmascript$29$__["default"].create({
     baseURL: BASE_URL
 });
@@ -562,9 +562,13 @@ const getAboutUser = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_mo
         return thunkAPI.rejectWithValue(error.response.data);
     }
 });
-const getAllUsers = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$reduxjs$2f$toolkit$2f$dist$2f$redux$2d$toolkit$2e$modern$2e$mjs__$5b$client$5d$__$28$ecmascript$29$__$3c$locals$3e$__["createAsyncThunk"])("user/getAllUsers", async (_, thunkAPI)=>{
+const getAllUsers = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$reduxjs$2f$toolkit$2f$dist$2f$redux$2d$toolkit$2e$modern$2e$mjs__$5b$client$5d$__$28$ecmascript$29$__$3c$locals$3e$__["createAsyncThunk"])("user/getAllUsers", async (user, thunkAPI)=>{
     try {
-        const response = await __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$config$2f$index$2e$js__$5b$client$5d$__$28$ecmascript$29$__["clientServer"].get("user/get_allusers");
+        const response = await __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$config$2f$index$2e$js__$5b$client$5d$__$28$ecmascript$29$__["clientServer"].get("user/get_allusers", {
+            params: {
+                token: user?.token
+            }
+        });
         return thunkAPI.fulfillWithValue(response.data);
     } catch (error) {
         return thunkAPI.rejectWithValue(error.response.data);
@@ -1496,11 +1500,11 @@ var _s = __turbopack_context__.k.signature();
 const NavbarComponent = ()=>{
     _s();
     const $ = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$compiler$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["c"])(18);
-    if ($[0] !== "b7211ff075ada00c9bb6b1d401505a3a3fc7fa5123578636ed367fa2774bbd6e") {
+    if ($[0] !== "2dd71d8c9a217766568dcd409fbfd998d7ec0b494ef282af085e4b48e78a5714") {
         for(let $i = 0; $i < 18; $i += 1){
             $[$i] = Symbol.for("react.memo_cache_sentinel");
         }
-        $[0] = "b7211ff075ada00c9bb6b1d401505a3a3fc7fa5123578636ed367fa2774bbd6e";
+        $[0] = "2dd71d8c9a217766568dcd409fbfd998d7ec0b494ef282af085e4b48e78a5714";
     }
     const router = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$router$2e$js__$5b$client$5d$__$28$ecmascript$29$__["useRouter"])();
     const authState = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2d$redux$2f$dist$2f$react$2d$redux$2e$mjs__$5b$client$5d$__$28$ecmascript$29$__["useSelector"])(_temp);
@@ -1522,7 +1526,7 @@ const NavbarComponent = ()=>{
             onClick: ()=>{
                 router.push("/");
             },
-            children: "Pro Connect"
+            children: "Pro Link"
         }, void 0, false, {
             fileName: "[project]/src/Component/Navbar/index.jsx",
             lineNumber: 31,
@@ -1832,11 +1836,12 @@ const deletePost = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modu
 const incrementLike = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$reduxjs$2f$toolkit$2f$dist$2f$redux$2d$toolkit$2e$modern$2e$mjs__$5b$client$5d$__$28$ecmascript$29$__$3c$locals$3e$__["createAsyncThunk"])("post/incrementLike", async (post = {}, thunkAPI)=>{
     try {
         const response = await __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$config$2f$index$2e$js__$5b$client$5d$__$28$ecmascript$29$__["clientServer"].post('/increment_post_likes', {
-            post_id: post.post_id
+            post_id: post.post_id,
+            token: localStorage.getItem('token')
         });
         return thunkAPI.fulfillWithValue(response.data);
     } catch (error) {
-        return thunkAPI.rejectWithValue(error.response.data.message);
+        return thunkAPI.rejectWithValue(error.response.data);
     }
 });
 const getAllComments = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$reduxjs$2f$toolkit$2f$dist$2f$redux$2d$toolkit$2e$modern$2e$mjs__$5b$client$5d$__$28$ecmascript$29$__$3c$locals$3e$__["createAsyncThunk"])("post/getAllComments", async (postData = {}, thunkAPI)=>{
@@ -1867,7 +1872,7 @@ const postComment = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_mod
         });
         return thunkAPI.fulfillWithValue(response.data);
     } catch (error) {
-        return thunkAPI.rejectWithValue("Something went Wrong");
+        return thunkAPI.rejectWithValue(error.response.data);
     }
 });
 if (typeof globalThis.$RefreshHelpers$ === 'object' && globalThis.$RefreshHelpers !== null) {
@@ -1912,11 +1917,11 @@ var __N_SSP = true;
 function ViewProfilePage(t0) {
     _s();
     const $ = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$compiler$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["c"])(68);
-    if ($[0] !== "6961bed6cafcce2dd307f27ed6b0b691df244ef2bc29cc5275cc144710fecac0") {
+    if ($[0] !== "0a2d648e8a180baad17a8d6a8a39ab1ebffd8021f92a16c64feefe51d6ce5b37") {
         for(let $i = 0; $i < 68; $i += 1){
             $[$i] = Symbol.for("react.memo_cache_sentinel");
         }
-        $[0] = "6961bed6cafcce2dd307f27ed6b0b691df244ef2bc29cc5275cc144710fecac0";
+        $[0] = "0a2d648e8a180baad17a8d6a8a39ab1ebffd8021f92a16c64feefe51d6ce5b37";
     }
     const { userProfile } = t0;
     const router = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$router$2e$js__$5b$client$5d$__$28$ecmascript$29$__["useRouter"])();

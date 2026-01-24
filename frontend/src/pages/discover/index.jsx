@@ -10,12 +10,12 @@ import DashboardLayout from "../../layout/DashboardLayout";
 import { useRouter } from "next/router";
 export default function DiscoverPage() {
   const dispatch = useDispatch();
-  const router=useRouter()
+  const router = useRouter()
 
   const authState = useSelector((state) => state.auth);
   useEffect(() => {
     if (!authState.all_profile_fetched) {
-      dispatch(getAllUsers());
+      dispatch(getAllUsers({ token: localStorage.getItem("token") }));
     }
   }, [authState.all_profile_fetched]);
   return (
@@ -28,11 +28,11 @@ export default function DiscoverPage() {
               <div className={styles.allUserProfile}>
                 {authState.all_profiles_fetched &&
                   authState.all_users.map((user) => (
-                    <div onClick={()=>{
-                        router.push(`/view_profile/${user.userId.username}`)
+                    <div onClick={() => {
+                      router.push(`/view_profile/${user.userId.username}`)
                     }} key={user._id} className={styles.userCard}>
                       <img
-                      className={styles.userCard_image}
+                        className={styles.userCard_image}
                         src={`${BASE_URL}/${user.userId.profilePicture}`}
                         alt="Profile"
                       />

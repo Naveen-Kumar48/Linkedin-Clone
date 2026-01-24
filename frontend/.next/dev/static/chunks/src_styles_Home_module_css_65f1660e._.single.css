@@ -13,12 +13,40 @@
   display: flex;
 }
 
-.Home-module__Ho9lYW__mainContainer_left, .Home-module__Ho9lYW__mainContainer_right {
-  flex: 1;
-}
-
 .Home-module__Ho9lYW__mainContainer_right img {
   width: 100%;
+  animation: 6s ease-in-out infinite Home-module__Ho9lYW__float;
+}
+
+@keyframes Home-module__Ho9lYW__float {
+  0% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-20px);
+  }
+
+  100% {
+    transform: translateY(0);
+  }
+}
+
+.Home-module__Ho9lYW__mainContainer_left {
+  flex: 1;
+  animation: 1s ease-out Home-module__Ho9lYW__fadeInLeft;
+}
+
+@keyframes Home-module__Ho9lYW__fadeInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-20px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
 }
 
 .Home-module__Ho9lYW__mainContainer_left > p:first-child {

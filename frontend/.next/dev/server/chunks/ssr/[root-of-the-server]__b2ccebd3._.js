@@ -77,7 +77,7 @@ const NavbarComponent = ()=>{
                         onClick: ()=>{
                             router.push('/');
                         },
-                        children: "Pro Connect"
+                        children: "Pro Link"
                     }, void 0, false, {
                         fileName: "[project]/src/Component/Navbar/index.jsx",
                         lineNumber: 19,
@@ -692,7 +692,9 @@ function DiscoverPage() {
     const authState = (0, __TURBOPACK__imported__module__$5b$externals$5d2f$react$2d$redux__$5b$external$5d$__$28$react$2d$redux$2c$__esm_import$2c$__$5b$project$5d2f$node_modules$2f$react$2d$redux$29$__["useSelector"])((state)=>state.auth);
     (0, __TURBOPACK__imported__module__$5b$externals$5d2f$react__$5b$external$5d$__$28$react$2c$__cjs$29$__["useEffect"])(()=>{
         if (!authState.all_profile_fetched) {
-            dispatch((0, __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$config$2f$redux$2f$action$2f$authAction$2f$index$2e$js__$5b$ssr$5d$__$28$ecmascript$29$__["getAllUsers"])());
+            dispatch((0, __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$config$2f$redux$2f$action$2f$authAction$2f$index$2e$js__$5b$ssr$5d$__$28$ecmascript$29$__["getAllUsers"])({
+                token: localStorage.getItem("token")
+            }));
         }
     }, [
         authState.all_profile_fetched

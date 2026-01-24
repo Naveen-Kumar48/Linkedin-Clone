@@ -10,6 +10,10 @@ const postSchema = new mongoose.Schema({
     type: Number,
     default: 0,
   },
+  likesArray: [{
+    type: mongoose.Schema.Types.ObjectId,
+    ref: "User"
+  }],
   createdAt: {
     type: Date,
     default: Date.now,
@@ -18,9 +22,9 @@ const postSchema = new mongoose.Schema({
     type: Date,
     default: Date.now,
   },
-  media: { 
+  media: {
     type: String, default: ''
-   },
+  },
   active: {
     type: Boolean,
     default: true,
