@@ -20,10 +20,15 @@ const convertUserDataToPDF = async (userData) => {
     if (userData.userId?.profilePicture) {
       const imagePath = `uploads/${userData.userId.profilePicture}`;
       if (fs.existsSync(imagePath)) {
-        doc.image(imagePath, {
-          align: "center",
-          width: 100,
-        });
+        try {
+          doc.image(imagePath, {
+            align: "center",
+            width: 100,
+          });
+        } catch (imageError) {
+          console.warn(`Failed to embed profile picture in PDF: ${imageError.message}`);
+          // Continue generating PDF without the image
+        }
       }
     }
 

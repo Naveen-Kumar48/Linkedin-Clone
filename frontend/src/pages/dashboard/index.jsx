@@ -147,7 +147,7 @@ function Dashboard() {
                         {post.media && (
                           <div className={styles.postMediaContainer}>
                             <img
-                              src={`${BASE_URL}/${post.media}`}
+                              src={`${BASE_URL}/uploads/${post.media}`}
                               alt="Post Media"
                             />
                           </div>
