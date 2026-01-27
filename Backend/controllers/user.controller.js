@@ -229,20 +229,43 @@ export const getAllUsersProfile = async (req, res) => {
 // *Api to download the profile resume
 
 export const downloadProfile = async (req, res) => {
-  const user_Id = req.query.id;
-  console.log(user_Id)
+  try {
+    const { id, token } = req.query;
+    let userId = id;
 
-  const userProfile = await Profile.findOne({ userId: user_Id }).populate(
-    "userId",
-    "name email username profilePicture"
-  );
+    // Resolve user from token if id is not provided
+    if (!userId && token) {
+      const user = await User.findOne({ token: token });
+      if (user) {
+        userId = user._id;
+      } else {
+        return res.status(404).json({ message: "User not found via token" });
+      }
+    }
 
-  if (!userProfile) {
-    return res.status(404).json({ message: "Profile not found" });
+    if (!userId) {
+      return res.status(400).json({ message: "User ID or Token is required" });
+    }
+
+    const userProfile = await Profile.findOne({ userId: userId }).populate(
+      "userId",
+      "name email username profilePicture"
+    );
+
+    if (!userProfile) {
+      return res.status(404).json({ message: "Profile not found" });
+    }
+
+    if (!userProfile.userId) {
+      return res.status(404).json({ message: "User not found for this profile" });
+    }
+
+    let outputPath = await convertUserDataToPDF(userProfile);
+    return res.json({ "message": outputPath });
+  } catch (error) {
+    console.error("Download Profile Error:", error);
+    return res.status(500).json({ message: error.message });
   }
-
-  let outputPath = await convertUserDataToPDF(userProfile);
-  return res.json({ "message": outputPath });
 };
 
 
