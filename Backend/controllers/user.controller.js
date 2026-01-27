@@ -252,6 +252,13 @@ export const sendConnectionRequest = async (req, res) => {
         message: "Connection User is not found",
       });
     }
+
+    if (String(user._id) === String(connectionUser._id)) {
+      return res
+        .status(400)
+        .json({ message: "You cannot send a connection request to yourself" });
+    }
+
     const existingRequest = await ConnectionRequest.findOne({
       userId: user._id,
       connectionId: connectionUser._id,
