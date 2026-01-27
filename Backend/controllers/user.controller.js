@@ -6,39 +6,51 @@ import crypto from "crypto";
 import fs from "fs";
 import ConnectionRequest from "../models/connections.model.js";
 
-//* function to convert user data to pdf
+// * function to convert user data to pdf
 const convertUserDataToPDF = async (userData) => {
-  const doc = new PDFDocument();
+  return new Promise((resolve, reject) => {
+    const doc = new PDFDocument();
 
-  const outputPath =
-    "uploads/" + crypto.randomBytes(32).toString("hex") + ".pdf";
-  const stream = fs.createWriteStream(outputPath);
+    const outputPath =
+      "uploads/" + crypto.randomBytes(32).toString("hex") + ".pdf";
+    const stream = fs.createWriteStream(outputPath);
 
-  doc.pipe(stream);
+    doc.pipe(stream);
 
-  if (userData.userId?.profilePicture) {
-    doc.image(`uploads/${userData.userId.profilePicture}`, {
-      align: "center",
-      width: 100,
+    if (userData.userId?.profilePicture) {
+      const imagePath = `uploads/${userData.userId.profilePicture}`;
+      if (fs.existsSync(imagePath)) {
+        doc.image(imagePath, {
+          align: "center",
+          width: 100,
+        });
+      }
+    }
+
+    doc.fontSize(14).text(`Name: ${userData.userId.name}`);
+    doc.fontSize(14).text(`Email: ${userData.userId.email}`);
+    doc.fontSize(14).text(`Username: ${userData.userId.username}`);
+    doc.fontSize(14).text(`Bio: ${userData.bio}`);
+    doc.fontSize(14).text(`Current Post: ${userData.currentPost}`);
+
+    doc.fontSize(14).text(`Past Work Experience:`);
+
+    userData.pastwork.forEach((work, index) => {
+      doc.fontSize(14).text(`Company Name:${work.company}`);
+      doc.fontSize(14).text(`Position:${work.position}`);
+      doc.fontSize(14).text(`Years:${work.years}`);
     });
-  }
 
-  doc.fontSize(14).text(`Name: ${userData.userId.name}`);
-  doc.fontSize(14).text(`Email: ${userData.userId.email}`);
-  doc.fontSize(14).text(`Username: ${userData.userId.username}`);
-  doc.fontSize(14).text(`Bio: ${userData.bio}`);
-  doc.fontSize(14).text(`Current Post: ${userData.currentPost}`);
+    doc.end();
 
-  doc.fontSize(14).text(`Past Work Experience:`);
+    stream.on("finish", () => {
+      resolve(outputPath);
+    });
 
-  userData.pastwork.forEach((work, index) => {
-    doc.fontSize(14).text(`Company Name:${work.company}`);
-    doc.fontSize(14).text(`Position:${work.position}`);
-    doc.fontSize(14).text(`Years:${work.years}`);
+    stream.on("error", (err) => {
+      reject(err);
+    });
   });
-
-  doc.end();
-  return outputPath;
 };
 
 //*Api to register user
