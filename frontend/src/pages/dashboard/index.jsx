@@ -1,4 +1,5 @@
 import React, { useEffect } from "react";
+import { toast } from "react-toastify";
 import { useDispatch } from "react-redux";
 import { useRouter } from "next/router";
 import {
@@ -163,7 +164,7 @@ function Dashboard() {
                             if (result.type === "post/incrementLike/fulfilled") {
                               dispatch(getAllPost());
                             } else {
-                              alert(result.payload.message || "Something went wrong");
+                              toast.error(result.payload.message || "Something went wrong");
                             }
                           }}
                           className={styles.actionButton}
@@ -310,8 +311,9 @@ function Dashboard() {
                         await dispatch(
                           getAllComments({ post_id: postState.postId }),
                         );
+                        toast.success("Comment added!");
                       } else {
-                        alert(result.payload.message || "Something went wrong");
+                        toast.error(result.payload.message || "Something went wrong");
                       }
                     }}
                     className={styles.postCommentContainer__commentBtn}

@@ -6,6 +6,8 @@ import { loginUser, registerUser } from "@/config/redux/action/authAction";
 import { emptyMessage } from "@/config/redux/reducer/authReducer";
 import styles from "./style.module.css";
 
+import { toast } from "react-toastify";
+
 const LoginComponent = () => {
   const authState = useSelector((state) => state.auth);
   const router = useRouter();
@@ -29,19 +31,25 @@ const LoginComponent = () => {
       router.push("/dashboard");
     }
   }, [])
+
   useEffect(() => {
     dispath(emptyMessage())
   }, [isLoginMethod])
 
 
   useEffect(() => {
-    if (authState.LoggedIn) {
-      dispath(emptyMessage())
+    if (authState.message && authState.message.message) {
+      if (authState.isError) {
+        toast.error(authState.message.message);
+      } else {
+        toast.success(authState.message.message);
+      }
+      dispath(emptyMessage());
     }
-  }, [authState.LoggedIn])
+  }, [authState.message, authState.isError, dispath]);
 
   const handleRegister = () => {
-   
+
     dispath(
       registerUser({
         username: username,
@@ -55,7 +63,7 @@ const LoginComponent = () => {
 
 
   const handleLogin = () => {
-  
+
     dispath(
       loginUser({
         email: email,
@@ -72,7 +80,6 @@ const LoginComponent = () => {
           <div className={styles.cardContainer_left}>
             <p className={styles.cardleft_heading}>{isLoginMethod ? "Login" : "Sign Up"}</p>
 
-            <p style={{ color: authState.isError ? "red" : "green" }}> {authState.message.message} </p>
             <div className={styles.inputContainer}>
               {
                 !isLoginMethod &&

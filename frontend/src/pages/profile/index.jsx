@@ -6,6 +6,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { BASE_URL, clientServer } from "@/config";
 import styles from "./Index.module.css";
 import { getAllPost } from "@/config/redux/action/postAction";
+import { toast } from "react-toastify";
 export default function ProfilePage() {
   const dispatch = useDispatch();
   // const [userProfile,setUserPerofile]=useState({
@@ -48,7 +49,7 @@ export default function ProfilePage() {
       let post = postReducer.posts.filter((post) => {
         return post.userId.username === authState.user.userId.username;
       });
-      
+
       setUserPosts(post);
     }
   }, [authState.user, postReducer.posts]);
@@ -56,34 +57,45 @@ export default function ProfilePage() {
 
 
 
+
+
   const updateProfilePicture = async (file) => {
     if (!file) return;
-    const formData = new FormData();
-    formData.append("token", localStorage.getItem("token"));
-    formData.append("profilePicture", file);
+    try {
+      const formData = new FormData();
+      formData.append("token", localStorage.getItem("token"));
+      formData.append("profilePicture", file);
 
-    await clientServer.post("/uploadprofilepic", formData);
+      await clientServer.post("/uploadprofilepic", formData);
 
-    dispatch(getAboutUser({ token: localStorage.getItem("token") }));
+      dispatch(getAboutUser({ token: localStorage.getItem("token") }));
+      toast.success("Profile picture updated!");
+    } catch (error) {
+      toast.error("Failed to update profile picture.");
+    }
   };
 
 
 
   const updateProfileData = async () => {
-
-    const request = await clientServer.post("/userupdate", {
-      token: localStorage.getItem("token"),
-      name: userProfile.userId?.name || ""
-    })
-    const response = await clientServer.post("/updateprofile_data", {
-      token: localStorage.getItem("token"),
-      bio: userProfile.bio,
-      currentWork: userProfile.currentWork,
-      currentPost: userProfile.currentPost,
-      education: userProfile.education,
-      pastwork: userProfile.pastwork,
-    })
-    dispatch(getAboutUser({ token: localStorage.getItem("token") }));
+    try {
+      await clientServer.post("/userupdate", {
+        token: localStorage.getItem("token"),
+        name: userProfile.userId?.name || ""
+      })
+      await clientServer.post("/updateprofile_data", {
+        token: localStorage.getItem("token"),
+        bio: userProfile.bio,
+        currentWork: userProfile.currentWork,
+        currentPost: userProfile.currentPost,
+        education: userProfile.education,
+        pastwork: userProfile.pastwork,
+      })
+      dispatch(getAboutUser({ token: localStorage.getItem("token") }));
+      toast.success("Profile updated!");
+    } catch (error) {
+      toast.error("Failed to update profile.");
+    }
   }
   return (
     <UserLayout>
