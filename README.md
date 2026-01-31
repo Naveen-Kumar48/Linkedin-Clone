@@ -87,34 +87,6 @@ Linked Clone is a comprehensive web application that replicates core functionali
 
 ---
 
-## 🔌 API Endpoints
-
-### 👤 User
-- `POST /register` - Create a new account.
-- `POST /login` - Authenticate user.
-- `GET /user/get_allusers` - specific content.
-- `GET /getuser_profile` - specific user details.
-- `POST /userupdate` - update basic info.
-- `POST /updateprofile_data` - update extended profile (bio, works).
-- `POST /uploadprofilepic` - upload avatar.
-- `GET /user/download_resume` - get PDF resume.
-
-### 🔗 Connections
-- `POST /user/send_connection_request` - Initiate connection.
-- `GET /user/getConnectionRequest` - View outgoing requests.
-- `GET /user/user_connection_request` - View incoming requests.
-- `POST /user/accept_connection_request` - Approve a connection.
-
-### 💬 Posts
-- `POST /post` - Create a new post (supports `multipart/form-data`).
-- `GET /posts` - Retrieve all posts.
-- `DELETE /delete_post` - Remove a post.
-- `POST /increment_post_likes` - Toggle like on a post.
-- `POST /comment` - Add a comment.
-- `GET /get_comments` - Retrieve comments for a post.
-
----
-
 ## 🚀 Getting Started
 
 ### Prerequisites
