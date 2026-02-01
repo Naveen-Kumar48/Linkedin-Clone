@@ -100,4 +100,11 @@ Linked Clone is a comprehensive web application that replicates core functionali
 ---
 
 ## 📸 Screenshots
-*(Add screenshots of your Dashboard, Profile, and Login pages here)*
+HomePage
+<img width="1919" height="926" alt="image" src="https://github.com/user-attachments/assets/8f8fad4d-c1cb-4265-8716-39d0622577cc" />
+Login/SignupPage
+<img width="1901" height="929" alt="image" src="https://github.com/user-attachments/assets/99c07aff-3308-4f3f-905a-96692c1157b8" />
+Home page
+<img width="1897" height="932" alt="image" src="https://github.com/user-attachments/assets/1ecb4873-1501-4fb3-8653-318360369bf5" />
+
+
