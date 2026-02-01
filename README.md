@@ -12,7 +12,6 @@ A full-stack social networking application inspired by LinkedIn, designed to fac
 - [✨ Key Features](#-key-features)
 - [🛠 Tech Stack](#-tech-stack)
 - [🏗 Architecture & Flow](#-architecture--flow)
-- [🔌 API Endpoints](#-api-endpoints)
 - [🚀 Getting Started](#-getting-started)
 - [📸 Screenshots](#-screenshots)
 
