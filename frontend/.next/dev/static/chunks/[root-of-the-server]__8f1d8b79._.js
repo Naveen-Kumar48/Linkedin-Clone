@@ -482,7 +482,7 @@ __turbopack_context__.s([
 ]);
 var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$axios$2f$lib$2f$axios$2e$js__$5b$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/node_modules/axios/lib/axios.js [client] (ecmascript)");
 ;
-const BASE_URL = 'https://linkedin-clone-4gta.onrender.com/';
+const BASE_URL = 'https://linkedin-clone-4gta.onrender.com';
 const clientServer = __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$axios$2f$lib$2f$axios$2e$js__$5b$client$5d$__$28$ecmascript$29$__["default"].create({
     baseURL: BASE_URL
 });
@@ -1030,6 +1030,7 @@ var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2d$red
 var __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$config$2f$redux$2f$action$2f$authAction$2f$index$2e$js__$5b$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/src/config/redux/action/authAction/index.js [client] (ecmascript)");
 var __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$config$2f$redux$2f$reducer$2f$authReducer$2f$index$2e$js__$5b$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/src/config/redux/reducer/authReducer/index.js [client] (ecmascript)");
 var __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$pages$2f$login$2f$style$2e$module$2e$css__$5b$client$5d$__$28$css__module$29$__ = __turbopack_context__.i("[project]/src/pages/login/style.module.css [client] (css module)");
+var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2d$toastify$2f$dist$2f$index$2e$mjs__$5b$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/node_modules/react-toastify/dist/index.mjs [client] (ecmascript)");
 ;
 var _s = __turbopack_context__.k.signature();
 ;
@@ -1040,14 +1041,15 @@ var _s = __turbopack_context__.k.signature();
 ;
 ;
 ;
+;
 const LoginComponent = ()=>{
     _s();
-    const $ = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$compiler$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["c"])(79);
-    if ($[0] !== "0defd6cd2b988ebea0b43039b74645e84a858ccd75632513ef9a05bedf9ed9d1") {
-        for(let $i = 0; $i < 79; $i += 1){
+    const $ = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$compiler$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["c"])(73);
+    if ($[0] !== "28fb91a3edcfe8db207084a5a626153403a4f8f0278a0273f28b9336abd4083e") {
+        for(let $i = 0; $i < 73; $i += 1){
             $[$i] = Symbol.for("react.memo_cache_sentinel");
         }
-        $[0] = "0defd6cd2b988ebea0b43039b74645e84a858ccd75632513ef9a05bedf9ed9d1";
+        $[0] = "28fb91a3edcfe8db207084a5a626153403a4f8f0278a0273f28b9336abd4083e";
     }
     const authState = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2d$redux$2f$dist$2f$react$2d$redux$2e$mjs__$5b$client$5d$__$28$ecmascript$29$__["useSelector"])(_temp);
     const router = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$router$2e$js__$5b$client$5d$__$28$ecmascript$29$__["useRouter"])();
@@ -1123,26 +1125,30 @@ const LoginComponent = ()=>{
     }
     (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$index$2e$js__$5b$client$5d$__$28$ecmascript$29$__["useEffect"])(t4, t5);
     let t6;
-    if ($[13] !== authState.LoggedIn || $[14] !== dispath) {
+    let t7;
+    if ($[13] !== authState.isError || $[14] !== authState.message || $[15] !== dispath) {
         t6 = ()=>{
-            if (authState.LoggedIn) {
+            if (authState.message && authState.message.message) {
+                if (authState.isError) {
+                    __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2d$toastify$2f$dist$2f$index$2e$mjs__$5b$client$5d$__$28$ecmascript$29$__["toast"].error(authState.message.message);
+                } else {
+                    __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2d$toastify$2f$dist$2f$index$2e$mjs__$5b$client$5d$__$28$ecmascript$29$__["toast"].success(authState.message.message);
+                }
                 dispath((0, __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$config$2f$redux$2f$reducer$2f$authReducer$2f$index$2e$js__$5b$client$5d$__$28$ecmascript$29$__["emptyMessage"])());
             }
         };
-        $[13] = authState.LoggedIn;
-        $[14] = dispath;
-        $[15] = t6;
-    } else {
-        t6 = $[15];
-    }
-    let t7;
-    if ($[16] !== authState.LoggedIn) {
         t7 = [
-            authState.LoggedIn
+            authState.message,
+            authState.isError,
+            dispath
         ];
-        $[16] = authState.LoggedIn;
+        $[13] = authState.isError;
+        $[14] = authState.message;
+        $[15] = dispath;
+        $[16] = t6;
         $[17] = t7;
     } else {
+        t6 = $[16];
         t7 = $[17];
     }
     (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$index$2e$js__$5b$client$5d$__$28$ecmascript$29$__["useEffect"])(t6, t7);
@@ -1190,7 +1196,7 @@ const LoginComponent = ()=>{
             children: t10
         }, void 0, false, {
             fileName: "[project]/src/pages/login/index.jsx",
-            lineNumber: 147,
+            lineNumber: 150,
             columnNumber: 11
         }, ("TURBOPACK compile-time value", void 0));
         $[28] = t10;
@@ -1198,40 +1204,9 @@ const LoginComponent = ()=>{
     } else {
         t11 = $[29];
     }
-    const t12 = authState.isError ? "red" : "green";
-    let t13;
-    if ($[30] !== t12) {
-        t13 = {
-            color: t12
-        };
-        $[30] = t12;
-        $[31] = t13;
-    } else {
-        t13 = $[31];
-    }
-    let t14;
-    if ($[32] !== authState.message.message || $[33] !== t13) {
-        t14 = /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
-            style: t13,
-            children: [
-                " ",
-                authState.message.message,
-                " "
-            ]
-        }, void 0, true, {
-            fileName: "[project]/src/pages/login/index.jsx",
-            lineNumber: 166,
-            columnNumber: 11
-        }, ("TURBOPACK compile-time value", void 0));
-        $[32] = authState.message.message;
-        $[33] = t13;
-        $[34] = t14;
-    } else {
-        t14 = $[34];
-    }
-    let t15;
-    if ($[35] !== isLoginMethod || $[36] !== name || $[37] !== username) {
-        t15 = !isLoginMethod && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+    let t12;
+    if ($[30] !== isLoginMethod || $[31] !== name || $[32] !== username) {
+        t12 = !isLoginMethod && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
             className: __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$pages$2f$login$2f$style$2e$module$2e$css__$5b$client$5d$__$28$css__module$29$__["default"].inputRow,
             children: [
                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("input", {
@@ -1242,7 +1217,7 @@ const LoginComponent = ()=>{
                     placeholder: "Username"
                 }, void 0, false, {
                     fileName: "[project]/src/pages/login/index.jsx",
-                    lineNumber: 175,
+                    lineNumber: 158,
                     columnNumber: 62
                 }, ("TURBOPACK compile-time value", void 0)),
                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("input", {
@@ -1253,289 +1228,287 @@ const LoginComponent = ()=>{
                     placeholder: "Name"
                 }, void 0, false, {
                     fileName: "[project]/src/pages/login/index.jsx",
-                    lineNumber: 175,
+                    lineNumber: 158,
                     columnNumber: 197
                 }, ("TURBOPACK compile-time value", void 0))
             ]
         }, void 0, true, {
             fileName: "[project]/src/pages/login/index.jsx",
-            lineNumber: 175,
+            lineNumber: 158,
             columnNumber: 29
         }, ("TURBOPACK compile-time value", void 0));
-        $[35] = isLoginMethod;
-        $[36] = name;
-        $[37] = username;
-        $[38] = t15;
+        $[30] = isLoginMethod;
+        $[31] = name;
+        $[32] = username;
+        $[33] = t12;
     } else {
-        t15 = $[38];
+        t12 = $[33];
     }
-    let t16;
-    if ($[39] === Symbol.for("react.memo_cache_sentinel")) {
-        t16 = (e_1)=>setEmailAddress(e_1.target.value);
-        $[39] = t16;
+    let t13;
+    if ($[34] === Symbol.for("react.memo_cache_sentinel")) {
+        t13 = (e_1)=>setEmailAddress(e_1.target.value);
+        $[34] = t13;
     } else {
-        t16 = $[39];
+        t13 = $[34];
     }
-    let t17;
-    if ($[40] !== email) {
-        t17 = /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("input", {
+    let t14;
+    if ($[35] !== email) {
+        t14 = /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("input", {
             value: email,
-            onChange: t16,
+            onChange: t13,
             className: __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$pages$2f$login$2f$style$2e$module$2e$css__$5b$client$5d$__$28$css__module$29$__["default"].inputField,
             type: "email",
             placeholder: "email"
         }, void 0, false, {
             fileName: "[project]/src/pages/login/index.jsx",
-            lineNumber: 192,
+            lineNumber: 175,
             columnNumber: 11
         }, ("TURBOPACK compile-time value", void 0));
-        $[40] = email;
-        $[41] = t17;
+        $[35] = email;
+        $[36] = t14;
     } else {
-        t17 = $[41];
+        t14 = $[36];
     }
-    let t18;
-    if ($[42] === Symbol.for("react.memo_cache_sentinel")) {
-        t18 = (e_2)=>setPassword(e_2.target.value);
-        $[42] = t18;
+    let t15;
+    if ($[37] === Symbol.for("react.memo_cache_sentinel")) {
+        t15 = (e_2)=>setPassword(e_2.target.value);
+        $[37] = t15;
     } else {
-        t18 = $[42];
+        t15 = $[37];
     }
-    let t19;
-    if ($[43] !== password) {
-        t19 = /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("input", {
+    let t16;
+    if ($[38] !== password) {
+        t16 = /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("input", {
             value: password,
-            onChange: t18,
+            onChange: t15,
             className: __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$pages$2f$login$2f$style$2e$module$2e$css__$5b$client$5d$__$28$css__module$29$__["default"].inputField,
             type: "password",
             placeholder: "Password"
         }, void 0, false, {
             fileName: "[project]/src/pages/login/index.jsx",
-            lineNumber: 207,
+            lineNumber: 190,
             columnNumber: 11
         }, ("TURBOPACK compile-time value", void 0));
-        $[43] = password;
-        $[44] = t19;
+        $[38] = password;
+        $[39] = t16;
     } else {
-        t19 = $[44];
+        t16 = $[39];
     }
-    let t20;
-    if ($[45] !== handleLogin || $[46] !== handleRegister || $[47] !== isLoginMethod) {
-        t20 = ()=>{
+    let t17;
+    if ($[40] !== handleLogin || $[41] !== handleRegister || $[42] !== isLoginMethod) {
+        t17 = ()=>{
             if (isLoginMethod) {
                 handleLogin();
             } else {
                 handleRegister();
             }
         };
-        $[45] = handleLogin;
-        $[46] = handleRegister;
-        $[47] = isLoginMethod;
+        $[40] = handleLogin;
+        $[41] = handleRegister;
+        $[42] = isLoginMethod;
+        $[43] = t17;
+    } else {
+        t17 = $[43];
+    }
+    const t18 = isLoginMethod ? "Login" : "Sign Up";
+    let t19;
+    if ($[44] !== t18) {
+        t19 = /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
+            children: t18
+        }, void 0, false, {
+            fileName: "[project]/src/pages/login/index.jsx",
+            lineNumber: 215,
+            columnNumber: 11
+        }, ("TURBOPACK compile-time value", void 0));
+        $[44] = t18;
+        $[45] = t19;
+    } else {
+        t19 = $[45];
+    }
+    let t20;
+    if ($[46] !== t17 || $[47] !== t19) {
+        t20 = /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
+            onClick: t17,
+            className: __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$pages$2f$login$2f$style$2e$module$2e$css__$5b$client$5d$__$28$css__module$29$__["default"].buttonWithOutline,
+            type: "submit",
+            children: t19
+        }, void 0, false, {
+            fileName: "[project]/src/pages/login/index.jsx",
+            lineNumber: 223,
+            columnNumber: 11
+        }, ("TURBOPACK compile-time value", void 0));
+        $[46] = t17;
+        $[47] = t19;
         $[48] = t20;
     } else {
         t20 = $[48];
     }
-    const t21 = isLoginMethod ? "Login" : "Sign Up";
-    let t22;
-    if ($[49] !== t21) {
-        t22 = /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
-            children: t21
-        }, void 0, false, {
+    let t21;
+    if ($[49] !== t12 || $[50] !== t14 || $[51] !== t16 || $[52] !== t20) {
+        t21 = /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+            className: __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$pages$2f$login$2f$style$2e$module$2e$css__$5b$client$5d$__$28$css__module$29$__["default"].inputContainer,
+            children: [
+                t12,
+                t14,
+                t16,
+                t20
+            ]
+        }, void 0, true, {
             fileName: "[project]/src/pages/login/index.jsx",
             lineNumber: 232,
             columnNumber: 11
         }, ("TURBOPACK compile-time value", void 0));
-        $[49] = t21;
-        $[50] = t22;
+        $[49] = t12;
+        $[50] = t14;
+        $[51] = t16;
+        $[52] = t20;
+        $[53] = t21;
     } else {
-        t22 = $[50];
+        t21 = $[53];
     }
-    let t23;
-    if ($[51] !== t20 || $[52] !== t22) {
-        t23 = /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
-            onClick: t20,
-            className: __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$pages$2f$login$2f$style$2e$module$2e$css__$5b$client$5d$__$28$css__module$29$__["default"].buttonWithOutline,
-            type: "submit",
-            children: t22
-        }, void 0, false, {
-            fileName: "[project]/src/pages/login/index.jsx",
-            lineNumber: 240,
-            columnNumber: 11
-        }, ("TURBOPACK compile-time value", void 0));
-        $[51] = t20;
-        $[52] = t22;
-        $[53] = t23;
-    } else {
-        t23 = $[53];
-    }
-    let t24;
-    if ($[54] !== t15 || $[55] !== t17 || $[56] !== t19 || $[57] !== t23) {
-        t24 = /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-            className: __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$pages$2f$login$2f$style$2e$module$2e$css__$5b$client$5d$__$28$css__module$29$__["default"].inputContainer,
+    let t22;
+    if ($[54] !== t11 || $[55] !== t21) {
+        t22 = /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+            className: __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$pages$2f$login$2f$style$2e$module$2e$css__$5b$client$5d$__$28$css__module$29$__["default"].cardContainer_left,
             children: [
-                t15,
-                t17,
-                t19,
-                t23
+                t11,
+                t21
             ]
         }, void 0, true, {
             fileName: "[project]/src/pages/login/index.jsx",
-            lineNumber: 249,
+            lineNumber: 243,
             columnNumber: 11
         }, ("TURBOPACK compile-time value", void 0));
-        $[54] = t15;
-        $[55] = t17;
-        $[56] = t19;
+        $[54] = t11;
+        $[55] = t21;
+        $[56] = t22;
+    } else {
+        t22 = $[56];
+    }
+    const t23 = isLoginMethod ? "Don't have an account?" : "Already have an account?";
+    let t24;
+    if ($[57] !== t23) {
+        t24 = /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
+            children: t23
+        }, void 0, false, {
+            fileName: "[project]/src/pages/login/index.jsx",
+            lineNumber: 253,
+            columnNumber: 11
+        }, ("TURBOPACK compile-time value", void 0));
         $[57] = t23;
         $[58] = t24;
     } else {
         t24 = $[58];
     }
     let t25;
-    if ($[59] !== t11 || $[60] !== t14 || $[61] !== t24) {
-        t25 = /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-            className: __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$pages$2f$login$2f$style$2e$module$2e$css__$5b$client$5d$__$28$css__module$29$__["default"].cardContainer_left,
-            children: [
-                t11,
-                t14,
-                t24
-            ]
-        }, void 0, true, {
-            fileName: "[project]/src/pages/login/index.jsx",
-            lineNumber: 260,
-            columnNumber: 11
-        }, ("TURBOPACK compile-time value", void 0));
-        $[59] = t11;
-        $[60] = t14;
-        $[61] = t24;
-        $[62] = t25;
-    } else {
-        t25 = $[62];
-    }
-    const t26 = isLoginMethod ? "Don't have an account?" : "Already have an account?";
-    let t27;
-    if ($[63] !== t26) {
-        t27 = /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
-            children: t26
-        }, void 0, false, {
-            fileName: "[project]/src/pages/login/index.jsx",
-            lineNumber: 271,
-            columnNumber: 11
-        }, ("TURBOPACK compile-time value", void 0));
-        $[63] = t26;
-        $[64] = t27;
-    } else {
-        t27 = $[64];
-    }
-    let t28;
-    if ($[65] !== isLoginMethod) {
-        t28 = ()=>{
+    if ($[59] !== isLoginMethod) {
+        t25 = ()=>{
             setIsLoginMethod(!isLoginMethod);
         };
-        $[65] = isLoginMethod;
-        $[66] = t28;
+        $[59] = isLoginMethod;
+        $[60] = t25;
     } else {
-        t28 = $[66];
+        t25 = $[60];
     }
-    let t29;
-    if ($[67] === Symbol.for("react.memo_cache_sentinel")) {
-        t29 = {
+    let t26;
+    if ($[61] === Symbol.for("react.memo_cache_sentinel")) {
+        t26 = {
             color: "black",
             textAlign: "center"
         };
-        $[67] = t29;
+        $[61] = t26;
     } else {
-        t29 = $[67];
+        t26 = $[61];
     }
-    const t30 = isLoginMethod ? "Sign Up" : "Login";
-    let t31;
-    if ($[68] !== t30) {
-        t31 = /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
+    const t27 = isLoginMethod ? "Sign Up" : "Login";
+    let t28;
+    if ($[62] !== t27) {
+        t28 = /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
             children: [
-                t30,
+                t27,
                 "  "
             ]
         }, void 0, true, {
             fileName: "[project]/src/pages/login/index.jsx",
-            lineNumber: 300,
+            lineNumber: 282,
             columnNumber: 11
         }, ("TURBOPACK compile-time value", void 0));
-        $[68] = t30;
-        $[69] = t31;
+        $[62] = t27;
+        $[63] = t28;
     } else {
-        t31 = $[69];
+        t28 = $[63];
     }
-    let t32;
-    if ($[70] !== t28 || $[71] !== t31) {
-        t32 = /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
-            onClick: t28,
-            style: t29,
+    let t29;
+    if ($[64] !== t25 || $[65] !== t28) {
+        t29 = /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
+            onClick: t25,
+            style: t26,
             className: __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$pages$2f$login$2f$style$2e$module$2e$css__$5b$client$5d$__$28$css__module$29$__["default"].buttonWithOutline,
             type: "submit",
-            children: t31
+            children: t28
         }, void 0, false, {
             fileName: "[project]/src/pages/login/index.jsx",
-            lineNumber: 308,
+            lineNumber: 290,
             columnNumber: 11
         }, ("TURBOPACK compile-time value", void 0));
-        $[70] = t28;
-        $[71] = t31;
-        $[72] = t32;
+        $[64] = t25;
+        $[65] = t28;
+        $[66] = t29;
     } else {
-        t32 = $[72];
+        t29 = $[66];
     }
-    let t33;
-    if ($[73] !== t27 || $[74] !== t32) {
-        t33 = /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+    let t30;
+    if ($[67] !== t24 || $[68] !== t29) {
+        t30 = /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
             className: __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$pages$2f$login$2f$style$2e$module$2e$css__$5b$client$5d$__$28$css__module$29$__["default"].cardContainer_right,
             children: [
-                t27,
-                t32
+                t24,
+                t29
             ]
         }, void 0, true, {
             fileName: "[project]/src/pages/login/index.jsx",
-            lineNumber: 317,
+            lineNumber: 299,
             columnNumber: 11
         }, ("TURBOPACK compile-time value", void 0));
-        $[73] = t27;
-        $[74] = t32;
-        $[75] = t33;
+        $[67] = t24;
+        $[68] = t29;
+        $[69] = t30;
     } else {
-        t33 = $[75];
+        t30 = $[69];
     }
-    let t34;
-    if ($[76] !== t25 || $[77] !== t33) {
-        t34 = /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$layout$2f$UserLayout$2f$index$2e$jsx__$5b$client$5d$__$28$ecmascript$29$__["default"], {
+    let t31;
+    if ($[70] !== t22 || $[71] !== t30) {
+        t31 = /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$layout$2f$UserLayout$2f$index$2e$jsx__$5b$client$5d$__$28$ecmascript$29$__["default"], {
             children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                 className: __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$pages$2f$login$2f$style$2e$module$2e$css__$5b$client$5d$__$28$css__module$29$__["default"].container,
                 children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                     className: __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$pages$2f$login$2f$style$2e$module$2e$css__$5b$client$5d$__$28$css__module$29$__["default"].cardContainer,
                     children: [
-                        t25,
-                        t33
+                        t22,
+                        t30
                     ]
                 }, void 0, true, {
                     fileName: "[project]/src/pages/login/index.jsx",
-                    lineNumber: 326,
+                    lineNumber: 308,
                     columnNumber: 57
                 }, ("TURBOPACK compile-time value", void 0))
             }, void 0, false, {
                 fileName: "[project]/src/pages/login/index.jsx",
-                lineNumber: 326,
+                lineNumber: 308,
                 columnNumber: 23
             }, ("TURBOPACK compile-time value", void 0))
         }, void 0, false, {
             fileName: "[project]/src/pages/login/index.jsx",
-            lineNumber: 326,
+            lineNumber: 308,
             columnNumber: 11
         }, ("TURBOPACK compile-time value", void 0));
-        $[76] = t25;
-        $[77] = t33;
-        $[78] = t34;
+        $[70] = t22;
+        $[71] = t30;
+        $[72] = t31;
     } else {
-        t34 = $[78];
+        t31 = $[72];
     }
-    return t34;
+    return t31;
 };
 _s(LoginComponent, "6NndXWHTre4Jb0MNAKCuXAiVRYc=", false, function() {
     return [

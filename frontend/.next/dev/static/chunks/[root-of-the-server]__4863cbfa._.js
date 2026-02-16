@@ -473,7 +473,7 @@ __turbopack_context__.s([
 ]);
 var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$axios$2f$lib$2f$axios$2e$js__$5b$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/node_modules/axios/lib/axios.js [client] (ecmascript)");
 ;
-const BASE_URL = 'https://linkedin-clone-4gta.onrender.com/';
+const BASE_URL = 'https://linkedin-clone-4gta.onrender.com';
 const clientServer = __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$axios$2f$lib$2f$axios$2e$js__$5b$client$5d$__$28$ecmascript$29$__["default"].create({
     baseURL: BASE_URL
 });
@@ -908,6 +908,7 @@ __turbopack_context__.s([
 ]);
 var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/node_modules/react/jsx-dev-runtime.js [client] (ecmascript)");
 var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$compiler$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/node_modules/react/compiler-runtime.js [client] (ecmascript)");
+var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2d$toastify$2f$dist$2f$index$2e$mjs__$5b$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/node_modules/react-toastify/dist/index.mjs [client] (ecmascript)");
 var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2d$redux$2f$dist$2f$react$2d$redux$2e$mjs__$5b$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/node_modules/react-redux/dist/react-redux.mjs [client] (ecmascript)");
 var __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$config$2f$redux$2f$store$2e$js__$5b$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/src/config/redux/store.js [client] (ecmascript)");
 ;
@@ -915,38 +916,57 @@ var __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$config$2f$redux$2f$st
 ;
 ;
 ;
+;
+;
 function App(t0) {
-    const $ = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$compiler$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["c"])(4);
-    if ($[0] !== "ca72a178ed59868502d3207d050fe1a5ad32977d2c50ebc5464afd68a9a23dfc") {
-        for(let $i = 0; $i < 4; $i += 1){
+    const $ = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$compiler$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["c"])(5);
+    if ($[0] !== "962e8df94931aa2ed3ef00dfa66d42e9346c0807aa0f05ed3a30b0095150c763") {
+        for(let $i = 0; $i < 5; $i += 1){
             $[$i] = Symbol.for("react.memo_cache_sentinel");
         }
-        $[0] = "ca72a178ed59868502d3207d050fe1a5ad32977d2c50ebc5464afd68a9a23dfc";
+        $[0] = "962e8df94931aa2ed3ef00dfa66d42e9346c0807aa0f05ed3a30b0095150c763";
     }
     const { Component, pageProps } = t0;
     let t1;
-    if ($[1] !== Component || $[2] !== pageProps) {
-        t1 = /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2d$redux$2f$dist$2f$react$2d$redux$2e$mjs__$5b$client$5d$__$28$ecmascript$29$__["Provider"], {
-            store: __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$config$2f$redux$2f$store$2e$js__$5b$client$5d$__$28$ecmascript$29$__["store"],
-            children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])(Component, {
-                ...pageProps
-            }, void 0, false, {
-                fileName: "[project]/src/pages/_app.js",
-                lineNumber: 19,
-                columnNumber: 34
-            }, this)
+    if ($[1] === Symbol.for("react.memo_cache_sentinel")) {
+        t1 = /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2d$toastify$2f$dist$2f$index$2e$mjs__$5b$client$5d$__$28$ecmascript$29$__["ToastContainer"], {
+            position: "top-right",
+            autoClose: 3000
         }, void 0, false, {
             fileName: "[project]/src/pages/_app.js",
-            lineNumber: 19,
+            lineNumber: 21,
             columnNumber: 10
         }, this);
-        $[1] = Component;
-        $[2] = pageProps;
-        $[3] = t1;
+        $[1] = t1;
     } else {
-        t1 = $[3];
+        t1 = $[1];
     }
-    return t1;
+    let t2;
+    if ($[2] !== Component || $[3] !== pageProps) {
+        t2 = /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2d$redux$2f$dist$2f$react$2d$redux$2e$mjs__$5b$client$5d$__$28$ecmascript$29$__["Provider"], {
+            store: __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$config$2f$redux$2f$store$2e$js__$5b$client$5d$__$28$ecmascript$29$__["store"],
+            children: [
+                t1,
+                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])(Component, {
+                    ...pageProps
+                }, void 0, false, {
+                    fileName: "[project]/src/pages/_app.js",
+                    lineNumber: 28,
+                    columnNumber: 38
+                }, this)
+            ]
+        }, void 0, true, {
+            fileName: "[project]/src/pages/_app.js",
+            lineNumber: 28,
+            columnNumber: 10
+        }, this);
+        $[2] = Component;
+        $[3] = pageProps;
+        $[4] = t2;
+    } else {
+        t2 = $[4];
+    }
+    return t2;
 }
 _c = App;
 var _c;

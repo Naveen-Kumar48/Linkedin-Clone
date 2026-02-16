@@ -473,7 +473,7 @@ __turbopack_context__.s([
 ]);
 var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$axios$2f$lib$2f$axios$2e$js__$5b$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/node_modules/axios/lib/axios.js [client] (ecmascript)");
 ;
-const BASE_URL = 'https://linkedin-clone-4gta.onrender.com/';
+const BASE_URL = 'https://linkedin-clone-4gta.onrender.com';
 const clientServer = __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$axios$2f$lib$2f$axios$2e$js__$5b$client$5d$__$28$ecmascript$29$__["default"].create({
     baseURL: BASE_URL
 });
@@ -1952,6 +1952,7 @@ __turbopack_context__.s([
 var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/node_modules/react/jsx-dev-runtime.js [client] (ecmascript)");
 var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$compiler$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/node_modules/react/compiler-runtime.js [client] (ecmascript)");
 var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$index$2e$js__$5b$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/node_modules/react/index.js [client] (ecmascript)");
+var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2d$toastify$2f$dist$2f$index$2e$mjs__$5b$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/node_modules/react-toastify/dist/index.mjs [client] (ecmascript)");
 var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2d$redux$2f$dist$2f$react$2d$redux$2e$mjs__$5b$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/node_modules/react-redux/dist/react-redux.mjs [client] (ecmascript)");
 var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$router$2e$js__$5b$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/node_modules/next/router.js [client] (ecmascript)");
 var __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$config$2f$redux$2f$action$2f$postAction$2f$index$2e$js__$5b$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/src/config/redux/action/postAction/index.js [client] (ecmascript)");
@@ -1980,14 +1981,15 @@ var _s = __turbopack_context__.k.signature();
 ;
 ;
 ;
+;
 function Dashboard() {
     _s();
     const $ = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$compiler$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["c"])(28);
-    if ($[0] !== "d01a69e64e13f5e6820ab7ba303d3610df26640066287ee3c7599dc42b3d314c") {
+    if ($[0] !== "730d343674ff78d0768512f0172ab6b0a368f7f3fc011662d275c674a583e0eb") {
         for(let $i = 0; $i < 28; $i += 1){
             $[$i] = Symbol.for("react.memo_cache_sentinel");
         }
-        $[0] = "d01a69e64e13f5e6820ab7ba303d3610df26640066287ee3c7599dc42b3d314c";
+        $[0] = "730d343674ff78d0768512f0172ab6b0a368f7f3fc011662d275c674a583e0eb";
     }
     const dispatch = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2d$redux$2f$dist$2f$react$2d$redux$2e$mjs__$5b$client$5d$__$28$ecmascript$29$__["useDispatch"])();
     const authState = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2d$redux$2f$dist$2f$react$2d$redux$2e$mjs__$5b$client$5d$__$28$ecmascript$29$__["useSelector"])(_DashboardUseSelector);
@@ -2073,7 +2075,7 @@ function Dashboard() {
             children: "Loading..."
         }, void 0, false, {
             fileName: "[project]/src/pages/dashboard/index.jsx",
-            lineNumber: 103,
+            lineNumber: 104,
             columnNumber: 28
         }, this) : /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
             className: __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$pages$2f$dashboard$2f$index$2e$module$2e$css__$5b$client$5d$__$28$css__module$29$__["default"].scrollComponent,
@@ -2089,7 +2091,7 @@ function Dashboard() {
                                 alt: "Profile"
                             }, void 0, false, {
                                 fileName: "[project]/src/pages/dashboard/index.jsx",
-                                lineNumber: 103,
+                                lineNumber: 104,
                                 columnNumber: 166
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("textarea", {
@@ -2101,7 +2103,7 @@ function Dashboard() {
                                 className: __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$pages$2f$dashboard$2f$index$2e$module$2e$css__$5b$client$5d$__$28$css__module$29$__["default"].textAreaOfContent
                             }, void 0, false, {
                                 fileName: "[project]/src/pages/dashboard/index.jsx",
-                                lineNumber: 103,
+                                lineNumber: 104,
                                 columnNumber: 278
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("label", {
@@ -2120,22 +2122,22 @@ function Dashboard() {
                                             d: "M2.25 15.75l5.159-5.159a2.25 2.25 0 013.182 0l5.159 5.159m-1.5-1.5l1.409-1.409a2.25 2.25 0 013.182 0l2.909 2.909m-18 3.75h16.5a1.5 1.5 0 001.5-1.5V6a1.5 1.5 0 00-1.5-1.5H3.75A1.5 1.5 0 002.25 6v12a1.5 1.5 0 001.5 1.5zm10.5-11.25h.008v.008h-.008V8.25zm.375 0a.375.375 0 11-.75 0 .375.375 0 01.75 0z"
                                         }, void 0, false, {
                                             fileName: "[project]/src/pages/dashboard/index.jsx",
-                                            lineNumber: 105,
+                                            lineNumber: 106,
                                             columnNumber: 302
                                         }, this)
                                     }, void 0, false, {
                                         fileName: "[project]/src/pages/dashboard/index.jsx",
-                                        lineNumber: 105,
+                                        lineNumber: 106,
                                         columnNumber: 190
                                     }, this)
                                 }, void 0, false, {
                                     fileName: "[project]/src/pages/dashboard/index.jsx",
-                                    lineNumber: 105,
+                                    lineNumber: 106,
                                     columnNumber: 162
                                 }, this)
                             }, void 0, false, {
                                 fileName: "[project]/src/pages/dashboard/index.jsx",
-                                lineNumber: 105,
+                                lineNumber: 106,
                                 columnNumber: 134
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("input", {
@@ -2147,7 +2149,7 @@ function Dashboard() {
                                 }["Dashboard[<input>.onChange]"]
                             }, void 0, false, {
                                 fileName: "[project]/src/pages/dashboard/index.jsx",
-                                lineNumber: 105,
+                                lineNumber: 106,
                                 columnNumber: 677
                             }, this),
                             postContent.length > 0 && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -2156,13 +2158,13 @@ function Dashboard() {
                                 children: "Post"
                             }, void 0, false, {
                                 fileName: "[project]/src/pages/dashboard/index.jsx",
-                                lineNumber: 107,
+                                lineNumber: 108,
                                 columnNumber: 74
                             }, this)
                         ]
                     }, void 0, true, {
                         fileName: "[project]/src/pages/dashboard/index.jsx",
-                        lineNumber: 103,
+                        lineNumber: 104,
                         columnNumber: 122
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -2180,7 +2182,7 @@ function Dashboard() {
                                                     alt: "Profile"
                                                 }, void 0, false, {
                                                     fileName: "[project]/src/pages/dashboard/index.jsx",
-                                                    lineNumber: 108,
+                                                    lineNumber: 109,
                                                     columnNumber: 142
                                                 }, this),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -2190,7 +2192,7 @@ function Dashboard() {
                                                             children: post.userId.name
                                                         }, void 0, false, {
                                                             fileName: "[project]/src/pages/dashboard/index.jsx",
-                                                            lineNumber: 108,
+                                                            lineNumber: 109,
                                                             columnNumber: 272
                                                         }, this),
                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -2200,13 +2202,13 @@ function Dashboard() {
                                                             ]
                                                         }, void 0, true, {
                                                             fileName: "[project]/src/pages/dashboard/index.jsx",
-                                                            lineNumber: 108,
+                                                            lineNumber: 109,
                                                             columnNumber: 299
                                                         }, this)
                                                     ]
                                                 }, void 0, true, {
                                                     fileName: "[project]/src/pages/dashboard/index.jsx",
-                                                    lineNumber: 108,
+                                                    lineNumber: 109,
                                                     columnNumber: 239
                                                 }, this),
                                                 authState.user.userId._id === post.userId._id && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -2226,23 +2228,23 @@ function Dashboard() {
                                                             d: "M14.74 9l-.346 9m-4.788 0L9.26 9m9.968-3.21c.342.052.682.107 1.022.166m-1.022-.165L18.16 19.673a2.25 2.25 0 01-2.244 2.077H8.084a2.25 2.25 0 01-2.244-2.077L4.772 5.79m14.456 0a48.108 48.108 0 00-3.478-.397m-12 .562c.34-.059.68-.114 1.022-.165m0 0a48.11 48.11 0 013.478-.397m7.5 0v-.916c0-1.18-.91-2.164-2.09-2.201a51.964 51.964 0 00-3.32 0c-1.18.037-2.09 1.022-2.09 2.201v.916m7.5 0a48.667 48.667 0 00-7.5 0"
                                                         }, void 0, false, {
                                                             fileName: "[project]/src/pages/dashboard/index.jsx",
-                                                            lineNumber: 110,
+                                                            lineNumber: 111,
                                                             columnNumber: 216
                                                         }, this)
                                                     }, void 0, false, {
                                                         fileName: "[project]/src/pages/dashboard/index.jsx",
-                                                        lineNumber: 110,
+                                                        lineNumber: 111,
                                                         columnNumber: 104
                                                     }, this)
                                                 }, void 0, false, {
                                                     fileName: "[project]/src/pages/dashboard/index.jsx",
-                                                    lineNumber: 108,
+                                                    lineNumber: 109,
                                                     columnNumber: 385
                                                 }, this)
                                             ]
                                         }, void 0, true, {
                                             fileName: "[project]/src/pages/dashboard/index.jsx",
-                                            lineNumber: 108,
+                                            lineNumber: 109,
                                             columnNumber: 107
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -2252,28 +2254,28 @@ function Dashboard() {
                                                     children: post.body
                                                 }, void 0, false, {
                                                     fileName: "[project]/src/pages/dashboard/index.jsx",
-                                                    lineNumber: 110,
+                                                    lineNumber: 111,
                                                     columnNumber: 733
                                                 }, this),
                                                 post.media && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                                                     className: __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$pages$2f$dashboard$2f$index$2e$module$2e$css__$5b$client$5d$__$28$css__module$29$__["default"].postMediaContainer,
                                                     children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("img", {
-                                                        src: `${__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$config$2f$index$2e$js__$5b$client$5d$__$28$ecmascript$29$__["BASE_URL"]}/${post.media}`,
+                                                        src: `${__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$config$2f$index$2e$js__$5b$client$5d$__$28$ecmascript$29$__["BASE_URL"]}/uploads/${post.media}`,
                                                         alt: "Post Media"
                                                     }, void 0, false, {
                                                         fileName: "[project]/src/pages/dashboard/index.jsx",
-                                                        lineNumber: 110,
+                                                        lineNumber: 111,
                                                         columnNumber: 809
                                                     }, this)
                                                 }, void 0, false, {
                                                     fileName: "[project]/src/pages/dashboard/index.jsx",
-                                                    lineNumber: 110,
+                                                    lineNumber: 111,
                                                     columnNumber: 766
                                                 }, this)
                                             ]
                                         }, void 0, true, {
                                             fileName: "[project]/src/pages/dashboard/index.jsx",
-                                            lineNumber: 110,
+                                            lineNumber: 111,
                                             columnNumber: 700
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -2288,7 +2290,7 @@ function Dashboard() {
                                                             if (result.type === "post/incrementLike/fulfilled") {
                                                                 dispatch((0, __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$config$2f$redux$2f$action$2f$postAction$2f$index$2e$js__$5b$client$5d$__$28$ecmascript$29$__["getAllPost"])());
                                                             } else {
-                                                                alert(result.payload.message || "Something went wrong");
+                                                                __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2d$toastify$2f$dist$2f$index$2e$mjs__$5b$client$5d$__$28$ecmascript$29$__["toast"].error(result.payload.message || "Something went wrong");
                                                             }
                                                         }
                                                     }["Dashboard[postState.posts.map() > <div>.onClick]"],
@@ -2306,12 +2308,12 @@ function Dashboard() {
                                                                 d: "M6.633 10.5c.806 0 1.533-.446 2.031-1.08a9.041 9.041 0 012.861-2.4c.723-.384 1.35-.956 1.653-1.715a4.498 4.498 0 00.322-1.672V3a.75.75 0 01.75-.75A2.25 2.25 0 0116.5 4.5c0 1.152-.26 2.247-.723 3.218-.266.558.107 1.282.725 1.282h3.126c1.026 0 1.945.694 2.054 1.715.045.422.068.85.068 1.285a11.95 11.95 0 01-2.649 7.521c-.388.482-.987.729-1.605.729H13.48c-.483 0-.964-.078-1.423-.23l-3.114-1.04a4.501 4.501 0 00-1.423-.23H5.904M14.25 9h2.25M5.904 18.75c.083.205.176.405.278.602.282.543.654.914 1.144.914H8c.55 0 .905-.398 1.022-1.002a7.59 7.59 0 00.125-1.524 3.126 3.126 0 00.312-3.575C8.379 11.121 7.239 10.5 5.904 10.5H5.197"
                                                             }, void 0, false, {
                                                                 fileName: "[project]/src/pages/dashboard/index.jsx",
-                                                                lineNumber: 121,
+                                                                lineNumber: 122,
                                                                 columnNumber: 216
                                                             }, this)
                                                         }, void 0, false, {
                                                             fileName: "[project]/src/pages/dashboard/index.jsx",
-                                                            lineNumber: 121,
+                                                            lineNumber: 122,
                                                             columnNumber: 104
                                                         }, this),
                                                         post.likes,
@@ -2319,14 +2321,14 @@ function Dashboard() {
                                                             children: "Like"
                                                         }, void 0, false, {
                                                             fileName: "[project]/src/pages/dashboard/index.jsx",
-                                                            lineNumber: 121,
+                                                            lineNumber: 122,
                                                             columnNumber: 916
                                                         }, this)
                                                     ]
                                                 }, void 0, true, {
                                                     fileName: "[project]/src/pages/dashboard/index.jsx",
-                                                    lineNumber: 110,
-                                                    columnNumber: 915
+                                                    lineNumber: 111,
+                                                    columnNumber: 923
                                                 }, this),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                                                     onClick: {
@@ -2350,25 +2352,25 @@ function Dashboard() {
                                                                 d: "M7.5 8.25h9m-9 3H12m-9.75 1.51c0 1.6 1.123 2.994 2.707 3.227 1.129.166 2.27.293 3.423.379.35.026.67.21.865.501L12 21l2.755-4.133a1.14 1.14 0 01.865-.501 48.172 48.172 0 003.423-.379c1.584-.233 2.707-1.626 2.707-3.228V6.741c0-1.602-1.123-2.995-2.707-3.228A48.394 48.394 0 0012 3c-2.392 0-4.744.175-7.043.513C3.373 3.746 2.25 5.14 2.25 6.741v6.018z"
                                                             }, void 0, false, {
                                                                 fileName: "[project]/src/pages/dashboard/index.jsx",
-                                                                lineNumber: 127,
+                                                                lineNumber: 128,
                                                                 columnNumber: 216
                                                             }, this)
                                                         }, void 0, false, {
                                                             fileName: "[project]/src/pages/dashboard/index.jsx",
-                                                            lineNumber: 127,
+                                                            lineNumber: 128,
                                                             columnNumber: 104
                                                         }, this),
                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
                                                             children: "Comment"
                                                         }, void 0, false, {
                                                             fileName: "[project]/src/pages/dashboard/index.jsx",
-                                                            lineNumber: 127,
+                                                            lineNumber: 128,
                                                             columnNumber: 626
                                                         }, this)
                                                     ]
                                                 }, void 0, true, {
                                                     fileName: "[project]/src/pages/dashboard/index.jsx",
-                                                    lineNumber: 121,
+                                                    lineNumber: 122,
                                                     columnNumber: 939
                                                 }, this),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -2395,54 +2397,54 @@ function Dashboard() {
                                                                 d: "M6 12L3.269 3.126A59.768 59.768 0 0121.485 12 59.77 59.77 0 013.27 20.876L5.999 12zm0 0h7.5"
                                                             }, void 0, false, {
                                                                 fileName: "[project]/src/pages/dashboard/index.jsx",
-                                                                lineNumber: 134,
+                                                                lineNumber: 135,
                                                                 columnNumber: 240
                                                             }, this)
                                                         }, void 0, false, {
                                                             fileName: "[project]/src/pages/dashboard/index.jsx",
-                                                            lineNumber: 134,
+                                                            lineNumber: 135,
                                                             columnNumber: 104
                                                         }, this),
                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
                                                             children: "Send"
                                                         }, void 0, false, {
                                                             fileName: "[project]/src/pages/dashboard/index.jsx",
-                                                            lineNumber: 134,
+                                                            lineNumber: 135,
                                                             columnNumber: 395
                                                         }, this)
                                                     ]
                                                 }, void 0, true, {
                                                     fileName: "[project]/src/pages/dashboard/index.jsx",
-                                                    lineNumber: 127,
+                                                    lineNumber: 128,
                                                     columnNumber: 652
                                                 }, this)
                                             ]
                                         }, void 0, true, {
                                             fileName: "[project]/src/pages/dashboard/index.jsx",
-                                            lineNumber: 110,
-                                            columnNumber: 880
+                                            lineNumber: 111,
+                                            columnNumber: 888
                                         }, this)
                                     ]
                                 }, post._id, true, {
                                     fileName: "[project]/src/pages/dashboard/index.jsx",
-                                    lineNumber: 108,
+                                    lineNumber: 109,
                                     columnNumber: 57
                                 }, this)
                         }["Dashboard[postState.posts.map()]"])
                     }, void 0, false, {
                         fileName: "[project]/src/pages/dashboard/index.jsx",
-                        lineNumber: 107,
+                        lineNumber: 108,
                         columnNumber: 151
                     }, this)
                 ]
             }, void 0, true, {
                 fileName: "[project]/src/pages/dashboard/index.jsx",
-                lineNumber: 103,
+                lineNumber: 104,
                 columnNumber: 90
             }, this)
         }, void 0, false, {
             fileName: "[project]/src/pages/dashboard/index.jsx",
-            lineNumber: 103,
+            lineNumber: 104,
             columnNumber: 50
         }, this);
         $[13] = authState.user;
@@ -2473,14 +2475,14 @@ function Dashboard() {
                             children: " No Comments"
                         }, void 0, false, {
                             fileName: "[project]/src/pages/dashboard/index.jsx",
-                            lineNumber: 152,
+                            lineNumber: 153,
                             columnNumber: 190
                         }, this),
                         postState.comments.length !== 0 && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                             children: postState.comments.map(_DashboardPostStateCommentsMap)
                         }, void 0, false, {
                             fileName: "[project]/src/pages/dashboard/index.jsx",
-                            lineNumber: 152,
+                            lineNumber: 153,
                             columnNumber: 248
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -2495,7 +2497,7 @@ function Dashboard() {
                                     placeholder: "Comment"
                                 }, void 0, false, {
                                     fileName: "[project]/src/pages/dashboard/index.jsx",
-                                    lineNumber: 152,
+                                    lineNumber: 153,
                                     columnNumber: 361
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -2510,8 +2512,9 @@ function Dashboard() {
                                                 await dispatch((0, __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$config$2f$redux$2f$action$2f$postAction$2f$index$2e$js__$5b$client$5d$__$28$ecmascript$29$__["getAllComments"])({
                                                     post_id: postState.postId
                                                 }));
+                                                __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2d$toastify$2f$dist$2f$index$2e$mjs__$5b$client$5d$__$28$ecmascript$29$__["toast"].success("Comment added!");
                                             } else {
-                                                alert(result_0.payload.message || "Something went wrong");
+                                                __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2d$toastify$2f$dist$2f$index$2e$mjs__$5b$client$5d$__$28$ecmascript$29$__["toast"].error(result_0.payload.message || "Something went wrong");
                                             }
                                         }
                                     }["Dashboard[<div>.onClick]"],
@@ -2520,34 +2523,34 @@ function Dashboard() {
                                         children: "Comment"
                                     }, void 0, false, {
                                         fileName: "[project]/src/pages/dashboard/index.jsx",
-                                        lineNumber: 169,
+                                        lineNumber: 171,
                                         columnNumber: 96
                                     }, this)
                                 }, void 0, false, {
                                     fileName: "[project]/src/pages/dashboard/index.jsx",
-                                    lineNumber: 154,
+                                    lineNumber: 155,
                                     columnNumber: 71
                                 }, this)
                             ]
                         }, void 0, true, {
                             fileName: "[project]/src/pages/dashboard/index.jsx",
-                            lineNumber: 152,
+                            lineNumber: 153,
                             columnNumber: 316
                         }, this)
                     ]
                 }, void 0, true, {
                     fileName: "[project]/src/pages/dashboard/index.jsx",
-                    lineNumber: 152,
+                    lineNumber: 153,
                     columnNumber: 78
                 }, this)
             }, void 0, false, {
                 fileName: "[project]/src/pages/dashboard/index.jsx",
-                lineNumber: 152,
+                lineNumber: 153,
                 columnNumber: 73
             }, this)
         }, void 0, false, {
             fileName: "[project]/src/pages/dashboard/index.jsx",
-            lineNumber: 148,
+            lineNumber: 149,
             columnNumber: 37
         }, this);
         $[20] = commentText;
@@ -2568,12 +2571,12 @@ function Dashboard() {
                 ]
             }, void 0, true, {
                 fileName: "[project]/src/pages/dashboard/index.jsx",
-                lineNumber: 180,
+                lineNumber: 182,
                 columnNumber: 22
             }, this)
         }, void 0, false, {
             fileName: "[project]/src/pages/dashboard/index.jsx",
-            lineNumber: 180,
+            lineNumber: 182,
             columnNumber: 10
         }, this);
         $[25] = t4;
@@ -2602,7 +2605,7 @@ function _DashboardPostStateCommentsMap(comment, index) {
                 alt: "Post Media"
             }, void 0, false, {
                 fileName: "[project]/src/pages/dashboard/index.jsx",
-                lineNumber: 190,
+                lineNumber: 192,
                 columnNumber: 57
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -2613,7 +2616,7 @@ function _DashboardPostStateCommentsMap(comment, index) {
                 children: comment.userId.name
             }, void 0, false, {
                 fileName: "[project]/src/pages/dashboard/index.jsx",
-                lineNumber: 190,
+                lineNumber: 192,
                 columnNumber: 134
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -2623,20 +2626,20 @@ function _DashboardPostStateCommentsMap(comment, index) {
                 ]
             }, void 0, true, {
                 fileName: "[project]/src/pages/dashboard/index.jsx",
-                lineNumber: 193,
+                lineNumber: 195,
                 columnNumber: 33
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
                 children: comment.body
             }, void 0, false, {
                 fileName: "[project]/src/pages/dashboard/index.jsx",
-                lineNumber: 193,
+                lineNumber: 195,
                 columnNumber: 66
             }, this)
         ]
     }, void 0, true, {
         fileName: "[project]/src/pages/dashboard/index.jsx",
-        lineNumber: 190,
+        lineNumber: 192,
         columnNumber: 10
     }, this);
 }

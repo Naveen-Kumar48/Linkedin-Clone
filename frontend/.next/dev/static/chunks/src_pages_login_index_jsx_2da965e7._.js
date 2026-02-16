@@ -8,7 +8,7 @@
   "static/chunks/node_modules_next_router_104fab1c.js",
   "static/chunks/node_modules_react-dom_4411d9bd._.js",
   "static/chunks/node_modules_axios_lib_2c8bf6cb._.js",
-  "static/chunks/node_modules_402ce1c9._.js",
+  "static/chunks/node_modules_87904ca3._.js",
   "static/chunks/[root-of-the-server]__8f1d8b79._.js",
   "static/chunks/src_4e4683db._.css"
 ],
