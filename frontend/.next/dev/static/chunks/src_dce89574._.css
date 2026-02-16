@@ -473,18 +473,47 @@
   padding-inline: 1.3rem;
 }
 
+.Index-module__NLSpOW__profileNameContainer {
+  align-items: center;
+  gap: 1.2rem;
+  width: fit-content;
+  display: flex;
+}
+
+.Index-module__NLSpOW__username {
+  color: gray;
+}
+
+.Index-module__NLSpOW__postsGrid {
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 1rem;
+  display: grid;
+}
+
+.Index-module__NLSpOW__postMediaPlaceholder {
+  width: 3rem;
+  height: 3.4rem;
+}
+
+.Index-module__NLSpOW__workCompany {
+  color: #2d3748;
+  font-weight: 700;
+}
+
+.Index-module__NLSpOW__workPosition {
+  color: teal;
+  font-weight: 600;
+}
+
+.Index-module__NLSpOW__workYears {
+  color: #718096;
+  font-size: .9rem;
+}
+
 @media screen and (max-width: 768px) {
   .Index-module__NLSpOW__Container {
     padding: 1rem .5rem;
     padding-bottom: 6rem;
-  }
-
-  .Index-module__NLSpOW__profileImageWrapper {
-    width: 130px;
-    height: 130px;
-    top: 175px;
-    left: 50%;
-    transform: translateX(-50%);
   }
 
   .Index-module__NLSpOW__backDropContainer:before {
@@ -492,13 +521,22 @@
   }
 
   .Index-module__NLSpOW__profileImageWrapper {
+    width: 130px;
+    height: 130px;
     top: 115px;
+    left: 50%;
+    transform: translateX(-50%);
   }
 
   .Index-module__NLSpOW__profileContainer_details {
     text-align: center;
     align-items: center;
     padding: 80px 1.5rem 1rem;
+  }
+
+  .Index-module__NLSpOW__profileNameContainer {
+    justify-content: center;
+    width: 100%;
   }
 
   .Index-module__NLSpOW__profileContainer_details > div:first-of-type {
@@ -516,7 +554,7 @@
     width: 100%;
   }
 
-  .Index-module__NLSpOW__workHistoryContainer {
+  .Index-module__NLSpOW__postsGrid, .Index-module__NLSpOW__workHistoryContainer {
     grid-template-columns: 1fr;
   }
 

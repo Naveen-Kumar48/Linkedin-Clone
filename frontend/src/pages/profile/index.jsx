@@ -115,17 +115,10 @@ export default function ProfilePage() {
                 />
               </div>
               <div className={styles.profileContainer_details}>
-                <div
-                  style={{
-                    display: "flex",
-                    width: "fit-content",
-                    alignItems: "center",
-                    gap: "1.2rem",
-                  }}
-                >
+                <div className={styles.profileNameContainer}>
                   <input className={styles.nameEdit} type="text" value={userProfile.userId?.name} onChange={(e) => { setUserProfile({ ...userProfile, userId: { ...userProfile.userId, name: e.target.value } }) }} />
 
-                  <p style={{ color: "grey" }}>
+                  <p className={styles.username}>
                     @{userProfile.userId.username}
                   </p>
                 </div>
@@ -144,7 +137,7 @@ export default function ProfilePage() {
                 <div style={{ width: "100%" }}>
                   <div>
                     <h3>Recent Activity</h3>
-                    <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fill, minmax(300px, 1fr))", gap: "1rem" }}>
+                    <div className={styles.postsGrid}>
                       {userPosts.map((post) => {
                         return (
                           <div key={post._id} className={styles.postCard}>
@@ -154,7 +147,7 @@ export default function ProfilePage() {
                                   <img src={`${BASE_URL}/uploads/${post.media}`} alt="Post Media" />
                                 ) : (
                                   <div
-                                    style={{ width: "3.rem", height: "3.4rem" }}
+                                    className={styles.postMediaPlaceholder}
                                   ></div>
                                 )}
                                 <p>{post.body}</p>
@@ -176,13 +169,13 @@ export default function ProfilePage() {
                   {userProfile.pastwork.map((work, index) => {
                     return (
                       <div key={index} className={styles.workHistoryCard}>
-                        <p style={{ fontWeight: "700", color: "#2d3748" }}>
+                        <p className={styles.workCompany}>
                           {work.company}
                         </p>
-                        <p style={{ color: "#008080", fontWeight: "600" }}>
+                        <p className={styles.workPosition}>
                           {work.position}
                         </p>
-                        <p style={{ fontSize: "0.9rem", color: "#718096" }}>
+                        <p className={styles.workYears}>
                           {work.years}
                         </p>
                       </div>

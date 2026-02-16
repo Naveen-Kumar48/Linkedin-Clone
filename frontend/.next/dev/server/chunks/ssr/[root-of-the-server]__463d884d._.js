@@ -658,11 +658,18 @@ __turbopack_context__.v({
   "inputField": "Index-module__NLSpOW__inputField",
   "nameEdit": "Index-module__NLSpOW__nameEdit",
   "postCard": "Index-module__NLSpOW__postCard",
+  "postMediaPlaceholder": "Index-module__NLSpOW__postMediaPlaceholder",
+  "postsGrid": "Index-module__NLSpOW__postsGrid",
   "profileContainer_details": "Index-module__NLSpOW__profileContainer_details",
   "profileImageWrapper": "Index-module__NLSpOW__profileImageWrapper",
+  "profileNameContainer": "Index-module__NLSpOW__profileNameContainer",
   "updateButton": "Index-module__NLSpOW__updateButton",
+  "username": "Index-module__NLSpOW__username",
+  "workCompany": "Index-module__NLSpOW__workCompany",
   "workHistoryCard": "Index-module__NLSpOW__workHistoryCard",
   "workHistoryContainer": "Index-module__NLSpOW__workHistoryContainer",
+  "workPosition": "Index-module__NLSpOW__workPosition",
+  "workYears": "Index-module__NLSpOW__workYears",
   "workhistory": "Index-module__NLSpOW__workhistory",
 });
 }),
@@ -844,12 +851,7 @@ function ProfilePage() {
                                     className: __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$pages$2f$profile$2f$Index$2e$module$2e$css__$5b$ssr$5d$__$28$css__module$29$__["default"].profileContainer_details,
                                     children: [
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$externals$5d2f$react$2f$jsx$2d$dev$2d$runtime__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__["jsxDEV"])("div", {
-                                            style: {
-                                                display: "flex",
-                                                width: "fit-content",
-                                                alignItems: "center",
-                                                gap: "1.2rem"
-                                            },
+                                            className: __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$pages$2f$profile$2f$Index$2e$module$2e$css__$5b$ssr$5d$__$28$css__module$29$__["default"].profileNameContainer,
                                             children: [
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$externals$5d2f$react$2f$jsx$2d$dev$2d$runtime__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__["jsxDEV"])("input", {
                                                     className: __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$pages$2f$profile$2f$Index$2e$module$2e$css__$5b$ssr$5d$__$28$css__module$29$__["default"].nameEdit,
@@ -866,20 +868,18 @@ function ProfilePage() {
                                                     }
                                                 }, void 0, false, {
                                                     fileName: "[project]/src/pages/profile/index.jsx",
-                                                    lineNumber: 126,
+                                                    lineNumber: 119,
                                                     columnNumber: 19
                                                 }, this),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$externals$5d2f$react$2f$jsx$2d$dev$2d$runtime__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__["jsxDEV"])("p", {
-                                                    style: {
-                                                        color: "grey"
-                                                    },
+                                                    className: __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$pages$2f$profile$2f$Index$2e$module$2e$css__$5b$ssr$5d$__$28$css__module$29$__["default"].username,
                                                     children: [
                                                         "@",
                                                         userProfile.userId.username
                                                     ]
                                                 }, void 0, true, {
                                                     fileName: "[project]/src/pages/profile/index.jsx",
-                                                    lineNumber: 128,
+                                                    lineNumber: 121,
                                                     columnNumber: 19
                                                 }, this)
                                             ]
@@ -899,12 +899,12 @@ function ProfilePage() {
                                                 rows: Math.max(3, userProfile.bio.length / 80)
                                             }, void 0, false, {
                                                 fileName: "[project]/src/pages/profile/index.jsx",
-                                                lineNumber: 134,
+                                                lineNumber: 127,
                                                 columnNumber: 19
                                             }, this)
                                         }, void 0, false, {
                                             fileName: "[project]/src/pages/profile/index.jsx",
-                                            lineNumber: 133,
+                                            lineNumber: 126,
                                             columnNumber: 17
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$externals$5d2f$react$2f$jsx$2d$dev$2d$runtime__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__["jsxDEV"])("div", {
@@ -917,15 +917,11 @@ function ProfilePage() {
                                                         children: "Recent Activity"
                                                     }, void 0, false, {
                                                         fileName: "[project]/src/pages/profile/index.jsx",
-                                                        lineNumber: 146,
+                                                        lineNumber: 139,
                                                         columnNumber: 21
                                                     }, this),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$externals$5d2f$react$2f$jsx$2d$dev$2d$runtime__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__["jsxDEV"])("div", {
-                                                        style: {
-                                                            display: "grid",
-                                                            gridTemplateColumns: "repeat(auto-fill, minmax(300px, 1fr))",
-                                                            gap: "1rem"
-                                                        },
+                                                        className: __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$pages$2f$profile$2f$Index$2e$module$2e$css__$5b$ssr$5d$__$28$css__module$29$__["default"].postsGrid,
                                                         children: userPosts.map((post)=>{
                                                             return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$externals$5d2f$react$2f$jsx$2d$dev$2d$runtime__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__["jsxDEV"])("div", {
                                                                 className: __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$pages$2f$profile$2f$Index$2e$module$2e$css__$5b$ssr$5d$__$28$css__module$29$__["default"].postCard,
@@ -939,56 +935,53 @@ function ProfilePage() {
                                                                                 alt: "Post Media"
                                                                             }, void 0, false, {
                                                                                 fileName: "[project]/src/pages/profile/index.jsx",
-                                                                                lineNumber: 154,
+                                                                                lineNumber: 147,
                                                                                 columnNumber: 35
                                                                             }, this) : /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$externals$5d2f$react$2f$jsx$2d$dev$2d$runtime__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__["jsxDEV"])("div", {
-                                                                                style: {
-                                                                                    width: "3.rem",
-                                                                                    height: "3.4rem"
-                                                                                }
+                                                                                className: __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$pages$2f$profile$2f$Index$2e$module$2e$css__$5b$ssr$5d$__$28$css__module$29$__["default"].postMediaPlaceholder
                                                                             }, void 0, false, {
                                                                                 fileName: "[project]/src/pages/profile/index.jsx",
-                                                                                lineNumber: 156,
+                                                                                lineNumber: 149,
                                                                                 columnNumber: 35
                                                                             }, this),
                                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$externals$5d2f$react$2f$jsx$2d$dev$2d$runtime__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__["jsxDEV"])("p", {
                                                                                 children: post.body
                                                                             }, void 0, false, {
                                                                                 fileName: "[project]/src/pages/profile/index.jsx",
-                                                                                lineNumber: 160,
+                                                                                lineNumber: 153,
                                                                                 columnNumber: 33
                                                                             }, this)
                                                                         ]
                                                                     }, void 0, true, {
                                                                         fileName: "[project]/src/pages/profile/index.jsx",
-                                                                        lineNumber: 152,
+                                                                        lineNumber: 145,
                                                                         columnNumber: 31
                                                                     }, this)
                                                                 }, void 0, false, {
                                                                     fileName: "[project]/src/pages/profile/index.jsx",
-                                                                    lineNumber: 151,
+                                                                    lineNumber: 144,
                                                                     columnNumber: 29
                                                                 }, this)
                                                             }, post._id, false, {
                                                                 fileName: "[project]/src/pages/profile/index.jsx",
-                                                                lineNumber: 150,
+                                                                lineNumber: 143,
                                                                 columnNumber: 27
                                                             }, this);
                                                         })
                                                     }, void 0, false, {
                                                         fileName: "[project]/src/pages/profile/index.jsx",
-                                                        lineNumber: 147,
+                                                        lineNumber: 140,
                                                         columnNumber: 21
                                                     }, this)
                                                 ]
                                             }, void 0, true, {
                                                 fileName: "[project]/src/pages/profile/index.jsx",
-                                                lineNumber: 145,
+                                                lineNumber: 138,
                                                 columnNumber: 19
                                             }, this)
                                         }, void 0, false, {
                                             fileName: "[project]/src/pages/profile/index.jsx",
-                                            lineNumber: 144,
+                                            lineNumber: 137,
                                             columnNumber: 17
                                         }, this)
                                     ]
@@ -1004,7 +997,7 @@ function ProfilePage() {
                                             children: "work history"
                                         }, void 0, false, {
                                             fileName: "[project]/src/pages/profile/index.jsx",
-                                            lineNumber: 173,
+                                            lineNumber: 166,
                                             columnNumber: 17
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$externals$5d2f$react$2f$jsx$2d$dev$2d$runtime__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__["jsxDEV"])("div", {
@@ -1015,42 +1008,33 @@ function ProfilePage() {
                                                         className: __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$pages$2f$profile$2f$Index$2e$module$2e$css__$5b$ssr$5d$__$28$css__module$29$__["default"].workHistoryCard,
                                                         children: [
                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$externals$5d2f$react$2f$jsx$2d$dev$2d$runtime__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__["jsxDEV"])("p", {
-                                                                style: {
-                                                                    fontWeight: "700",
-                                                                    color: "#2d3748"
-                                                                },
+                                                                className: __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$pages$2f$profile$2f$Index$2e$module$2e$css__$5b$ssr$5d$__$28$css__module$29$__["default"].workCompany,
                                                                 children: work.company
                                                             }, void 0, false, {
                                                                 fileName: "[project]/src/pages/profile/index.jsx",
-                                                                lineNumber: 179,
+                                                                lineNumber: 172,
                                                                 columnNumber: 25
                                                             }, this),
                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$externals$5d2f$react$2f$jsx$2d$dev$2d$runtime__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__["jsxDEV"])("p", {
-                                                                style: {
-                                                                    color: "#008080",
-                                                                    fontWeight: "600"
-                                                                },
+                                                                className: __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$pages$2f$profile$2f$Index$2e$module$2e$css__$5b$ssr$5d$__$28$css__module$29$__["default"].workPosition,
                                                                 children: work.position
                                                             }, void 0, false, {
                                                                 fileName: "[project]/src/pages/profile/index.jsx",
-                                                                lineNumber: 182,
+                                                                lineNumber: 175,
                                                                 columnNumber: 25
                                                             }, this),
                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$externals$5d2f$react$2f$jsx$2d$dev$2d$runtime__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__["jsxDEV"])("p", {
-                                                                style: {
-                                                                    fontSize: "0.9rem",
-                                                                    color: "#718096"
-                                                                },
+                                                                className: __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$pages$2f$profile$2f$Index$2e$module$2e$css__$5b$ssr$5d$__$28$css__module$29$__["default"].workYears,
                                                                 children: work.years
                                                             }, void 0, false, {
                                                                 fileName: "[project]/src/pages/profile/index.jsx",
-                                                                lineNumber: 185,
+                                                                lineNumber: 178,
                                                                 columnNumber: 25
                                                             }, this)
                                                         ]
                                                     }, index, true, {
                                                         fileName: "[project]/src/pages/profile/index.jsx",
-                                                        lineNumber: 178,
+                                                        lineNumber: 171,
                                                         columnNumber: 23
                                                     }, this);
                                                 }),
@@ -1062,19 +1046,19 @@ function ProfilePage() {
                                                     children: "Add Work"
                                                 }, void 0, false, {
                                                     fileName: "[project]/src/pages/profile/index.jsx",
-                                                    lineNumber: 191,
+                                                    lineNumber: 184,
                                                     columnNumber: 19
                                                 }, this)
                                             ]
                                         }, void 0, true, {
                                             fileName: "[project]/src/pages/profile/index.jsx",
-                                            lineNumber: 175,
+                                            lineNumber: 168,
                                             columnNumber: 17
                                         }, this)
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/src/pages/profile/index.jsx",
-                                    lineNumber: 172,
+                                    lineNumber: 165,
                                     columnNumber: 15
                                 }, this)
                             ]
@@ -1091,7 +1075,7 @@ function ProfilePage() {
                             children: "Update"
                         }, void 0, false, {
                             fileName: "[project]/src/pages/profile/index.jsx",
-                            lineNumber: 202,
+                            lineNumber: 195,
                             columnNumber: 17
                         }, this)
                     ]
@@ -1120,7 +1104,7 @@ function ProfilePage() {
                                     placeholder: "Enter Work Space"
                                 }, void 0, false, {
                                     fileName: "[project]/src/pages/profile/index.jsx",
-                                    lineNumber: 225,
+                                    lineNumber: 218,
                                     columnNumber: 17
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$externals$5d2f$react$2f$jsx$2d$dev$2d$runtime__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__["jsxDEV"])("input", {
@@ -1131,7 +1115,7 @@ function ProfilePage() {
                                     placeholder: "Enter Your Position"
                                 }, void 0, false, {
                                     fileName: "[project]/src/pages/profile/index.jsx",
-                                    lineNumber: 226,
+                                    lineNumber: 219,
                                     columnNumber: 17
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$externals$5d2f$react$2f$jsx$2d$dev$2d$runtime__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__["jsxDEV"])("input", {
@@ -1142,7 +1126,7 @@ function ProfilePage() {
                                     placeholder: "Enter Years"
                                 }, void 0, false, {
                                     fileName: "[project]/src/pages/profile/index.jsx",
-                                    lineNumber: 227,
+                                    lineNumber: 220,
                                     columnNumber: 17
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$externals$5d2f$react$2f$jsx$2d$dev$2d$runtime__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__["jsxDEV"])("div", {
@@ -1161,28 +1145,28 @@ function ProfilePage() {
                                         children: "Add Work"
                                     }, void 0, false, {
                                         fileName: "[project]/src/pages/profile/index.jsx",
-                                        lineNumber: 231,
+                                        lineNumber: 224,
                                         columnNumber: 19
                                     }, this)
                                 }, void 0, false, {
                                     fileName: "[project]/src/pages/profile/index.jsx",
-                                    lineNumber: 228,
+                                    lineNumber: 221,
                                     columnNumber: 17
                                 }, this)
                             ]
                         }, void 0, true, {
                             fileName: "[project]/src/pages/profile/index.jsx",
-                            lineNumber: 220,
+                            lineNumber: 213,
                             columnNumber: 15
                         }, this)
                     }, void 0, false, {
                         fileName: "[project]/src/pages/profile/index.jsx",
-                        lineNumber: 219,
+                        lineNumber: 212,
                         columnNumber: 13
                     }, this)
                 }, void 0, false, {
                     fileName: "[project]/src/pages/profile/index.jsx",
-                    lineNumber: 213,
+                    lineNumber: 206,
                     columnNumber: 11
                 }, this)
             ]
