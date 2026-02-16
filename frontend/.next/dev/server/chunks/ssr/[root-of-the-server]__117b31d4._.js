@@ -648,6 +648,7 @@ __turbopack_context__.v({
   "myConnection": "index-module__ceZrkW__myConnection",
   "profilePicture": "index-module__ceZrkW__profilePicture",
   "userCard": "index-module__ceZrkW__userCard",
+  "userInfo": "index-module__ceZrkW__userInfo",
 });
 }),
 "[project]/src/pages/my_connections/index.jsx [ssr] (ecmascript)", ((__turbopack_context__) => {
@@ -732,69 +733,66 @@ function MyConnectionsPage() {
                                 router.push(`/view_profile/${user.userId.username}`);
                             },
                             className: __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$pages$2f$my_connections$2f$index$2e$module$2e$css__$5b$ssr$5d$__$28$css__module$29$__["default"].userCard,
-                            children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$externals$5d2f$react$2f$jsx$2d$dev$2d$runtime__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__["jsxDEV"])("div", {
-                                children: [
-                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$externals$5d2f$react$2f$jsx$2d$dev$2d$runtime__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__["jsxDEV"])("div", {
-                                        className: __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$pages$2f$my_connections$2f$index$2e$module$2e$css__$5b$ssr$5d$__$28$css__module$29$__["default"].profilePicture,
-                                        children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$externals$5d2f$react$2f$jsx$2d$dev$2d$runtime__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__["jsxDEV"])("img", {
-                                            src: `${__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$config$2f$index$2e$js__$5b$ssr$5d$__$28$ecmascript$29$__["BASE_URL"]}/${user.userId.profilePicture}`,
-                                            alt: "Profile-picture"
-                                        }, void 0, false, {
-                                            fileName: "[project]/src/pages/my_connections/index.jsx",
-                                            lineNumber: 57,
-                                            columnNumber: 49
-                                        }, this)
+                            children: [
+                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$externals$5d2f$react$2f$jsx$2d$dev$2d$runtime__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__["jsxDEV"])("div", {
+                                    className: __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$pages$2f$my_connections$2f$index$2e$module$2e$css__$5b$ssr$5d$__$28$css__module$29$__["default"].profilePicture,
+                                    children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$externals$5d2f$react$2f$jsx$2d$dev$2d$runtime__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__["jsxDEV"])("img", {
+                                        src: `${__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$config$2f$index$2e$js__$5b$ssr$5d$__$28$ecmascript$29$__["BASE_URL"]}/${user.userId.profilePicture}`,
+                                        alt: "Profile-picture"
                                     }, void 0, false, {
                                         fileName: "[project]/src/pages/my_connections/index.jsx",
                                         lineNumber: 56,
                                         columnNumber: 45
-                                    }, this),
-                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$externals$5d2f$react$2f$jsx$2d$dev$2d$runtime__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__["jsxDEV"])("div", {
-                                        className: __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$pages$2f$my_connections$2f$index$2e$module$2e$css__$5b$ssr$5d$__$28$css__module$29$__["default"].userInfo,
-                                        children: [
-                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$externals$5d2f$react$2f$jsx$2d$dev$2d$runtime__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__["jsxDEV"])("h3", {
-                                                children: user.userId.name
-                                            }, void 0, false, {
-                                                fileName: "[project]/src/pages/my_connections/index.jsx",
-                                                lineNumber: 63,
-                                                columnNumber: 49
-                                            }, this),
-                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$externals$5d2f$react$2f$jsx$2d$dev$2d$runtime__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__["jsxDEV"])("h3", {
-                                                children: user.userId.username
-                                            }, void 0, false, {
-                                                fileName: "[project]/src/pages/my_connections/index.jsx",
-                                                lineNumber: 64,
-                                                columnNumber: 49
-                                            }, this)
-                                        ]
-                                    }, void 0, true, {
-                                        fileName: "[project]/src/pages/my_connections/index.jsx",
-                                        lineNumber: 62,
-                                        columnNumber: 45
-                                    }, this),
-                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$externals$5d2f$react$2f$jsx$2d$dev$2d$runtime__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__["jsxDEV"])("button", {
-                                        onClick: (e)=>{
-                                            e.stopPropagation();
-                                            dispatch((0, __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$config$2f$redux$2f$action$2f$authAction$2f$index$2e$js__$5b$ssr$5d$__$28$ecmascript$29$__["acceptConnectionRequest"])({
-                                                connectionId: user._id,
-                                                token: localStorage.getItem("token"),
-                                                action: "accept"
-                                            }));
-                                        },
-                                        className: __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$pages$2f$my_connections$2f$index$2e$module$2e$css__$5b$ssr$5d$__$28$css__module$29$__["default"].connectBtn,
-                                        children: "Accept"
-                                    }, void 0, false, {
-                                        fileName: "[project]/src/pages/my_connections/index.jsx",
-                                        lineNumber: 66,
-                                        columnNumber: 45
                                     }, this)
-                                ]
-                            }, void 0, true, {
-                                fileName: "[project]/src/pages/my_connections/index.jsx",
-                                lineNumber: 55,
-                                columnNumber: 41
-                            }, this)
-                        }, user._id, false, {
+                                }, void 0, false, {
+                                    fileName: "[project]/src/pages/my_connections/index.jsx",
+                                    lineNumber: 55,
+                                    columnNumber: 41
+                                }, this),
+                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$externals$5d2f$react$2f$jsx$2d$dev$2d$runtime__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__["jsxDEV"])("div", {
+                                    className: __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$pages$2f$my_connections$2f$index$2e$module$2e$css__$5b$ssr$5d$__$28$css__module$29$__["default"].userInfo,
+                                    children: [
+                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$externals$5d2f$react$2f$jsx$2d$dev$2d$runtime__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__["jsxDEV"])("h3", {
+                                            children: user.userId.name
+                                        }, void 0, false, {
+                                            fileName: "[project]/src/pages/my_connections/index.jsx",
+                                            lineNumber: 62,
+                                            columnNumber: 45
+                                        }, this),
+                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$externals$5d2f$react$2f$jsx$2d$dev$2d$runtime__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__["jsxDEV"])("h3", {
+                                            children: [
+                                                "@",
+                                                user.userId.username
+                                            ]
+                                        }, void 0, true, {
+                                            fileName: "[project]/src/pages/my_connections/index.jsx",
+                                            lineNumber: 63,
+                                            columnNumber: 45
+                                        }, this)
+                                    ]
+                                }, void 0, true, {
+                                    fileName: "[project]/src/pages/my_connections/index.jsx",
+                                    lineNumber: 61,
+                                    columnNumber: 41
+                                }, this),
+                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$externals$5d2f$react$2f$jsx$2d$dev$2d$runtime__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__["jsxDEV"])("button", {
+                                    onClick: (e)=>{
+                                        e.stopPropagation();
+                                        dispatch((0, __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$config$2f$redux$2f$action$2f$authAction$2f$index$2e$js__$5b$ssr$5d$__$28$ecmascript$29$__["acceptConnectionRequest"])({
+                                            connectionId: user._id,
+                                            token: localStorage.getItem("token"),
+                                            action: "accept"
+                                        }));
+                                    },
+                                    className: __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$pages$2f$my_connections$2f$index$2e$module$2e$css__$5b$ssr$5d$__$28$css__module$29$__["default"].connectBtn,
+                                    children: "Accept"
+                                }, void 0, false, {
+                                    fileName: "[project]/src/pages/my_connections/index.jsx",
+                                    lineNumber: 65,
+                                    columnNumber: 41
+                                }, this)
+                            ]
+                        }, user._id, true, {
                             fileName: "[project]/src/pages/my_connections/index.jsx",
                             lineNumber: 48,
                             columnNumber: 37
@@ -804,7 +802,7 @@ function MyConnectionsPage() {
                         children: " My Network "
                     }, void 0, false, {
                         fileName: "[project]/src/pages/my_connections/index.jsx",
-                        lineNumber: 86,
+                        lineNumber: 84,
                         columnNumber: 21
                     }, this),
                     authState.connections.filter((connection)=>connection.status_accepted !== null).map((user)=>{
@@ -813,55 +811,52 @@ function MyConnectionsPage() {
                                 router.push(`/view_profile/${user.userId.username}`);
                             },
                             className: __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$pages$2f$my_connections$2f$index$2e$module$2e$css__$5b$ssr$5d$__$28$css__module$29$__["default"].userCard,
-                            children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$externals$5d2f$react$2f$jsx$2d$dev$2d$runtime__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__["jsxDEV"])("div", {
-                                children: [
-                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$externals$5d2f$react$2f$jsx$2d$dev$2d$runtime__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__["jsxDEV"])("div", {
-                                        className: __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$pages$2f$my_connections$2f$index$2e$module$2e$css__$5b$ssr$5d$__$28$css__module$29$__["default"].profilePicture,
-                                        children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$externals$5d2f$react$2f$jsx$2d$dev$2d$runtime__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__["jsxDEV"])("img", {
-                                            src: `${__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$config$2f$index$2e$js__$5b$ssr$5d$__$28$ecmascript$29$__["BASE_URL"]}/${user.userId.profilePicture}`,
-                                            alt: "Profile-picture"
-                                        }, void 0, false, {
-                                            fileName: "[project]/src/pages/my_connections/index.jsx",
-                                            lineNumber: 99,
-                                            columnNumber: 41
-                                        }, this)
+                            children: [
+                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$externals$5d2f$react$2f$jsx$2d$dev$2d$runtime__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__["jsxDEV"])("div", {
+                                    className: __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$pages$2f$my_connections$2f$index$2e$module$2e$css__$5b$ssr$5d$__$28$css__module$29$__["default"].profilePicture,
+                                    children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$externals$5d2f$react$2f$jsx$2d$dev$2d$runtime__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__["jsxDEV"])("img", {
+                                        src: `${__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$config$2f$index$2e$js__$5b$ssr$5d$__$28$ecmascript$29$__["BASE_URL"]}/${user.userId.profilePicture}`,
+                                        alt: "Profile-picture"
                                     }, void 0, false, {
                                         fileName: "[project]/src/pages/my_connections/index.jsx",
-                                        lineNumber: 98,
-                                        columnNumber: 37
-                                    }, this),
-                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$externals$5d2f$react$2f$jsx$2d$dev$2d$runtime__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__["jsxDEV"])("div", {
-                                        className: __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$pages$2f$my_connections$2f$index$2e$module$2e$css__$5b$ssr$5d$__$28$css__module$29$__["default"].userInfo,
-                                        children: [
-                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$externals$5d2f$react$2f$jsx$2d$dev$2d$runtime__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__["jsxDEV"])("h3", {
-                                                children: user.userId.name
-                                            }, void 0, false, {
-                                                fileName: "[project]/src/pages/my_connections/index.jsx",
-                                                lineNumber: 105,
-                                                columnNumber: 41
-                                            }, this),
-                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$externals$5d2f$react$2f$jsx$2d$dev$2d$runtime__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__["jsxDEV"])("h3", {
-                                                children: user.userId.username
-                                            }, void 0, false, {
-                                                fileName: "[project]/src/pages/my_connections/index.jsx",
-                                                lineNumber: 106,
-                                                columnNumber: 41
-                                            }, this)
-                                        ]
-                                    }, void 0, true, {
-                                        fileName: "[project]/src/pages/my_connections/index.jsx",
-                                        lineNumber: 104,
+                                        lineNumber: 96,
                                         columnNumber: 37
                                     }, this)
-                                ]
-                            }, void 0, true, {
-                                fileName: "[project]/src/pages/my_connections/index.jsx",
-                                lineNumber: 97,
-                                columnNumber: 33
-                            }, this)
-                        }, user._id, false, {
+                                }, void 0, false, {
+                                    fileName: "[project]/src/pages/my_connections/index.jsx",
+                                    lineNumber: 95,
+                                    columnNumber: 33
+                                }, this),
+                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$externals$5d2f$react$2f$jsx$2d$dev$2d$runtime__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__["jsxDEV"])("div", {
+                                    className: __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$pages$2f$my_connections$2f$index$2e$module$2e$css__$5b$ssr$5d$__$28$css__module$29$__["default"].userInfo,
+                                    children: [
+                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$externals$5d2f$react$2f$jsx$2d$dev$2d$runtime__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__["jsxDEV"])("h3", {
+                                            children: user.userId.name
+                                        }, void 0, false, {
+                                            fileName: "[project]/src/pages/my_connections/index.jsx",
+                                            lineNumber: 102,
+                                            columnNumber: 37
+                                        }, this),
+                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$externals$5d2f$react$2f$jsx$2d$dev$2d$runtime__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__["jsxDEV"])("h3", {
+                                            children: [
+                                                "@",
+                                                user.userId.username
+                                            ]
+                                        }, void 0, true, {
+                                            fileName: "[project]/src/pages/my_connections/index.jsx",
+                                            lineNumber: 103,
+                                            columnNumber: 37
+                                        }, this)
+                                    ]
+                                }, void 0, true, {
+                                    fileName: "[project]/src/pages/my_connections/index.jsx",
+                                    lineNumber: 101,
+                                    columnNumber: 33
+                                }, this)
+                            ]
+                        }, user._id, true, {
                             fileName: "[project]/src/pages/my_connections/index.jsx",
-                            lineNumber: 90,
+                            lineNumber: 88,
                             columnNumber: 29
                         }, this);
                     })
@@ -869,7 +864,7 @@ function MyConnectionsPage() {
             }, void 0, true, {
                 fileName: "[project]/src/pages/my_connections/index.jsx",
                 lineNumber: 38,
-                columnNumber: 9
+                columnNumber: 17
             }, this)
         }, void 0, false, {
             fileName: "[project]/src/pages/my_connections/index.jsx",

@@ -343,6 +343,10 @@
 }
 
 @media screen and (max-width: 768px) {
+  .index-module__KVi4QG__wrapper {
+    max-width: 98%;
+  }
+
   .index-module__KVi4QG__allCommentsContainer {
     width: 95vw;
     height: 70vh;

@@ -6,22 +6,69 @@
   align-items: center;
   box-shadow: 10px 10px 10px 0px rgba(0, 0, 0, 0.1);
 }
-.profilePicture > img {
+
+.profilePicture>img {
   width: 6.5rem;
   border-radius: 50%;
 }
-.myConnection{
-    display: flex;
-    width: 100%;
-    justify-content: space-around;
-    padding-top: 1.5rem;
-    cursor: pointer;
+
+.myConnection {
+  display: flex;
+  width: 100%;
+  justify-content: space-around;
+  padding-top: 1.5rem;
+  cursor: pointer;
 }
-.connectBtn{
-    padding-inline: 0.8rem;
-    padding-block: 0.3rem;
-    border: 1px solid blue;
-    outline: none;
-    border-radius: 10px;
-    cursor: pointer;
+
+.connectBtn {
+  padding-block: 0.3rem;
+  border: 1px solid blue;
+  outline: none;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.userInfo {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  flex: 1;
+  /* Take remaining space */
+}
+
+.userInfo h3:first-child {
+  font-size: 1rem;
+  color: #333;
+  margin: 0;
+}
+
+.userInfo h3:last-child {
+  font-size: 0.9rem;
+  color: #666;
+  margin: 0;
+  font-weight: 400;
+}
+
+@media screen and (max-width: 480px) {
+  .userCard {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
+    text-align: center;
+  }
+
+  .profilePicture {
+    align-self: center;
+  }
+
+  .userInfo {
+    width: 100%;
+    align-items: center;
+  }
+
+  .connectBtn {
+    width: 100%;
+    padding-block: 0.6rem;
+  }
 }

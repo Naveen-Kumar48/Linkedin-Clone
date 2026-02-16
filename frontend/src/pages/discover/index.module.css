@@ -45,3 +45,20 @@
     margin: 0;
     line-height: 1.4;
 }
+
+@media screen and (max-width: 480px) {
+    .allUserProfile {
+        grid-template-columns: 1fr;
+        padding: 1rem;
+    }
+
+    .userCard {
+        gap: 0.8rem;
+        padding: 1rem;
+    }
+
+    .userCard_image {
+        width: 50px;
+        height: 50px;
+    }
+}

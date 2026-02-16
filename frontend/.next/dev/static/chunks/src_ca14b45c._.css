@@ -73,6 +73,23 @@
   line-height: 1.4;
 }
 
+@media screen and (max-width: 480px) {
+  .index-module__0j-TBq__allUserProfile {
+    grid-template-columns: 1fr;
+    padding: 1rem;
+  }
+
+  .index-module__0j-TBq__userCard {
+    gap: .8rem;
+    padding: 1rem;
+  }
+
+  .index-module__0j-TBq__userCard_image {
+    width: 50px;
+    height: 50px;
+  }
+}
+
 /* [project]/src/layout/DashboardLayout/index.module.css [client] (css) */
 .index-module__H6bjfq__homeContainer {
   display: flex;
