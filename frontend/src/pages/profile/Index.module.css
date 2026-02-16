@@ -410,6 +410,17 @@
     height: 130px;
     top: 115px;
     /* Adjust based on banner: 180 (banner) - 65 (half profile) = 115 */
+    z-index: 20; /* Ensure it is above the banner */
+    background-color: #e2e8f0; /* Placeholder color if image fails */
+  }
+
+  .backDrop__overlay {
+    opacity: 0.7; /* Always visible on mobile to indicate editability */
+    background-color: rgba(0, 0, 0, 0.3);
+  }
+  
+  .backDrop__overlay p {
+    font-size: 0.9rem;
   }
 
   .profileContainer_details {
