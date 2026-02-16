@@ -1,8 +1,0 @@
-__turbopack_load_page_chunks__("/discover", [
-  "static/chunks/6e2af3e88879f8fa.js",
-  "static/chunks/4de0f170e360de8c.js",
-  "static/chunks/5bd3573be64821ff.js",
-  "static/chunks/17e4fca1daed52c0.js",
-  "static/chunks/6d15e999ba7ca2cc.css",
-  "static/chunks/turbopack-46ea6920c4fb948c.js"
-])

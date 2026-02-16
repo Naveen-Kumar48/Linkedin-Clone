@@ -1,6 +1,0 @@
-{
-  "version": 3,
-  "sources": [],
-  "sections": [
-    {"offset": {"line": 1, "column": 0}, "map": {"version":3,"sources":["file:///D:/Web%20Development/Projects/Linked%20Clone/frontend/src/layout/DashboardLayout/index.module.css"],"sourcesContent":[".homeContainer {\r\n    display: flex;\r\n}\r\n\r\n.homeContainer>div:nth-of-type(odd) {\r\n    flex: 0.2;\r\n}\r\n\r\n.homeContainer>div:nth-of-type(even) {\r\n    flex: 0.6;\r\n}\r\n\r\n.homeContainer__leftBar {\r\n    display: flex;\r\n    flex-direction: column;\r\n    gap: 1.2rem;\r\n    align-items: start;\r\n}\r\n\r\n.sideBarOptions {\r\n    display: flex;\r\n    align-items: center;\r\n    font-size: 1.4rem;\r\n    gap: 1.3rem;\r\n    width: 80%;\r\n    min-width: 100px;\r\n    max-width: 80%;\r\n    cursor: pointer;\r\n    transition: all 0.2s;\r\n}\r\n.sideBarOptions:hover{\r\n   \r\n    transform: scale(1.04) \r\n}\r\n\r\n.sideBarOptions>svg {\r\n    height: 1.4rem;\r\n    min-width: fit-content;\r\n}"],"names":[],"mappings":"AAAA;;;;AAIA;;;;AAIA;;;;AAIA;;;;;;;AAOA;;;;;;;;;;;;AAWA;;;;AAKA"}}]
-}
