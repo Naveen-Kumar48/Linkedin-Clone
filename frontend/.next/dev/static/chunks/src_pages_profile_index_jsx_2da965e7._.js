@@ -9,7 +9,7 @@
   "static/chunks/node_modules_next_router_104fab1c.js",
   "static/chunks/node_modules_react-dom_4411d9bd._.js",
   "static/chunks/node_modules_axios_lib_2c8bf6cb._.js",
-  "static/chunks/node_modules_2b35a1ee._.js",
+  "static/chunks/node_modules_ff04c281._.js",
   "static/chunks/src_dce89574._.css"
 ],
     source: "entry"
