@@ -58,7 +58,7 @@ const convertUserDataToPDF = async (userData) => {
   });
 };
 
-//*Api to register user
+//*Api to Register user
 export const register = async (req, res) => {
   console.log(req.body);
   try {
