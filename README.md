@@ -5,7 +5,7 @@ A full-stack social networking application inspired by LinkedIn, designed to fac
 ## 🚀 Live Demo
 (https://prolink-network.vercel.app)
 
----
+---------------
 
 ## 📖 Table of Contents
 - [Project Overview](#-project-overview)
